@@ -35,15 +35,15 @@
 .subs > #layout {
   display: flex;
 }
-.subs > #layout > .navigator {
+.subs > #layout > .navigator, .subs > #layout > .navigator > .level, .subs > #layout > .navigator > .level > ul > li {
   padding: 10px 60px 10px 0px;
   margin: 0;
   min-width: 250px;
 }
-.subs > #layout > .navigator > ul > li {
+.subs > #layout > .navigator > ul > li, .subs > #layout > .navigator > .level > ul > li, .subs > #layout > .navigator > .level > ul > li > ul > li {
   list-style: none;
 }
-.subs > #layout > .navigator > ul > li > a {
+.subs > #layout > .navigator > ul > li > a, .subs > #layout > .navigator > .level > ul > li > a, .subs > #layout > .navigator > .level > ul > li > ul > li > a {
   display: block;
   text-decoration: none;
   margin-bottom: 10px;
@@ -55,21 +55,20 @@
   box-shadow: 1px 1px 3px #999999;
   box-sizing: border-box;
 }
-.subs > #layout > .navigator > ul > li > a.choosed {
+.subs > #layout > .navigator > ul > li > a.choosed, .subs > #layout > .navigator > .level > ul > li > a.choosed, .subs > #layout > .navigator > .level > ul > li > ul > li > a.choosed {
   background: #444444;
   pointer-events: none;
 }
-.subs > #layout > .navigator > ul > li > a.not_work {
+.subs > #layout > .navigator > ul > li > a.not_work, .subs > #layout > .navigator > .level > ul > li > a.not_work, .subs > #layout > .navigator > .level > ul > li > ul > li > a.not_work {
   background: #444444;
   cursor: not-allowed;
 }
-.subs > #layout > .navigator > ul > li > a:hover {
+.subs > #layout > .navigator > ul > li > a:hover, .subs > #layout > .navigator > .level > ul > li > a:hover, .subs > #layout > .navigator > .level > ul > li > ul > li > a:hover {
   animation: sub_button 0.15s ease-out forwards;
 }
 @keyframes sub_button {
   from {
     background-color: #999999;
-    color: #EEEEEE;
     padding-left: 10px;
   }
   to {
@@ -77,13 +76,34 @@
     padding-left: 15px;
   }
 }
-.subs > #layout > .navigator > ul > li > a:active {
+.subs > #layout > .navigator > ul > li > a:active, .subs > #layout > .navigator > .level > ul > li > a:active, .subs > #layout > .navigator > .level > ul > li > ul > li > a:active {
   background-color: #444444;
+}
+.subs > #layout > .navigator > .level > ul > li > a, .subs > #layout > .navigator > .level > ul > li > ul > li > a, .subs > #layout > .navigator > .level > .level > ul > li > a, .subs > #layout > .navigator > .level > .level > ul > li > ul > li > a, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > a, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > ul > li > a {
+  background-color: #435ebe;
+  display: none;
+}
+.subs > #layout > .navigator > .level > ul > li > a#showed_level, .subs > #layout > .navigator > .level > ul > li > ul > li > a#showed_level, .subs > #layout > .navigator > .level > .level > ul > li > a#showed_level, .subs > #layout > .navigator > .level > .level > ul > li > ul > li > a#showed_level, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > a#showed_level, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > ul > li > a#showed_level {
+  display: block;
+}
+.subs > #layout > .navigator > .level > ul > li > a:hover, .subs > #layout > .navigator > .level > ul > li > ul > li > a:hover, .subs > #layout > .navigator > .level > .level > ul > li > a:hover, .subs > #layout > .navigator > .level > .level > ul > li > ul > li > a:hover, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > a:hover, .subs > #layout > .navigator > .level > ul > li > .level > ul > li > ul > li > a:hover {
+  animation: level_button 0.15s ease-out forwards;
+  display: block;
+}
+@keyframes level_button {
+  from {
+    background-color: #435ebe;
+    padding-left: 10px;
+  }
+  to {
+    background-color: #506fdf;
+    padding-left: 15px;
+  }
 }
 .subs > #layout > .content {
   padding: 10px 20px;
   width: 100%;
-  background-color: #444444;
+  background-color: #333333;
   box-shadow: 1px 2px 4px #999999;
 }
 
@@ -95,9 +115,12 @@
   margin-top: 20px;
   line-height: 40px;
 }
-#head > h1, #head > b {
+#head > h1 {
   font-size: 22px;
   display: block;
+}
+#head > b {
+  font-size: 22px;
 }
 #head > em {
   font-weight: bold;
@@ -138,15 +161,13 @@
   display: block;
   text-decoration: none;
   line-height: 50px;
-  color: #333333;
   font-size: 24px;
   font-weight: bold;
 }
 #main > ul > li > a:visited {
-  color: #333333;
+  background-color: #555555;
 }
 #main > ul > li > a:active {
-  color: #eeeeee;
   background-color: #435ebe;
   border-radius: 3px;
 }

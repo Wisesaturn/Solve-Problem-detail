@@ -35,11 +35,11 @@
     &>#layout {
         display : flex;
 
-        &>.navigator {
+        &>.navigator, &>.navigator>.level, &>.navigator>.level>ul>li {
             padding : 10px 60px 10px 0px;
             margin : 0;
             min-width : 250px;
-            
+
             &>ul {
                &>li {
                     list-style : none;
@@ -74,7 +74,6 @@
                              @keyframes sub_button {
                                 from {
                                     background-color : #999999;
-                                    color : #EEEEEE;
                                     padding-left : 10px;
                                 }
                                 to {
@@ -91,13 +90,45 @@
                    }
                }
             }
+
+            &>.level, &>.level>ul>li {
+                &>ul {
+                    &>li {
+                        &>a {
+                            background-color :#435ebe;
+                            display : none;
+
+                            &#showed_level {
+                                display : block;
+                            }
+
+                            &:hover {
+                                @keyframes level_button {
+                                    from {
+                                        background-color : #435ebe;
+                                        padding-left : 10px;
+                                    }
+                                    to {
+                                        background-color : #506fdf;
+                                        padding-left : 15px;
+                                    }
+                                }
+
+                                animation: level_button .15s ease-out forwards;
+                                display : block;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &>.content {
             padding : 10px 20px;
             width : 100%;
 
-            background-color : #444444;
+            background-color : #333333;
+
 
             box-shadow : 1px 2px 4px #999999;
         }
@@ -114,9 +145,13 @@
     margin-top : 20px;
     line-height : 40px;
 
-    &>h1, &>b {
+    &>h1 {
         font-size : 22px;
         display : block;
+    }
+
+    &>b {
+        font-size : 22px;
     }
 
     &>em { font-weight: bold;}
@@ -166,15 +201,13 @@
                 
                 line-height: 50px;
 
-                color : #333333;
                 font-size : 24px;
                 font-weight : bold;
 
                 &:visited {
-                    color : #333333;
+                    background-color : #555555;
                 }
                 &:active {
-                    color : #eeeeee;
                     background-color : #435ebe;
                     border-radius : 3px;
                 }
