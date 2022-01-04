@@ -1,39 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 em {
   font-weight: bold;
 }
 
-h3 {
-  margin-left: 50px;
+.center {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.content {
-  margin-left: 100px;
-}
-
-.subtitle {
-  margin-left: 75px;
-  font-weight: bold;
+ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 li {
-  text-align: center;
-  vertical-align: middle;
-  align-items: center;
-  text-decoration: none;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0.7rem 1rem;
+  display: inline-block;
+  margin: 0px 15px;
   max-width: 250px;
   width: 100%;
-  min-height: 50px;
   border-radius: 3px;
   box-shadow: 1px 1px 3px #999999;
   box-sizing: border-box;
-  color: #eeeeee;
-  background-color: #435cbc;
+  background-color: white;
 }
-li:a {
+li > a {
+  display: block;
+  text-decoration: none;
+  line-height: 50px;
+  color: #333333;
+  font-size: 24px;
+  font-family: "Jua", sans-serif;
+}
+li > a:visited {
+  color: #333333;
+}
+li > a:active {
   color: #eeeeee;
+  background-color: #435ebe;
+  border-radius: 3px;
+}
+li:hover {
+  animation: button 0.3s linear forwards;
+  transition: 0.6s ease-in;
+}
+@keyframes button {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: #eeeeee;
+  }
 }
 
 /*# sourceMappingURL=compiled.css.map */
