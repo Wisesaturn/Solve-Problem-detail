@@ -1,0 +1,23 @@
+{
+  "name": "solve-problem-detail",
+  "version": "1.0.0",
+  "description": "+ 이 곳은 코딩테스트 문제풀이 모음집을 해설용 블로그입니다.\r + ``` Code ``` 내용을 보실려면 ['Solve-Problem'](https://github.com/Wisesaturn/Solve-Problem \"재한쓰의 코딩테스트 문제풀이 모음집\")을 이용해주세요.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch index.scss ./style/compiled.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wisesaturn/Solve-Problem-detail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wisesaturn/Solve-Problem-detail/issues"
+  },
+  "homepage": "https://github.com/Wisesaturn/Solve-Problem-detail#readme",
+  "dependencies": {
+    "sass": "^1.45.2"
+  }
+}
