@@ -3,7 +3,7 @@
   background-color: #333333;
   color: #eeeeee;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   font-family: "Gowun Dodum", sans-serif;
   font-size: 18px;
 }
@@ -13,19 +13,20 @@
 }
 .subs > #sub_head {
   height: 128px;
-  line-height: 128px;
-  display: flex;
   margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+  align-items: center;
 }
 .subs > #sub_head > h1 {
   width: 100%;
 }
 .subs > #sub_head > a {
-  min-width: 60px;
-  height: 64px;
+  min-width: 64px;
   line-height: 64px;
-  margin: 32px 100px;
+  height: 64px;
+  padding-right: -64px;
   text-decoration: none;
   background-color: #999999;
   border-radius: 3px;

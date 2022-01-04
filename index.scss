@@ -1,28 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
 
-* {background-color : #333333; color : #eeeeee; padding : 0; margin : 0 auto; font-family: 'Gowun Dodum', sans-serif; font-size : 18px;}
+* {background-color : #333333; color : #eeeeee; padding : 0; margin : 0; font-family: 'Gowun Dodum', sans-serif; font-size : 18px;}
 
 .subs {
     padding : 20px 40px;
 
     &>#sub_head {
         height : 128px;
-        line-height : 128px;
-        display : flex;
         margin-bottom : 48px;
+
+        display : flex;
+        justify-content: space-between;
+
         text-align : center;
+        align-items : center;
 
         &>h1 {
             width : 100%;
         }
 
         &>a {
-            min-width : 60px;
-            height : 64px;
+            min-width : 64px;
             line-height : 64px;
-
-            margin : 32px 100px;
-
+            height : 64px;
+            padding-right : -64px;
+            
             text-decoration : none;
             background-color : #999999;
 
