@@ -1,90 +1,106 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap");
 * {
+  background-color: #333333;
+  color: #eeeeee;
   padding: 0;
   margin: 0 auto;
   font-family: "Gowun Dodum", sans-serif;
   font-size: 18px;
 }
 
-em {
-  font-weight: bold;
+.subs {
+  padding: 20px 40px;
 }
-
-#sub_head {
-  text-align: center;
+.subs > #sub_head {
+  height: 128px;
+  line-height: 128px;
   display: flex;
+  margin-bottom: 48px;
+  text-align: center;
+}
+.subs > #sub_head > h1 {
   width: 100%;
-  min-height: 128px;
 }
-#sub_head > .center {
-  font-size: 20px;
-  margin-top: 20px;
-  line-height: 40px;
-}
-#sub_head > .center > h1, #sub_head > .center > b {
-  font-size: 22px;
-  display: block;
-}
-#sub_head > .content_back {
-  width: 50px;
+.subs > #sub_head > a {
+  min-width: 60px;
   height: 64px;
   line-height: 64px;
-  margin-top: 32px;
-  background-color: #333333;
-  color: #eeeeee;
+  margin: 32px 100px;
+  text-decoration: none;
+  background-color: #999999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #999999;
+  box-sizing: border-box;
+}
+.subs > #layout {
+  display: flex;
+}
+.subs > #layout > .navigator {
+  padding: 10px 60px 10px 0px;
+  margin: 0;
+  min-width: 250px;
+}
+.subs > #layout > .navigator > ul > li {
+  list-style: none;
+}
+.subs > #layout > .navigator > ul > li > a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #777777;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #999999;
+  box-sizing: border-box;
+}
+.subs > #layout > .navigator > ul > li > a.choosed {
+  background: #444444;
+  pointer-events: none;
+}
+.subs > #layout > .navigator > ul > li > a.not_work {
+  background: #444444;
+  cursor: not-allowed;
+}
+.subs > #layout > .navigator > ul > li > a:hover {
+  animation: sub_button 0.15s ease-out forwards;
+}
+@keyframes sub_button {
+  from {
+    background-color: #999999;
+    color: #EEEEEE;
+    padding-left: 10px;
+  }
+  to {
+    background-color: #AAAAAA;
+    padding-left: 15px;
+  }
+}
+.subs > #layout > .navigator > ul > li > a:active {
+  background-color: #444444;
+}
+.subs > #layout > .content {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #444444;
+  box-shadow: 1px 2px 4px #999999;
 }
 
 #head {
   text-align: center;
-  width: 100%;
   min-height: 250px;
-}
-#head > .center {
   display: block;
   font-size: 20px;
   margin-top: 20px;
   line-height: 40px;
 }
-#head > .center > h1, #head > .center > b {
+#head > h1, #head > b {
   font-size: 22px;
   display: block;
 }
-
-#layout > .navigator {
-  float: left;
-  width: 15%;
-}
-#layout > .navigator > ul {
-  display: flex;
-  flex-direction: column-reverse;
-}
-#layout > .navigator > ul > li {
-  display: block;
-  margin: 5px 15px;
-  max-width: 250px;
-  width: 100%;
-}
-#layout > .navigator > ul > li > a {
-  display: block;
-  line-height: 32px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px #999999;
-  box-sizing: border-box;
-  background-color: #777777;
-  color: #eeeeee;
-  text-decoration: none;
-}
-#layout > .navigator > ul > li > a.choosed {
-  background-color: #333333;
-  cursor: default;
-}
-#layout > .navigator > ul > li > a.not_work {
-  color: #bbbbbb;
-  cursor: not-allowed;
-}
-#layout > .content {
-  float: right;
-  text-align: center;
+#head > em {
+  font-weight: bold;
 }
 
 #main {
@@ -94,7 +110,7 @@ em {
 }
 #main > ul {
   text-align: center;
-  line-height: 300px;
+  line-height: 200px;
 }
 #main > ul > li {
   display: inline-block;
