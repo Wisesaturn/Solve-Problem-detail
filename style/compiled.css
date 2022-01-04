@@ -21,10 +21,41 @@ em {
   font-size: 22px;
 }
 
-ul {
+#layout > .navigator {
+  float: left;
+}
+#layout > .navigator > ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
+#layout > .navigator > ul > li {
+  display: block;
+  margin: 5px 15px;
+  max-width: 250px;
+  width: 100%;
+}
+#layout > .navigator > ul > li > a {
+  display: block;
+  line-height: 32px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #999999;
+  box-sizing: border-box;
+  background-color: #777777;
+  color: #eeeeee;
+  text-decoration: none;
+}
+#layout > .navigator > ul > li > a.not_work {
+  color: #bbbbbb;
+}
+#layout > .content {
+  float: right;
   text-align: center;
 }
-ul > li {
+
+#main > ul {
+  text-align: center;
+}
+#main > ul > li {
   display: inline-block;
   margin: 30px 15px;
   max-width: 250px;
@@ -34,7 +65,7 @@ ul > li {
   box-sizing: border-box;
   background-color: white;
 }
-ul > li:hover {
+#main > ul > li:hover {
   animation: button 0.3s linear forwards;
   transition: 0.6s ease-in;
 }
@@ -46,7 +77,7 @@ ul > li:hover {
     background-color: #eeeeee;
   }
 }
-ul > li > a {
+#main > ul > li > a {
   display: block;
   text-decoration: none;
   line-height: 50px;
@@ -54,26 +85,26 @@ ul > li > a {
   font-size: 24px;
   font-weight: bold;
 }
-ul > li > a:visited {
+#main > ul > li > a:visited {
   color: #333333;
 }
-ul > li > a:active {
+#main > ul > li > a:active {
   color: #eeeeee;
   background-color: #435ebe;
   border-radius: 3px;
 }
-ul > li > a#not_work {
+#main > ul > li > a#not_work {
   color: #dddddd;
 }
-ul > li > a#back {
+#main > ul > li > a#back {
   background-color: #333333;
   color: #eeeeee;
 }
-ul > li > a#back:active {
+#main > ul > li > a#back:active {
   color: #333333;
   border-radius: 3px;
 }
-ul > li > a#back:hover {
+#main > ul > li > a#back:hover {
   animation: back 0.3s linear forwards;
   transition: 0.6s ease-in;
 }
