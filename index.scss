@@ -5,7 +5,7 @@
 .subs {
     padding : 20px 40px;
 
-    &>#sub_head {
+    >#sub_head {
         height : 128px;
         margin-bottom : 48px;
 
@@ -15,11 +15,11 @@
         text-align : center;
         align-items : center;
 
-        &>h1 {
+        >h1 {
             width : 100%;
         }
 
-        &>a {
+        >a {
             min-width : 64px;
             line-height : 64px;
             height : 64px;
@@ -46,19 +46,19 @@
         }
     }
 
-    &>#layout {
+    >#layout {
         display : flex;
 
-        &>.navigator, &>.navigator>.level, &>.navigator>.level>ul>li {
+        >.navigator, >.navigator>.level, >.navigator>.level>ul>li {
             padding : 10px 60px 10px 0px;
             margin : 0;
             min-width : 250px;
 
-            &>ul {
-               &>li {
+            >ul {
+               >li {
                     list-style : none;
                     
-                   &>a {
+                   >a {
                         display : block;
                         text-decoration : none;
 
@@ -105,10 +105,10 @@
                }
             }
 
-            &>.level, &>.level>ul>li {
-                &>ul {
-                    &>li {
-                        &>a {
+            >.level, >.level>ul>li {
+                >ul {
+                    >li {
+                        >a {
                             background-color :#435ebe;
                             display : none;
 
@@ -137,7 +137,7 @@
             }
         }
 
-        &>.content {
+        >.content {
             padding : 10px 20px;
             width : 100%;
 
@@ -157,16 +157,16 @@
     padding-top : 20px;
     line-height : 40px;
 
-    &>h1 {
+    >h1 {
         font-size : 22px;
         display : block;
     }
 
-    &>b {
+    >b {
         font-size : 22px;
     }
 
-    &>em { font-weight: bold;}
+    >em { font-weight: bold;}
 }
 
 #main {
@@ -174,11 +174,11 @@
     height : 300px;
     display : block;
 
-    &>ul {
+    >ul {
         text-align : center;
         line-height : 200px;
 
-        &>li {
+        >li {
             display : inline-block;
 
             margin : 30px 15px;
@@ -190,7 +190,7 @@
 
             background-color: white;
 
-            &>a {
+            >a {
                 display : block;
                 text-decoration: none;
                 border-radius : 3px;
