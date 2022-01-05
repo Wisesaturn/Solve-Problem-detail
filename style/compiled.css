@@ -28,10 +28,21 @@
   height: 64px;
   padding-right: -64px;
   text-decoration: none;
-  background-color: #999999;
+  background-color: #777777;
   border-radius: 3px;
   box-shadow: 1px 1px 3px #999999;
   box-sizing: border-box;
+}
+.subs > #sub_head > a:hover {
+  animation: back_button 0.15s ease-out forwards;
+}
+@keyframes back_button {
+  from {
+    background-color: #777777;
+  }
+  to {
+    background-color: #888888;
+  }
 }
 .subs > #layout {
   display: flex;
@@ -113,7 +124,7 @@
   min-height: 250px;
   display: block;
   font-size: 20px;
-  margin-top: 20px;
+  padding-top: 20px;
   line-height: 40px;
 }
 #head > h1 {
@@ -139,28 +150,16 @@
 #main > ul > li {
   display: inline-block;
   margin: 30px 15px;
-  max-width: 250px;
-  width: 100%;
+  width: 250px;
   border-radius: 3px;
   box-shadow: 1px 1px 3px #999999;
   box-sizing: border-box;
   background-color: white;
 }
-#main > ul > li:hover {
-  animation: button 0.3s linear forwards;
-  transition: 0.6s ease-in;
-}
-@keyframes button {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: #eeeeee;
-  }
-}
 #main > ul > li > a {
   display: block;
   text-decoration: none;
+  border-radius: 3px;
   line-height: 50px;
   font-size: 24px;
   font-weight: bold;
@@ -170,30 +169,22 @@
 }
 #main > ul > li > a:active {
   background-color: #435ebe;
-  border-radius: 3px;
 }
 #main > ul > li > a#not_work {
   color: #dddddd;
-  cursor: not-allowed;
+  pointer-events: none;
 }
-#main > ul > li > a#back {
-  background-color: #333333;
-  color: #eeeeee;
+#main > ul > li > a:hover {
+  animation: button 0.3s ease-out forwards;
 }
-#main > ul > li > a#back:active {
-  color: #333333;
-  border-radius: 3px;
-}
-#main > ul > li > a#back:hover {
-  animation: back 0.3s linear forwards;
-  transition: 0.6s ease-in;
-}
-@keyframes back {
+@keyframes button {
   from {
-    background-color: #333333;
+    background-color: #435ebe;
+    font-size: 24px;
   }
   to {
-    background-color: #555555;
+    background-color: #506fdf;
+    font-size: 25px;
   }
 }
 

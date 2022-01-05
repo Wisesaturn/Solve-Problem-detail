@@ -26,11 +26,23 @@
             padding-right : -64px;
             
             text-decoration : none;
-            background-color : #999999;
+            background-color : #777777;
 
             border-radius: 3px;  
             box-shadow : 1px 1px 3px #999999;
             box-sizing: border-box;
+
+            &:hover {
+                        @keyframes back_button {
+                            from {
+                                background-color : #777777;
+                            }
+                            to {
+                                background-color : #888888;
+                            }
+                        }
+                            animation: back_button .15s ease-out forwards;
+                    }
         }
     }
 
@@ -130,8 +142,6 @@
             width : 100%;
 
             background-color : #333333;
-
-
             box-shadow : 1px 2px 4px #999999;
         }
     }
@@ -144,7 +154,7 @@
 
     display : block;
     font-size : 20px;
-    margin-top : 20px;
+    padding-top : 20px;
     line-height : 40px;
 
     &>h1 {
@@ -172,9 +182,7 @@
             display : inline-block;
 
             margin : 30px 15px;
-
-            max-width : 250px;
-            width : 100%;
+            width : 250px;
 
             border-radius: 3px;  
             box-shadow : 1px 1px 3px #999999;
@@ -182,24 +190,10 @@
 
             background-color: white;
 
-            &:hover {
-                    @keyframes button {
-                        from {
-                            background-color : white;
-                        }
-                        to {
-                            background-color : #eeeeee;
-                        }
-                    }
-
-                    animation: button .3s linear forwards;
-                    transition : .6s ease-in;
-                
-                }
-
             &>a {
                 display : block;
                 text-decoration: none;
+                border-radius : 3px;
                 
                 line-height: 50px;
 
@@ -211,36 +205,26 @@
                 }
                 &:active {
                     background-color : #435ebe;
-                    border-radius : 3px;
                 }
 
                 &#not_work {
                     color : #dddddd;
-                    cursor : not-allowed;
+                    pointer-events: none;
                 }
 
-                &#back {
-                    background-color : #333333;
-                    color : #eeeeee;
-                    
-                    &:active {
-                        color : #333333;
-                        border-radius : 3px;
-                    }
-
-                    &:hover {
-                        @keyframes back {
-                            from {
-                                background-color : #333333;
-                            }
-                            to {
-                                background-color : #555555;
-                            }
+                &:hover {
+                    @keyframes button {
+                        from {
+                            background-color : #435ebe;
+                            font-size : 24px;
                         }
-
-                        animation : back .3s linear forwards;
-                        transition : .6s ease-in;
+                        to {
+                            background-color : #506fdf;
+                            font-size : 25px;
+                        }
                     }
+
+                    animation: button .3s ease-out forwards;
                 }
             }
         }
