@@ -1,0 +1,49 @@
+:root {
+    --level : #435ebe;
+    --level-after : #506fdf;
+    --default : #777;
+    --default-shadow : #999;
+}
+
+li {
+    display : block;
+    text-decoration : none;
+    list-style-type : none;
+
+    width : 150px;
+    margin-bottom : 10px;
+    padding : 5px 10px;
+
+    overflow : hidden;
+    white-space : nowrap;
+
+    background-color : var(--level);
+
+    border-radius: 3px;  
+    box-shadow : 1px 1px 3px var(--level-after);
+    box-sizing: border-box;
+
+    &:hover {
+        @keyframes level_button {
+            from {
+                background-color : var(--level);
+                padding-left : 10px;
+            }
+            to {
+                background-color : var(--level-after);
+                padding-left : 15px;
+            }
+        }
+        animation: level_button .15s ease-out forwards;
+        cursor : pointer;
+    }
+
+    &.Not_Choosed {
+        background-color : var(--default);
+        box-shadow : 1px 1px 3px var(--default-shadow);
+
+        &:hover {
+            box-shadow: 1px 1px 3px var(--level-after);
+        }
+    }
+}
