@@ -1,0 +1,23 @@
+.Navigator_all_wrap {
+    animation : Navigator .3s ease-out forwards;
+    display : inline-block;
+    position : relative;
+    height : 100%;
+    background-color : none;
+    min-width : 15rem;
+
+
+    > .Navigator_stuff_wrap {
+        position : relative;
+        left : -3rem;
+        max-width : 4rem;
+    }
+
+    > .Navigator_wrap {
+    position : relative;
+    top : -8rem;
+    width : 100%;
+    }
+}
+
+.Navigator_all_wrap_off { display : none; }
