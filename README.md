@@ -9,12 +9,13 @@
 + React 환경에서 사이트 제작 <b>(2021-01-05 ~ )</b>  
    🔸 React 환경 제작 (create-react-app 이용)  
    🔸 SCSS 이용 (npm install node-sass 설치)  
-   🔸 git 연결 (gh-pages 패키지 설치, )
+   🔸 git 연결 (gh-pages 패키지 설치)
    + npm install gh-pages --save-dev  
    + homepage 및 scripte에 deploy 명령어 추가  
    + npm run deploy를 통해 배포
    <br>
-   ✔ 이 <b>3단계</b>를 통해 최종적으로 <b>React 환경 내 Github 연결</b>을 완료하였다.  
+   ✔ 이 <b>3단계</b>를 통해 최종적으로 <b>React 환경 내 Github 연결</b>을 완료하였다.
+   <br>
    ✔ 이 과정을 거치는 동안 <b>'branch', 'local'와 'remote' repository</b> 개념을 여러 번 학습하였다. (⊙ˍ⊙)  
    <br>
    
