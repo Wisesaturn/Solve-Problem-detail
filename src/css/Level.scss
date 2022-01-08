@@ -41,6 +41,7 @@ li {
     &.Not_Choosed {
         background-color : var(--default);
         box-shadow : 1px 1px 3px var(--default-shadow);
+        display : none;
 
         &:hover {
             box-shadow: 1px 1px 3px var(--level-after);
