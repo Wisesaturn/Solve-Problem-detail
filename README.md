@@ -18,8 +18,9 @@
    <br>
    ✔ 이 과정을 거치는 동안 <b>'branch', 'local'와 'remote' repository</b> 개념을 여러 번 학습하였다. (⊙ˍ⊙)  
    <br>
-   🔸 상태 관리 라이브러리 'Recoil' 설치
-   ✔ Header, Content, Footer가 Level에 따라 변화하기 위해선 하나의 전역 변수가 필요한데 이를 'Recoil'통해 구현하였다.  
+   <br>
+   🔸 상태 관리 라이브러리 'Recoil' 설치<br>  
+   ✔ Header, Content, Footer가 Level에 따라 변화하기 위해선 하나의 전역 변수가 필요한데 이를 'Recoil'통해 구현하였다.<br>  
    ✔ 대부분 변수 및 데이터를 ``` state.jsx ```안에 넣어놓았다. 
    
 ## 📎 참고  
