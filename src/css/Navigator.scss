@@ -11,17 +11,34 @@
     overflow-y : scroll;
 
     > li {
-        width : 100%;
+        width : 95%;
     }
 
     > #Search {
+        display : flex;
         margin-top : -30px;
 
         > input {
             width : 100%;
+            margin-right : 10px;
+            margin-bottom : 15px;
+            padding-left : 10px;
+
+            border-radius : 5px;
+
             background-color : white;
             color: blue;
-            margin-bottom : 15px;
+        }
+
+        > svg {
+            float : right;
+            padding : 6px;
+
+            margin-right : 12px;
+
+            background-color : #444;
+            border-radius : 5px;
+            box-shadow : 0px 0px 2px 1px #222;
         }
     }
 
