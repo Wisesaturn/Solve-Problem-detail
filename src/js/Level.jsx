@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import '../css/Level.scss';
 import { lvData, Levels } from './state';
+import { useRecoilState } from 'recoil';
+import { IoIosArrowDown } from "react-icons/io";
 
 const Level = () => {
-
-    const [isShow, setIsShow] = useState("-- Level --");
+    const [isShow, setIsShow] = useRecoilState(lvData);
     const [isActive, setIsActive] = useState(false);
     const selectStyle = { display: `${isActive ? 'block' : 'none'}` } // check display
     //set the variable
@@ -19,8 +20,8 @@ const Level = () => {
     }
     // Dropdown
 
-    const onSelect = () => {
-        setIsShow("test");
+    const onSelect = (e) => {
+        setIsShow("Level " + e.target.id);
         setIsActive(false);
     }
     // Select Level
@@ -30,20 +31,24 @@ const Level = () => {
             className="Not_Choosed"
             style={selectStyle}
             onClick={onSelect}
-            key={d.id}>
+            key={d.id}
+            id={d.id}>
             {d.name}
         </li>
     );
     // make List using map
 
     return (
-        <div>
+        <div
+            className={`${isActive ? 'dropDown' : 'dropDown_off'}`}>
             <li
                 id={`${isActive ? 'Choosed' : 'Not_Choosed'}`}
                 className="Choosed"
-                onClick={onClick}>
+                onMouseOver={onClick}>
                 {isShow}
+                <IoIosArrowDown id="icon"/>
             </li>
+            
             {levelList}
         </div>
     );

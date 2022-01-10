@@ -27,3 +27,4 @@
 + React SCSS 연동 : https://codingmania.tistory.com/339 [개발자의 개발 블로그]
 + React github 배포 : https://velog.io/@byjihye/react-github-pages
 + 벨로퍼트와 함께하는 모던 리액트 : ['주소'](https://react.vlpt.us/ "벨로퍼트와 함께하는 모던 리액트")
++ 레이아웃 참고 (Flexbox로 만들 수 있는 10가지 레이아웃) : ['주소'](https://d2.naver.com/helloworld/8540176 "flexbox로 만들 수 있는 10가지 레이아웃)

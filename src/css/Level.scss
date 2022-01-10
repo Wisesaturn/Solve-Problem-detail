@@ -3,6 +3,21 @@
     --level-after : #506fdf;
     --default : #777;
     --default-shadow : #999;
+    --dropDown : #44444480;
+    --header : #222;
+}
+
+.dropDown {
+    margin-left : auto;
+    box-shadow : 0px 0px 4px 5px var(--dropDown);
+    background-color : var(--dropDown);
+    height : 46 * 6px;
+    z-index : 2;
+}
+
+.dropDown_off {
+    margin-left : auto;
+    background-color : var(--header);
 }
 
 li {
@@ -36,6 +51,21 @@ li {
         }
         animation: level_button .15s ease-out forwards;
         cursor : pointer;
+
+        > #icon {
+            @keyframes level_icon {
+            from {
+                margin-left : 28px;
+                background-color : var(--level);
+            }
+            to {
+                margin-left : 23px;
+                background-color : var(--level-after);
+            }
+        }
+        animation : level_icon .15s ease-out forwards;
+        cursor : pointer;
+        }
     }
 
     &.Not_Choosed {
@@ -46,5 +76,11 @@ li {
         &:hover {
             box-shadow: 1px 1px 3px var(--level-after);
         }
+    }
+
+    > #icon {
+        float : right;
+        margin-top : 6px;
+        background-color : var(--level);
     }
 }
