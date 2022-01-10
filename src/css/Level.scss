@@ -1,6 +1,7 @@
 :root {
     --level : #435ebe;
     --level-after : #506fdf;
+    --level-active : #223aa1;
     --default : #777;
     --default-shadow : #999;
     --dropDown : #44444480;
@@ -65,6 +66,38 @@ li {
         }
         animation : level_icon .15s ease-out forwards;
         cursor : pointer;
+        }
+    }
+
+    &:active {
+        @keyframes level_button_active {
+            from {
+                background-color : var(--level-after);
+                box-shadow : 1px 1px 3px var(--level-after);
+                padding-left : 15px;
+            }
+            to {
+                background-color : var(--level-active);
+                box-shadow : 0px 1px 5px 1px var(--header) inset;
+                padding-left : 15px;
+            }
+        }
+        animation: level_button_active .1s ease-out forwards;
+        cursor : wait;
+
+        > #icon {
+            @keyframes level_icon_active {
+            from {
+                background-color : var(--level-after);
+                margin-left : 23px;
+            }
+            to {
+                background-color : var(--level-active);
+                margin-left : 23px;
+            }
+        }
+        animation: level_icon_active .1s ease-out forwards;
+        cursor : wait;
         }
     }
 

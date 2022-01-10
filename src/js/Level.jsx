@@ -12,11 +12,6 @@ const Level = () => {
 
     const onClick = () => {
         setIsActive(!isActive); // 함수가 다 끝나면 작동하는 듯..?
-        if (!isActive) { // Open Event
-
-        } else { // Close Event
-
-        }
     }
     // Dropdown
 
