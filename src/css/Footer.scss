@@ -1,11 +1,18 @@
 .Footer {
+    display : flex;
+    justify-content: space-between;
+    
     background-color : #111;
     margin-top : auto;
     flex : none;
 
     padding : 20px 54px;
-
     font-size : 12px;
 
     white-space : pre-wrap;
+
+    > img {
+        width : 36px;
+        height : 48px;
+    }
 }

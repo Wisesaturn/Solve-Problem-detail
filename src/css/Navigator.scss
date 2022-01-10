@@ -12,6 +12,12 @@
 
     > li {
         width : 95%;
+        background-color : var(--default);
+        box-shadow : 1px 1px 3px var(--default-shadow);
+
+        &:hover {
+            box-shadow: 1px 1px 3px var(--level-after);
+        }
     }
 
     > #Search {
@@ -26,8 +32,8 @@
 
             border-radius : 5px;
 
-            background-color : white;
-            color: blue;
+            background-color : #EEEEEE;
+            color: #333;
         }
 
         > svg {
@@ -39,6 +45,32 @@
             background-color : #444;
             border-radius : 5px;
             box-shadow : 0px 0px 2px 1px #222;
+
+            &:hover {
+                @keyframes Search_button {
+                    from {
+                        background-color : var(--level);
+                    }
+                    to {
+                        background-color : var(--level-after);
+                    }
+                }
+                animation: Search_button .15s ease-out forwards;
+                cursor : pointer;
+            }
+
+            &:active {
+                @keyframes Search_button_active {
+                    from {
+                        background-color : var(--level-after);
+                    }
+                    to {
+                        background-color : var(--level-active);
+                    }
+                }
+                animation: Search_button_active .15s ease-out forwards;
+                cursor : wait;
+            }
         }
     }
 
