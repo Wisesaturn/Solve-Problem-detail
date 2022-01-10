@@ -39,7 +39,8 @@ const Level = () => {
             <li
                 id={`${isActive ? 'Choosed' : 'Not_Choosed'}`}
                 className="Choosed"
-                onMouseOver={onClick}>
+                onMouseOver={onClick}
+                onClick={onClick}>
                 {isShow}
                 <IoIosArrowDown id="icon"/>
             </li>
