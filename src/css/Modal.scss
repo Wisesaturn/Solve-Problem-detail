@@ -1,23 +1,4 @@
-.Modal {
-    display : none;
-
-    z-index : 999;
-    position : fixed;
-    top : 0;
-    left : 0;
-    overflow : auto;
-    outline : 0;
-    box-sizing: border-box;
-
-    > .Modal_inner {
-        position : relative;
-        box-sizing : border-box;
-        box-shadow : 0 0 6px 0 rgba(0, 0, 0, .5);
-        background-color : #fff;
-        top : 50%;
-        max-width : 480px;
-        transform : translateY(-50%);
-        margin : 0 auto;
-        padding : 40px 20px;
-    }
+svg {
+    background-color : rgba(0,255,0,0);
+    color : red;
 }

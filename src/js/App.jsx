@@ -7,12 +7,14 @@ import Modal from './Modal';
 
 function App() {
   return (
-    <div id="App">
-      <Header />
-      <Content />
-      <Footer />
-      <Modal />
-    </div>
+    <>
+      <div id="App">
+        <Header />
+        <Content />
+        <Footer />
+      </div>
+      <Modal className="Modal" visible={true}> </Modal>
+    </>
   );
 }
 
