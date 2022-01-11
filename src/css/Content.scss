@@ -1,7 +1,16 @@
 .Content {
     display : flex;
-    flex : none;
-
-    height : 80%;
-    margin : 15px 54px;
+    height : 100%;
+    padding : 1.2rem 12rem;
 }
+
+/*
+    Sidebar를 안에 넣었을 땐,
+    display : flex
+    flex : none (크기를 고정)
+
+    height :80%
+    의 값을 주었음
+
+    처음에는 <Data />와 <Navigator />를 묶는 용도로 Content 사용
+*/

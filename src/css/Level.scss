@@ -9,7 +9,7 @@
 }
 
 .dropDown {
-    margin-left : auto;
+    margin-left : 24px;
     box-shadow : 0px 0px 4px 5px var(--dropDown);
     background-color : var(--dropDown);
     height : 46 * 6px;
@@ -17,7 +17,7 @@
 }
 
 .dropDown_off {
-    margin-left : auto;
+    margin-left : 24px;
     background-color : var(--header);
 }
 

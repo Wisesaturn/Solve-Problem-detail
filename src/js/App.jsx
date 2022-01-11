@@ -13,7 +13,7 @@ function App() {
         <Content />
         <Footer />
       </div>
-      <Modal className="Modal" visible={true}> </Modal>
+      <Modal className="Modal" visible={false}> </Modal>
     </>
   );
 }

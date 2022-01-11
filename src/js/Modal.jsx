@@ -4,7 +4,7 @@ import '../css/Modal.scss';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RiCheckboxCircleFill } from 'react-icons/ri';
-import { ModalMessage } from './ModalMessage';
+import { ModalMessage } from './state';
 
 function Modal({ className, visible }) {
     const [Message, setMessage] = useRecoilState(ModalMessage);

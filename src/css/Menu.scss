@@ -1,0 +1,38 @@
+.MenuSpace_wrap {
+    display : flex;
+    margin-left: auto;
+    background-color : inherit;
+
+    > .MenuSpace {
+        font-size : 14px;
+        font-weight : bold;
+        text-align : center;
+
+        display : inline-block;
+
+        margin-right : 24px;
+        padding : 10px 20px;
+        
+        background-color : #333;
+        color : #ddd;
+
+        box-sizing : border-box;
+        border-radius : 3px;
+
+        z-index : 0;
+        min-width : 115px;
+
+        white-space : nowrap;
+
+        &:hover {
+            background-color : #444;
+            cursor : pointer;
+        }
+
+        &:active {
+            background-color : var(--header);
+            box-shadow: 1px 1px 2px 1px #111 inset;
+            cursor : wait;
+        }
+    }
+}
