@@ -48,3 +48,21 @@
       background-color : var(--footer-after);
   }
 }
+
+@keyframes Footer_image_hover {
+  to {
+      filter : brightness(8);
+  }
+}
+
+@keyframes Footer_image_naver_hover {
+  to {
+      filter : grayscale(.4);
+  }
+}
+
+@keyframes Footer_image_active {
+  to {
+      filter : brightness(0.3);
+  }
+}

@@ -14,6 +14,8 @@
         display : flex;
 
         > .SNS {
+            display : inherit;
+            vertical-align: middle;
             margin-left : 48px;
 
             &:hover {
@@ -23,6 +25,33 @@
             &:active {
                 animation: Active .15s ease-out forwards;
                 cursor : wait;
+            }
+
+            >img { margin : auto 0; }
+            >img.image {
+                filter: brightness(5);
+                
+                &:hover {
+                    animation: Footer_image_hover .15s ease-out forwards;
+                    cursor : pointer;
+                }
+                &:active {
+                    animation: Footer_image_active .15s ease-out forwards;
+                    cursor : wait;
+                }
+            }
+            >#naver {
+                margin : auto 0;
+                filter : grayscale(1);
+
+                &:hover {
+                    animation: Footer_image_naver_hover .15s ease-out forwards;
+                    cursor : pointer;
+                }
+                &:active {
+                    animation: Footer_image_active .15s ease-out forwards;
+                    cursor : wait;
+                }
             }
         }
     }
