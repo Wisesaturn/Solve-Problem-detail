@@ -22,30 +22,40 @@
    🔸 상태 관리 라이브러리 'Recoil' 설치<br>
    ✔ 'npm install recoil' 이용 <br>  
    ✔ Header, Content, Footer가 Level에 따라 변화하기 위해선 하나의 전역 변수가 필요한데 이를 'Recoil'통해 구현하였다.<br>  
-   ✔ 대부분 변수 및 데이터를 ``` state.jsx ```안에 넣어놓았다.
+   ✔ 대부분 변수 및 데이터를 <b>state.jsx</b>안에 넣어놓았다.
    <br>
    <br>
    🔸 임시 아이콘 'React-icon' 이용<br>
    ✔ 'npm install react-icons' 이용<br>
    ✔ React-icon을 이용해 간단한 아이콘들을 임시로 사용한다.<br>
-   ✔ 차후에 마음 생기면 아이콘도 디자인할 계획!
+   ✔ 차후에 마음 생기면 아이콘도 디자인할 계획! <br>
    <br>
-   <br>
-   🔸 Typescript처럼 <b>Type을 검사</b>해주는 'PropType' 사용<br>
+   🔸 Typescript처럼 <b>Type을 검사</b>해주는 <b>'PropType'</b> 사용<br>
    ✔ 'npm i prop-types' 이용<br>
    ✔ 나중에 Type이 뒤죽박죽 되는 부분을 방지하기 위해! <br>
    <br>
-   <br>
-   🔸 ``` styled-component ```를 사용하여 CSS-in-JS 라이브러리를 사용<br>
+   🔸 <b>styled-component</b>를 사용하여 CSS-in-JS 라이브러리를 사용<br>
    ✔ 'npm i styled-components' 이용<br>
    ✔ 요즘 트렌드인 선 Component 분류, 후 한 곳에 섞기를 해보려고 한다.<br>
    ✔ 전역적인 CSS를 사용하지 않으려면 이 방법을 사용하면 좋을 듯하다. <br>
+   <br>
+   🔸 <b>레이아웃 전면 수정 (2021-01-12 ~ 13)<</b> <br>
+   ✔ 너무 무턱대고 맨 땅에 헤딩을 하면서 코드를 짜다 보니 <br> 
+   디자인 방향성이 중구난방이었다.<br>
+   <em>(색상, 사이드바 위치, 버튼 디자인 등 난잡 그자체)</em> <br>
+   ✔ 그래서 디자인 요소를 전부다 수정하기로 결정했다. (다시 처음부터..?) <Br>
+   ✔ 100% 꽉채우는 반응형 웹 + 메인 컬러만 설정해서 간단하게 짰다. <br>
+   ✔ 사이드바는 초기엔 좌측에서 팝업 느낌으로 나오게끔 하였으나 <br>
+      너무 부산스러웠다. <br>
+   ✔ 또한, 메인 내용을 가려버리는 인터페이스 디자인이라 그냥<br>
+   맨 처음 계획이었던 게시물과 flex 형태 레이아웃 및 버튼에 따라 나오게 했다. <br>
+    <br>
    
 ## 📎 참고  
 + React SCSS 연동 : https://codingmania.tistory.com/339 [개발자의 개발 블로그]
 + React github 배포 : https://velog.io/@byjihye/react-github-pages
 + 벨로퍼트와 함께하는 모던 리액트 : ['주소'](https://react.vlpt.us/ "벨로퍼트와 함께하는 모던 리액트")
-+ 레이아웃 참고 (Flexbox로 만들 수 있는 10가지 레이아웃) : ['주소'](https://d2.naver.com/helloworld/8540176 "flexbox로 만들 수 있는 10가지 레이아웃)
++ 레이아웃 참고 (Flexbox로 만들 수 있는 10가지 레이아웃) : ['주소'](https://d2.naver.com/helloworld/8540176 "flexbox로 만들 수 있는 10가지 레이아웃")
 + React-icons : https://react-icons.github.io/react-icons
 + Prop-types (react) : ['주소'](https://ko.reactjs.org/docs/typechecking-with-proptypes.html "PropTypes와 함께 하는 타입 검사")
 + style-component : https://www.daleseo.com/react-styled-components/
