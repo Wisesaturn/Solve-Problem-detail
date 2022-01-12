@@ -1,5 +1,50 @@
+:root {
+    --normal-after : #bcecd3;
+    --normal-active : #739684;
+    --normal-ft : #eee;
+    --normal-bg : #444;
+    --header : #2e3b35;
+    --header-after : #36443d;
+    --header-shadow : #222c27;
+    --footer-bg : #252525;
+    --footer-after : #2b2a2a;
+    --default : #777;
+    --default-shadow : #999;
+    --dropDown : #44444480;
+    --scrollbar : #739684;
+    --scrollbar-bg : #1c2521;
+    --content-ft : #bcecd3;
+    --bottom-line : #999;
+}
+
 #App {
   display : flex;
   flex-direction : column;
-  height : 100%;
+  flex : 1;
+  width : 100vw;
+  height : 100vh;
+}
+
+@keyframes Choice {
+    to {
+        color : var(--normal-after);
+    }
+}
+
+@keyframes Active {
+    to {
+        color : var(--normal-active);
+    }
+}
+
+@keyframes Header_hover {
+    to {
+        background-color : var(--header-after);
+    }
+}
+
+@keyframes Footer_hover {
+  to {
+      background-color : var(--footer-after);
+  }
 }

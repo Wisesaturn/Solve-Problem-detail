@@ -1,18 +1,17 @@
 import React from 'react';
-import { AiOutlineCaretLeft } from 'react-icons/ai';
-import '../css/Profile.scss';
+import '../../../css/Profile.scss';
 import { useRecoilState } from 'recoil';
-import { Sitebar_state } from './state';
+import { Sitebar_state } from '../../state';
 
 const Profile = () => {
     const [check, setCheck] = useRecoilState(Sitebar_state);
 
     return (
         <div className="Profile">
+            (( 여기는 사진을 넣을 계획 ))
             <div className="Profile_Content">
-                프로필 영역입니다.
+                프로필 영역입니다. (아무래도 내용?)
             </div>
-            <AiOutlineCaretLeft size="36" onClick={ () => {setCheck(!check)} }/>
         </div>
     );
 }

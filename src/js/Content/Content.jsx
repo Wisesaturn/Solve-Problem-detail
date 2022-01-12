@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigator from './Navigator';
+import Navigator from './Navigator/Navigator';
 import Data from './Data';
 import styled from 'styled-components';
-import '../css/Content.scss';
+import '../../css/Content.scss';
 import { useRecoilState } from 'recoil';
-import { Sitebar_state } from './state';
+import { Sitebar_state } from '../state';
 
 function Content() {
     const [check, setCheck] = useRecoilState(Sitebar_state);

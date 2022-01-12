@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Data.scss';
+import '../../css/Data.scss';
 import Title from './title';
 import Main_content from './main-content';
 import Comment from './comment';

@@ -2,41 +2,38 @@
     display : flex;
     // justify-content: space-between;
     flex : none;
-    padding : 1.2rem 12rem;
-    height : 40px;
+    padding : 0.8rem 12rem;
+    height : 32px;
 
-    background-color : #222;
+    background-color : var(--header);
 
-    > h1 {
+    box-shadow : 0px -3px 10px 5px var(--header-shadow);
+
+    &:hover {
+        animation : Header_hover .15s ease-out forwards;
+    }
+
+    > a {
         text-align : center;
         white-space: nowrap;
-
-        padding-top : 6px;
-
-        background-color : #222;
+        text-decoration: none;
+        font-weight : bold;
+        color : inherit;
+        margin : auto 0;        
     }
 
     > .Sitebar {
-        background-color : inherit;
+            margin-right : 2rem;
+    }
 
-        padding : .2rem;
-        margin-right : 2rem;
-
-        filter : invert(100%);
-
-        box-sizing: border-box;
-        border-radius : 3px;
-
-        background-color : #222;
-        vertical-align: middle;
-
+    > a , .Sitebar > svg {
         &:hover {
-            background-color : #111;
+            animation: Choice .15s ease-out forwards;
+            cursor : pointer;
         }
-
         &:active {
-            background-color : #444;
-            box-shadow : 1px 1px 2px 1px #777 inset;
+            animation: Active .15s ease-out forwards;
+            cursor : wait;
         }
     }
 }

@@ -1,28 +1,29 @@
 .Footer {
     display : flex;
-    
-    background-color : #111;
-
-    margin-top : auto;
-
-    padding : 1.2rem 12rem;
+    background-color : var(--footer-bg);
+    padding : .8rem 12rem;
     font-size : 12px;
-
     white-space : pre-wrap;
+
+    &:hover {
+        animation : Footer_hover .15s ease-out forwards;
+    }
 
     .Wrap_SNS {
         margin-left : auto;
         display : flex;
-        background-color : inherit;
 
         > .SNS {
-            background-color : inherit;
             margin-left : 48px;
-        }
 
-        > img {
-            width : 36px;
-            height : 48px;
+            &:hover {
+                animation: Choice .15s ease-out forwards;
+                cursor : pointer;
+            }
+            &:active {
+                animation: Active .15s ease-out forwards;
+                cursor : wait;
+            }
         }
     }
 }

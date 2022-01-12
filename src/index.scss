@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
 
-* {background-color : #333333; color : #eeeeee; padding : 0; margin : 0; font-family: 'Gowun Dodum', sans-serif; font-size : 18px;}
+* { padding : 0; margin : 0; font-family: 'Gowun Dodum', sans-serif; font-size : 18px;}
 
 html, body, #root {
   height : 100% !important;
+  color : #eeeeee;
+  background-color : #333333;
 }
 
 body {

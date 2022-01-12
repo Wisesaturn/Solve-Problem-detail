@@ -1,18 +1,7 @@
 .Profile {
     display : flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-
-    > svg {
-        &:hover {
-            box-shadow : 1px 1px 5px 1px #444 inset;
-        }
-
-        &:active {
-            background-color : #333;
-            box-shadow : 1px 1px 3px 2px #222 inset;
-        }
-    }
 
     &_Content {
         width : 100%;

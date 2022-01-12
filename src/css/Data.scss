@@ -1,52 +1,41 @@
 .Data {
     display : flex;
     flex-direction: column;
-
-    padding : 2rem 3rem;
-    box-shadow : 0px 0px 35px 0px #222 inset;    
-
+    padding : 1rem 3rem;  
     width : 100%;
-
     overflow-y : auto;
     overflow-x : hidden;
-
     white-space : pre-wrap;
 
     &::-webkit-scrollbar {
-        width : 10px;
+        width : 8px;
 
         &-thumb {
-            background-color : #2f3542;
+            background-color : var(--scrollbar);
             border-radius : 3px;
-            box-shadow : 0px 0px 4px 1px inset #222;
+            box-shadow : 0px 0px 2px 1px inset var(--scrollbar-bg);
         }
 
         &-track {
-            background-color : #222;
+            background-color : var(--scrollbar-bg);
         }
     }
 
     > .title, .comment, .main_content {
         width : inherit;
+        border-bottom : 1px solid var(--bottom-line);
+
+        padding : 1.6rem .8rem;
     }
 
     > .title {
         font-size : 28px;
         font-weight : bold;
-        color : #bcecd3;
-
-        border-bottom : 1px solid #999;
-
-        padding-bottom : 5px;
-        margin : 10px 0px 20px;
+        color : var(--content-ft);
     }
 
     > .main_content {
         line-height : 32px;
-
-        padding-bottom : 20px;
-        margin-bottom : 20px;
-        border-bottom : 1px solid #999;
     }
 
     > .comment {

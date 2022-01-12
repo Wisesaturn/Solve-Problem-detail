@@ -1,3 +1,5 @@
+
+
 .Navigator_Wrap {
     display : flex;
     flex-direction: row;
@@ -12,7 +14,7 @@
     width : 500px;
     height : 100%;
 
-    padding : 20px 40px;
+    padding : 20px 40px 20px 0px;
 
     z-index : 4;
     margin-right : 3rem;
@@ -31,6 +33,22 @@
         }
     animation: navigator .3s ease-out forwards;
 
+    > svg {
+            background-color : #444;
+            border-radius : 5px;
+            box-shadow : 0px 0px 2px 1px #222;
+
+            &:hover {
+                animation: Search_button .15s ease-out forwards;
+                cursor : pointer;
+            }
+
+            &:active {
+                animation: Search_button_active .15s ease-out forwards;
+                cursor : wait;
+            }
+        }
+
     > .Navigator_First {
         width : 50%;
     }
@@ -47,7 +65,7 @@
             height : 90%;
 
             overflow-x : hidden;
-            overflow-y : scroll;
+            overflow-y : auto;
 
             &::-webkit-scrollbar {
                 width : 6px;
@@ -101,28 +119,12 @@
                 box-shadow : 0px 0px 2px 1px #222;
 
                 &:hover {
-                    @keyframes Search_button {
-                        from {
-                            background-color : var(--level);
-                        }
-                        to {
-                            background-color : var(--level-after);
-                        }
-                    }
-                    animation: Search_button .15s ease-out forwards;
+                    animation: Choice .15s ease-out forwards;
                     cursor : pointer;
                 }
 
                 &:active {
-                    @keyframes Search_button_active {
-                        from {
-                            background-color : var(--level-after);
-                        }
-                        to {
-                            background-color : var(--level-active);
-                        }
-                    }
-                    animation: Search_button_active .15s ease-out forwards;
+                    animation: Active .15s ease-out forwards;
                     cursor : wait;
                 }
             }

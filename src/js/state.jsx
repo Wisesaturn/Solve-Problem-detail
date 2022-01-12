@@ -24,4 +24,6 @@ const Sitebar_state = atom({
     type : boolean
 })
 
-export { lvData, Levels, ModalMessage, Sitebar_state }
+const Home = "http://wisesaturn.github.io/solve-problem-detail";
+
+export { Home, lvData, Levels, ModalMessage, Sitebar_state }

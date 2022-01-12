@@ -1,9 +1,8 @@
 import React from 'react';
-import Level from './Level';
 import Menu from './Menu';
-import '../css/Header.scss';
+import '../../css/Header.scss';
 import { HiOutlineViewList } from 'react-icons/hi';
-import { Sitebar_state } from './state';
+import { Sitebar_state, Home } from '../state';
 import { useRecoilState } from 'recoil';
 
 function Header() {
@@ -26,7 +25,7 @@ function Header() {
     return (
         <div className="Header">
             <Sitebar />
-            <h1>재한쓰 풀이 모음집</h1>
+            <a href={Home}>재한쓰 풀이 모음집</a>
             <Menu />
         </div>
     );

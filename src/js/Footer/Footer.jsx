@@ -1,6 +1,5 @@
 import React from 'react';
-import '../css/Footer.scss';
-import Profile from '../resource/profile.jpg';
+import '../../css/Footer.scss';
 
 function Footer() {
     return (
