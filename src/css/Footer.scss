@@ -1,18 +1,28 @@
 .Footer {
     display : flex;
-    justify-content: space-between;
-
+    
     background-color : #111;
+
     margin-top : auto;
-    flex : none;
 
     padding : 1.2rem 12rem;
     font-size : 12px;
 
     white-space : pre-wrap;
 
-    > img {
-        width : 36px;
-        height : 48px;
+    .Wrap_SNS {
+        margin-left : auto;
+        display : flex;
+        background-color : inherit;
+
+        > .SNS {
+            background-color : inherit;
+            margin-left : 48px;
+        }
+
+        > img {
+            width : 36px;
+            height : 48px;
+        }
     }
 }

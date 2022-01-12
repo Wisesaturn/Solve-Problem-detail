@@ -15,38 +15,41 @@ const Navigator = () => {
             // attribute 오류 수정
             // 그냥 visible={check}로 넣으면 type이 안 정해져 있어서 오류 남!
             style={Sitebar_style}>
-            
-            <Profile />
-            <Search />
-            <div className="Navigator">    
-                <li>목록 1</li>
-                <li>목록 2</li>
-                <li>목록 3</li>
-                <li>목록 4</li>
-                <li>목록 5</li>
-                <li>목록 6</li>
-                <li>목록 7</li>
-                <li>목록 8</li>
-                <li>목록 9</li>
-                <li>목록 10</li>
-                <li>목록 5</li>
-                <li>목록 6</li>
-                <li>목록 7</li>
-                <li>목록 8</li>
-                <li>목록 9</li>
-                <li>목록 10</li>
-                <li>목록 5</li>
-                <li>목록 6</li>
-                <li>목록 7</li>
-                <li>목록 8</li>
-                <li>목록 9</li>
-                <li>목록 10</li>
-                <li>목록 5</li>
-                <li>목록 6</li>
-                <li>목록 7</li>
-                <li>목록 8</li>
-                <li>목록 9</li>
-                <li>목록 끝-----</li>
+            <div className="Navigator_First">
+                <Profile />
+            </div>
+            <div className="Navigator_Second">
+                <Search />
+                <div className="Navigator">    
+                    <li>목록 1</li>
+                    <li>목록 2</li>
+                    <li>목록 3</li>
+                    <li>목록 4</li>
+                    <li>목록 5</li>
+                    <li>목록 6</li>
+                    <li>목록 7</li>
+                    <li>목록 8</li>
+                    <li>목록 9</li>
+                    <li>목록 10</li>
+                    <li>목록 5</li>
+                    <li>목록 6</li>
+                    <li>목록 7</li>
+                    <li>목록 8</li>
+                    <li>목록 9</li>
+                    <li>목록 10</li>
+                    <li>목록 5</li>
+                    <li>목록 6</li>
+                    <li>목록 7</li>
+                    <li>목록 8</li>
+                    <li>목록 9</li>
+                    <li>목록 10</li>
+                    <li>목록 5</li>
+                    <li>목록 6</li>
+                    <li>목록 7</li>
+                    <li>목록 8</li>
+                    <li>목록 9</li>
+                    <li>목록 끝-----</li>
+                </div>
             </div>
         </div>
     )

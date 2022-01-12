@@ -11,7 +11,7 @@ function Content() {
 
     return (
         <div className="Content">
-            <Overlay visible={check}/>
+            <Overlay visible={check} onMouseOver={ () => {setCheck(false)} }/>
             <Navigator />
             <Data />
         </div>

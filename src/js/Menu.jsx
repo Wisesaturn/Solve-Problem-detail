@@ -5,7 +5,13 @@ const Menu = () => {
     return (
         <div className="MenuSpace_wrap">
             <div className="MenuSpace">
-                프로그래머스
+                홈
+            </div>
+            <div className="MenuSpace">
+                방명록
+            </div>
+            <div className="MenuSpace">
+                다크모드 ON/OFF
             </div>
         </div>
     );

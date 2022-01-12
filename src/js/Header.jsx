@@ -28,7 +28,6 @@ function Header() {
             <Sitebar />
             <h1>재한쓰 풀이 모음집</h1>
             <Menu />
-            <Level />
         </div>
     );
 }
