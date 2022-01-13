@@ -1,20 +1,46 @@
 :root {
-    --normal-after : #bcecd3;
-    --normal-active : #739684;
-    --normal-ft : #eee;
-    --normal-bg : #444;
-    --header : #2e3b35;
-    --header-after : #36443d;
-    --header-shadow : #222c27;
-    --footer-bg : #252525;
-    --footer-after : #2b2a2a;
+  --darkMode-dark-bg : #1b241f;
+  --darkMode-dark-toggle-bg : #212c26;
+  --darkMode-dark-sh : #232323;
+  --darkMode-light-bg : #ddd;
+  --darkMode-light-toggle-bg : #eee;
+  --darkMode-light-sh : #eaeaea;
+  --bottom-line : #999;
+
+  /* 밑에 색상은 기존 색상 (혹시 몰라 남겨둠) */
     --default : #777;
     --default-shadow : #999;
     --dropDown : #44444480;
-    --scrollbar : #739684;
-    --scrollbar-bg : #1c2521;
-    --content-ft : #bcecd3;
-    --bottom-line : #999;
+
+    .dark {
+      --normal-after : #bcecd3;
+      --normal-active : #739684;
+      --normal-ft : #eee;
+      --normal-bg : #444;
+      --header : #2e3b35;
+      --header-after : #36443d;
+      --header-shadow : #222c27;
+      --footer-bg : #252525;
+      --footer-after : #2b2a2a;
+      --scrollbar : #739684;
+      --scrollbar-bg : #323d38;
+      --content-ft : #bcecd3;
+    }
+
+    .light {
+      --normal-after : #257750;
+      --normal-active : #121f18;
+      --normal-ft : #444;
+      --normal-bg : #eee;
+      --header : #8ac5a8;
+      --header-after : #82bb9f;
+      --header-shadow : #5b7568;
+      --footer-bg : #d1d0d0;
+      --footer-after : #cac8c8;
+      --scrollbar : #788a81;
+      --scrollbar-bg : #9dc9b2;
+      --content-ft : #455e51;
+    }
 }
 
 #App {
@@ -23,6 +49,8 @@
   flex : 1;
   width : 100vw;
   height : 100vh;
+  color : var(--normal-ft);
+  background-color : var(--normal-bg);
 }
 
 @keyframes Choice {

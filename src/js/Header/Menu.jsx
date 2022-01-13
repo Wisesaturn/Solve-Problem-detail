@@ -1,5 +1,8 @@
 import React from 'react'
 import '../../css/Menu.scss';
+import { darkMode_state } from '../state';
+import { useRecoilState } from 'recoil';
+import DarkMode_button from './Darkmode';
 
 const Menu = () => {
     return (
@@ -8,7 +11,7 @@ const Menu = () => {
                 방명록
             </div>
             <div className="MenuSpace">
-                다크모드
+                <DarkMode_button />
             </div>
         </div>
     );
