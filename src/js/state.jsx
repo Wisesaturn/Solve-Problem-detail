@@ -1,4 +1,3 @@
-import { boolean } from 'check-types';
 import { atom } from 'recoil';
 
 const lvData = atom({
@@ -20,10 +19,13 @@ const ModalMessage = atom({
 
 const Sitebar_state = atom({
     key: 'Sitebar_button',
-    default: false,
-    type : boolean
+    default: false
 })
 
 const Home = "http://wisesaturn.github.io/solve-problem-detail";
+const Link_Github = "https://github.com/Wisesaturn";
+const Link_Naver = "https://blog.naver.com/rfv1479";
+const Link_Instagram = "https://www.instagram.com/songjh_97/";
 
 export { Home, lvData, Levels, ModalMessage, Sitebar_state }
+export { Link_Github, Link_Naver, Link_Instagram }
