@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigator from './Navigator/Navigator';
 import Data from './Data';
-import styled from 'styled-components';
 import '../../css/Content.scss';
 import { useRecoilState } from 'recoil';
 import { Sitebar_state } from '../state';
@@ -11,23 +10,13 @@ function Content() {
 
     return (
         <div className="Content">
-            <Overlay visible={check} onMouseOver={ () => {setCheck(false)} }/>
-            <Navigator />
+            <Navigator visible={false ? { check } : undefined} />
             <Data />
         </div>
     );
 }
 
-const Overlay = styled.div`
-  box-sizing: border-box;
-  display: ${(props) => (props.visible ? 'block' : 'none')};
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-`
-
 export default Content;
+
+// attribute 오류 수정
+// 그냥 visible={check}로 넣으면 type이 안 정해져 있어서 오류 남!
