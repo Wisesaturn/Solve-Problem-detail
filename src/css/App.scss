@@ -44,14 +44,13 @@
   flex : 1;
   width : 100vw;
   height : 100vh;
+  transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
   color : var(--normal-ft);
   background-color : var(--normal-bg);
 }
 
 @keyframes Choice {
-    to {
-        color : var(--normal-after);
-    }
+    to { color : var(--normal-after); }
 }
 
 @keyframes Active {
@@ -70,4 +69,17 @@
   to {
       background-color : var(--footer-after);
   }
+}
+
+@keyframes Navigator {
+  from { opacity : .5; left : -2rem; }
+    to { opactiy :  1; left : 0;  }
+}
+
+@keyframes Stuff_hover {
+    to { left : -1rem }
+}
+
+@keyframes Stuff_hover_before {
+    from { left : -1rem } to { left : 0 }
 }

@@ -10,9 +10,18 @@ const Navigator_Stuff = ({content}) => {
 }
 
 const Stuff_wrap = styled.div`
-    width : 3rem;
+    position : relative;
+    left : 0;
+    width : 4rem;
     height : 4rem;
     margin-bottom : 1rem;
+    background-color : purple;
+    animation : Stuff_hover_before .3s ease-out forwards;
+
+    &:hover {
+        animation : Stuff_hover .3s ease-out forwards;
+        cursor : pointer;
+    }
 `
 
 
