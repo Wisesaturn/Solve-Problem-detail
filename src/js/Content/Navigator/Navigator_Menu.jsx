@@ -1,37 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { subMenu } from '../../state';
+import { subMenu, subMenu_focus } from '../../state';
 
 const Navigator_Menu = (props) => {
     const menu = [...subMenu];
     const [sub, setSub] = useState([]);
+    const [focus, setFocus] = useState(false);
+    const [now, setNow] = useRecoilState(subMenu_focus);
 
-    const onClick = (e) => {
-        for (let i = 0; i < menu.length ; i++) {
-            if (e.target.id == menu[i].id) {   
-                let temp = [...menu[i].content];
-                setSub(temp);
-            }
-        }
+    const onClick = (e) => {   
+        let temp = [...menu[e.target.id-1]];
+        setSub(temp);
+        setNow(e.target.id);
     }
 
-    const subList = sub.map((d) => 
+    const subList = sub.map((d, index) => 
         <li
-            key={d}>
-            {d}
+            key={index}>
+                {d.icon}
+                <span>{d.title}</span>
         </li>
     );
 
-    const visible = useEffect(() => {
-        // visible 조건문, state에 visible를 추가해야 할 듯
-        // visible 값이 오직 하나만 존재하게 하고 onClick할 때 visible=true하면 될 듯?
-        // 1. 처음에 visible 전부 false 후, 2. onClick할 때 true 적용하면 될 듯?
-    },[]);
-
+    useEffect( () => { (props.id == now ? setFocus(true) : setFocus(false)) },[now]);
+    
     return (
         <Navigator_wrap>
-            <li onClick={onClick} id={props.id}> {props.content} </li>
-            <Navigator_sub_wrap visible={visible}>
+                <li onClick={onClick} id={props.id}> {props.content} </li>
+            <Navigator_sub_wrap visible={focus} id={props.id}>
                 {subList}
             </Navigator_sub_wrap>
         </Navigator_wrap>
@@ -39,23 +36,31 @@ const Navigator_Menu = (props) => {
 }
 
 const Navigator_wrap = styled.div`
-    display : block;
+    display : flex;
+    flex-direction : column;
     text-decoration : none;
     list-style : none;
+
    > li {
         padding : .5rem;
    }
 
     &:hover {
         cursor : pointer;
+        > li { padding-left : 1rem; }
     }
 `
 
 const Navigator_sub_wrap = styled.div`
-    display: ${(props) => (props.visible ? 'block' : 'none')};
+    display: ${(props) => (props.visible ? 'flex' : 'none')};
+    flex-direction : column;
+    position : relative;
 
     > li {
+        background-color : #ddd;
         padding : .5rem 1.5rem;
+
+        &:hover { padding-left : 2rem; }
     }
 `
 

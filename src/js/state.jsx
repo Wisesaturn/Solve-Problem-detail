@@ -31,14 +31,68 @@ const darkMode_state = atom({
 })
 
 const subMenu = [
-    {  id : 1, content : ["서브메뉴 1", "서브메뉴 2", "서브메뉴 3"] },
-    {  id : 2, content : ["서브메뉴 4", "서브메뉴 5", "서브메뉴 6"] },
+    [
+        {
+            title: '서브메뉴 1',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 2',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 3',
+            path: '/',
+            icon: "",
+        }
+    ],
+    [
+        {
+            title: '서브메뉴 4',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 5',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 6',
+            path: '/',
+            icon: "",
+        }
+    ],
+    [
+        {
+            title: '서브메뉴 7',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 8',
+            path: '/',
+            icon: "",
+        },
+        {
+            title: '서브메뉴 9',
+            path: '/',
+            icon: "",
+        }
+    ],
 ]
 
-const Home = "http://wisesaturn.github.io/solve-problem-detail";
+const subMenu_focus = atom({
+    key : 'subMenu_focus',
+    default : 0
+});
+
+const Home = "http://wisesaturn.github.io/study-blog";
 const Link_Github = "https://github.com/Wisesaturn";
 const Link_Naver = "https://blog.naver.com/rfv1479";
 const Link_Instagram = "https://www.instagram.com/songjh_97/";
 
-export { Home, lvData, Levels, ModalMessage, Sitebar_state, darkMode_state, subMenu }
+export { Home, lvData, Levels, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu }
 export { Link_Github, Link_Naver, Link_Instagram }
