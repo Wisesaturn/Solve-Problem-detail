@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiFillHome } from 'react-icons/ai';
-import { BsSearch } from 'react-icons/bs';
-import { stuffMenu } from '../../state';
+import { stuffMenu, search_active } from '../../state';
+import { useRecoilState } from 'recoil';
 
 const Navigator_Stuff = (props) => {
     const content_filter = stuffMenu.filter(d => d.key === props.content);
+    const [active, setActive] = useRecoilState(search_active);
+
+    const Click = () => { 
+        props.Click === "Search" ? setActive(!active)
+            : props.Click === "Home" ? setActive(false) : setActive(null);
+        ;
+    }
 
     return (
-        <Stuff_wrap>
+        <Stuff_wrap onClick={Click}>
             {content_filter[0].icon}
         </Stuff_wrap>
     );

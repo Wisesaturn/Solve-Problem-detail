@@ -27,6 +27,16 @@
       --stuff-shadow : #333;
       --stuff-ft-active : #212c26;
       --profile-bg : #2b3b35;
+      --menu-bg : #3d5a4b;
+      --menu-after : #344d40;
+      --submenu-bg : #5a8870;
+      --submenu-after : #4f7462;
+      --submenu-active : #436856;
+      --submenu-shadow : #444;
+      --submenu-border : #444;
+      --profile-picture-bg : #374d44;
+      --profile-picture-shadow : #23352c;
+      --search-border : #ddd;
     }
 
     .light {
@@ -49,6 +59,16 @@
       --stuff-shadow : #bbb;
       --stuff-ft-active : #5e7a6b;
       --profile-bg : #8ac5a8;
+      --menu-bg : #a4d6bc;
+      --menu-after : #aee4c8;
+      --submenu-bg : #c3e4d3;
+      --submenu-after : #7bb197;
+      --submenu-active : #68927b;
+      --submenu-shadow : #bbb;
+      --submenu-border : #ccc;
+      --profile-picture-bg : #7bb197;
+      --profile-picture-shadow : #85b39c;
+       --search-border : #7bb197;
     }
 }
 
@@ -98,15 +118,24 @@
     from { left : -.5rem; background-color : var(--stuff-after); color : var(--stuff-ft); }
       to { left : 0; background-color : var(--stuff-bg); }
 }
-
 @keyframes Stuff_hover_active {
     to { left : -.5rem; background-color : var(--stuff-active); color : var(--stuff-ft-active); }
 }
 
 @keyframes Subnav_menu_hover {
-    to { padding-left : .8rem }
+    to { padding-left : 1rem; background-color : var(--menu-after); }
 }
 
 @keyframes Subnav_hover {
-    to { padding-left : 1.8rem }
+    to { padding-left : 1.2rem; background-color : var(--submenu-after); }
+}
+
+@keyframes Subnav_active {
+  from { padding-left : 1.2rem; background-color : var(--submenu-after); }
+    to { padding-left : 1.2rem; background-color : var(--submenu-active);}
+}
+
+@keyframes Search_open {
+    from { top : -10rem; }
+      to { top : 0; }
 }

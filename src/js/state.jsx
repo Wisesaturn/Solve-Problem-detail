@@ -3,18 +3,6 @@ import { boolean } from 'check-types';
 import { BsSearch } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
 
-const lvData = atom({
-    key: 'lvData',
-    default: '-- Level --'
-});
-
-const Levels = [
-    {
-        id: 1,
-        name: "Level 1"
-    }
-]
-
 const ModalMessage = atom({
     key: 'ModalMessage',
     default: "기본 메세지 입니다. 😁"
@@ -102,10 +90,17 @@ const subMenu_focus = atom({
     default : 0
 });
 
+const search_active = atom({
+    key: 'search_active',
+    default: false,
+    type : boolean
+});
+
 const Home = "http://wisesaturn.github.io/study-blog";
 const Link_Github = "https://github.com/Wisesaturn";
 const Link_Naver = "https://blog.naver.com/rfv1479";
 const Link_Instagram = "https://www.instagram.com/songjh_97/";
+const Link_Email = "rfv1479@gmail.com";
 
-export { Home, lvData, Levels, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu, stuffMenu }
-export { Link_Github, Link_Naver, Link_Instagram }
+export { Home, search_active, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu, stuffMenu }
+export { Link_Github, Link_Naver, Link_Instagram, Link_Email }

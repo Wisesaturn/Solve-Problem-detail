@@ -12,18 +12,16 @@ const Navigator = ({visible}) => {
     useEffect(() => { setFocus(0) }, [push]);
 
     return (
-        <div className={`${push ? 'Navigator_wrap' : 'Navigator_wrap_off'}`} >
+        <div className={`${push ? 'Navigator_all_wrap' : 'Navigator_all_wrap_off'}`} >
             <div className="Navigator_stuff_wrap" >
-                <Navigator_Stuff content="Home" />
-                <Navigator_Stuff content="Search" />
+                <Navigator_Stuff content="Home" Click="Home" />
+                <Navigator_Stuff content="Search" Click="Search" />
             </div>
-            <div className="Navigator">
-                <Profile />
-                <div className="Navigator_menu_wrap">
+            <div className="Navigator_wrap">
+                    <Profile />
                     <Navigator_Menu content="메뉴1" id="1" />
                     <Navigator_Menu content="메뉴2" id="2" />
                     <Navigator_Menu content="메뉴3" id="3" />
-                </div>
             </div>
         </div>
     );

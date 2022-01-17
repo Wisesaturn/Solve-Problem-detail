@@ -1,9 +1,9 @@
-.Navigator_wrap {
+.Navigator_all_wrap {
     animation : Navigator .3s ease-out forwards;
     display : inline-block;
     position : relative;
     height : 100%;
-    background-color : orange;
+    background-color : none;
     min-width : 15rem;
 
 
@@ -13,21 +13,11 @@
         max-width : 4rem;
     }
 
-    > .Navigator {
+    > .Navigator_wrap {
     position : relative;
     top : -8rem;
-    background-color : black;
     width : 100%;
-
-         > .Profile {
-            display : block;
-            background-color : var(--profile-bg);
-            height : 15rem;
-        }
-        > .Navigator_menu_wrap {
-            background-color : green;
-        }
     }
 }
 
-.Navigator_wrap_off { display : none; }
+.Navigator_all_wrap_off { display : none; }
