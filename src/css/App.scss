@@ -36,7 +36,7 @@
       --submenu-border : #444;
       --profile-picture-bg : #374d44;
       --profile-picture-shadow : #23352c;
-      --search-border : #ddd;
+      --search-border : #999;
     }
 
     .light {
@@ -136,6 +136,6 @@
 }
 
 @keyframes Search_open {
-    from { top : -10rem; }
-      to { top : 0; }
+    from { opacity : .5; top : -3rem; }
+      to { opacity : 1; top : 0; }
 }
