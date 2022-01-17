@@ -1,5 +1,7 @@
 import { atom } from 'recoil';
 import { boolean } from 'check-types';
+import { BsSearch } from 'react-icons/bs';
+import { AiFillHome } from 'react-icons/ai';
 
 const lvData = atom({
     key: 'lvData',
@@ -29,6 +31,17 @@ const darkMode_state = atom({
     default: true,
     type : boolean
 })
+
+const stuffMenu = [
+    {
+        key : 'Home',
+        icon : <AiFillHome />
+    },
+    {
+        key : 'Search',
+        icon : <BsSearch />
+    }
+]
 
 const subMenu = [
     [
@@ -94,5 +107,5 @@ const Link_Github = "https://github.com/Wisesaturn";
 const Link_Naver = "https://blog.naver.com/rfv1479";
 const Link_Instagram = "https://www.instagram.com/songjh_97/";
 
-export { Home, lvData, Levels, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu }
+export { Home, lvData, Levels, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu, stuffMenu }
 export { Link_Github, Link_Naver, Link_Instagram }

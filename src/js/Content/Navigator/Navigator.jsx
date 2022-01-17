@@ -9,7 +9,7 @@ import { Sitebar_state, subMenu_focus } from '../../state';
 const Navigator = ({visible}) => {
     const [push, setPush] = useRecoilState(Sitebar_state);
     const [focus, setFocus] = useRecoilState(subMenu_focus);
-    useEffect(() => { (push ? setFocus(0) : setFocus(0)) }, [push]);
+    useEffect(() => { setFocus(0) }, [push]);
 
     return (
         <div className={`${push ? 'Navigator_wrap' : 'Navigator_wrap_off'}`} >

@@ -12,7 +12,7 @@ const Navigator_Menu = (props) => {
     const onClick = (e) => {   
         let temp = [...menu[e.target.id-1]];
         setSub(temp);
-        setNow(e.target.id);
+        props.id === now ? setNow(0) : setNow(e.target.id);
     }
 
     const subList = sub.map((d, index) => 
@@ -23,7 +23,7 @@ const Navigator_Menu = (props) => {
         </li>
     );
 
-    useEffect( () => { (props.id == now ? setFocus(true) : setFocus(false)) },[now]);
+    useEffect( () => { (props.id === now ? setFocus(true) : setFocus(false)) },[now]);
     
     return (
         <Navigator_wrap>
@@ -47,7 +47,7 @@ const Navigator_wrap = styled.div`
 
     &:hover {
         cursor : pointer;
-        > li { padding-left : 1rem; }
+        > li { animation : Subnav_menu_hover .3s ease-out forwards }
     }
 `
 
@@ -60,7 +60,7 @@ const Navigator_sub_wrap = styled.div`
         background-color : #ddd;
         padding : .5rem 1.5rem;
 
-        &:hover { padding-left : 2rem; }
+        &:hover { animation : Subnav_hover .3s ease-out forwards }
     }
 `
 

@@ -11,18 +11,17 @@
         position : relative;
         left : -3rem;
         max-width : 4rem;
-        background-color : none;
     }
 
     > .Navigator {
     position : relative;
-    top : -10rem;
+    top : -8rem;
     background-color : black;
     width : 100%;
 
          > .Profile {
             display : block;
-            background-color : blue;
+            background-color : var(--profile-bg);
             height : 15rem;
         }
         > .Navigator_menu_wrap {

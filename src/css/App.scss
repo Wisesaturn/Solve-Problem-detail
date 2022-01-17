@@ -17,9 +17,16 @@
       --header-shadow : #222c27;
       --footer-bg : #252525;
       --footer-after : #2b2a2a;
-      --scrollbar : #739684;
+      --scrollbar : #809289;
       --scrollbar-bg : #323d38;
       --content-ft : #bcecd3;
+      --stuff-bg : #2e3b35;
+      --stuff-after : #36443d;
+      --stuff-active : #303f36;
+      --stuff-ft : #bcecd3;
+      --stuff-shadow : #333;
+      --stuff-ft-active : #212c26;
+      --profile-bg : #2b3b35;
     }
 
     .light {
@@ -35,6 +42,13 @@
       --scrollbar : #788a81;
       --scrollbar-bg : #9dc9b2;
       --content-ft : #455e51;
+      --stuff-bg : #8ac5a8;
+      --stuff-after : #7bb197;
+      --stuff-active : #416d55;
+      --stuff-ft : #257750;
+      --stuff-shadow : #bbb;
+      --stuff-ft-active : #5e7a6b;
+      --profile-bg : #8ac5a8;
     }
 }
 
@@ -77,9 +91,22 @@
 }
 
 @keyframes Stuff_hover {
-    to { left : -1rem }
+    to { left : -.5rem; background-color : var(--stuff-after); color : var(--stuff-ft); }
 }
 
 @keyframes Stuff_hover_before {
-    from { left : -1rem } to { left : 0 }
+    from { left : -.5rem; background-color : var(--stuff-after); color : var(--stuff-ft); }
+      to { left : 0; background-color : var(--stuff-bg); }
+}
+
+@keyframes Stuff_hover_active {
+    to { left : -.5rem; background-color : var(--stuff-active); color : var(--stuff-ft-active); }
+}
+
+@keyframes Subnav_menu_hover {
+    to { padding-left : .8rem }
+}
+
+@keyframes Subnav_hover {
+    to { padding-left : 1.8rem }
 }
