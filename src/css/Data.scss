@@ -21,21 +21,48 @@
         }
     }
 
-    > .title, .comment, .main_content {
+    > .title_wrap, .comment, .main_content_wrap {
         width : inherit;
         border-bottom : 1px solid var(--bottom-line);
-
         padding : 1.6rem .8rem;
     }
 
-    > .title {
-        font-size : 28px;
-        font-weight : bold;
-        color : var(--content-ft);
-    }
+    > .title_wrap
+        {
+            > .Category {
+                padding : 0 0 1rem;
+                > a {
+                    text-decoration : none;
+                    color : inherit;
+                }
+            }
+            > .title {
+                display : flex;
+                justify-content: space-between;
+                font-size : 28px;
+                font-weight : bold;
+                color : var(--content-ft);
+                > .Date {
+                    margin-top : auto;
+                    font-size : 16px;
+                    font-weight : normal;
+                    color : var(--normal-ft);
+                }
+            }
+        }
 
-    > .main_content {
+    > .main_content_wrap {
         line-height : 32px;
+        > .Tag {
+            display : flex;
+            padding : .6rem;
+            
+            > .Tag_Title, .Tag_List { margin : .6rem; padding : .3rem;}
+            > .Tag_Title {
+                color : var(--normal-bg);
+                background-color : var(--normal-ft);
+            }
+        }
     }
 
     > .comment {
