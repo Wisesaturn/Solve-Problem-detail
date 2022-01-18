@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import "../../../css/Navigator.scss";
 import Profile from './Profile';
 import Navigator_Menu from './Navigator_Menu';
 import Navigator_Stuff from './Navigator_Stuff';

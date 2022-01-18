@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../css/Footer.scss';
 import { AiFillInstagram, AiFillGithub } from 'react-icons/ai';
 import { Link_Github, Link_Naver, Link_Instagram } from '../state';
 

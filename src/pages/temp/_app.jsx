@@ -1,10 +1,9 @@
 import React from 'react';
-import '../css/App.scss';
-import Content from './Content/Content';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
-import Modal from './Modal';
-import { darkMode_state } from './state';
+import Content from '../../js/Content/Content';
+import Header from '../../js/Header/Header';
+import Footer from '../../js/Footer/Footer';
+import Modal from '../../js/Modal';
+import { darkMode_state } from '../../js/state';
 import { useRecoilValue } from 'recoil';
 
 function App() {

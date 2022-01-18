@@ -1,5 +1,4 @@
 import { atom } from 'recoil';
-import { boolean } from 'check-types';
 import { BsSearch } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
 
@@ -11,13 +10,11 @@ const ModalMessage = atom({
 const Sitebar_state = atom({
     key: 'Sitebar_state',
     default: false,
-    type : boolean
 })
 
 const darkMode_state = atom({
     key: 'darkMode_state',
     default: true,
-    type : boolean
 })
 
 const stuffMenu = [
@@ -92,8 +89,7 @@ const subMenu_focus = atom({
 
 const search_active = atom({
     key: 'search_active',
-    default: false,
-    type : boolean
+    default: false
 });
 
 const Home = "http://wisesaturn.github.io/study-blog";

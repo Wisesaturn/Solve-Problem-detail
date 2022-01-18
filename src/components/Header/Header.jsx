@@ -1,6 +1,5 @@
 import React from 'react';
 import Menu from './Menu';
-import '../../css/Header.scss';
 import { HiOutlineViewList } from 'react-icons/hi';
 import { Sitebar_state, Home } from '../state';
 import { useRecoilState } from 'recoil';
@@ -25,7 +24,7 @@ function Header() {
     return (
         <div className="Header">
             <Sitebar />
-            <a href={Home}>재한쓰 풀이 모음집</a>
+            <a href={Home}>재한's 스터디 블로그</a>
             <Menu />
         </div>
     );

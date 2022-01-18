@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import '../css/Modal.scss';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RiCheckboxCircleFill } from 'react-icons/ri';

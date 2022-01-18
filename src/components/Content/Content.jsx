@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigator from './Navigator/Navigator';
 import Data from './Data';
-import '../../css/Content.scss';
 import { useRecoilState } from 'recoil';
 import { Sitebar_state } from '../state';
 
