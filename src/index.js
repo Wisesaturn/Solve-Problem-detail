@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './js/App';
+import Routes_list from './Routes';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
+      <RecoilRoot>
+        <Routes_list />
+      </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );

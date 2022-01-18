@@ -104,6 +104,11 @@
 + 왜 boolean 값을 읽지를 못하는가!? : ['주소'](https://mygumi.tistory.com/382 "Warning Received `true` for non-boolean attribute :: 마이구미")
 + Toggle Switch CSS로 제작 (라이브러리 이용 X) : ['주소'](https://ordinary-code.tistory.com/53 "css로 만드는 체크박스 ON/OFF 스위치 버튼 디자인 예제"), ['주소2'](https://m.blog.naver.com/coding-/221400113716 "CSS 토글 버튼, Toggle Switch 만들기")
 + position 개념 정리 : https://creamilk88.tistory.com/m/197
++ Typescript 설치 (React X) : https://doitnow-man.tistory.com/170?category=760521
++ create-react-app Typescript : https://dev-yakuza.posstree.com/ko/react/create-react-app/typescript/
++ Next.JS로 블로그 만들기 : https://velog.io/@anjoy/Nextjs
++ React Router 설치 : ['주소'](https://velog.io/@jungsw586/React-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0-2.-React-Router-%EC%84%A4%EC%B9%98 "React-Router-개발환경-세팅")
++ React-Router-DOM 6 버전 업데이트로 인한 변경 사항 : ['주소'](https://velog.io/@kcdoggo/Switch-is-not-exported-from-react-router-dom-%EC%97%90%EB%9F%AC "'Switch' is not exported from 'react-router-dom' 에러"), ['공식문서'](https://reactrouter.com/docs/en/v6/upgrading/v5, "Upgrading from v5")
 </details>
 
 ## 📎 참고
