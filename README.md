@@ -139,7 +139,7 @@
 + SPA 페이지를 React-Router로 Github Page에 배포 : https://velog.io/@ausg/gh-pages-react-router
 + [Git 경고 메세지] LF will be replaced by CRLF in 해결 방안 : https://dabo-dev.tistory.com/13
 + 왜 'React-router'를 버리고 'NextJS'로 가야 하는가? **(CSR과 SSR의 차이, SEO 대응)** : ['주소'](https://velog.io/@thsoon/next.js%EB%A5%BC-%EB%B0%B0%EC%9A%B0%EA%B8%B0-%EC%A0%84%EC%97%90 "Next.js를 배우기전에...!"), ['주소2'](https://proglish.tistory.com/216, "SSR과 CSR의 차이")
-+ Gatsby와 NextJS의 차이 : https://yohanpro.com/posts/ssr
++ Gatsby와 NextJS의 차이 : https://yohanpro.com/posts/ssr 
 + React로 블로그 만들기 (MySql 이용, 데이터 전달까지) : https://blog.naver.com/sejun3278/221569414455
 </details>
 
