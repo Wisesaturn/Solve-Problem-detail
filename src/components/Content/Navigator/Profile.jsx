@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import Picture from '../../../resource/Profile-zepeto.png';
 import styled from 'styled-components';
 import { Link_Github, Link_Email } from '../../state';
 import { AiOutlineMail, AiFillGithub } from 'react-icons/ai';
@@ -50,7 +48,7 @@ const Picture_area = styled.div`
     margin : 1rem;
     
     background-color : none;
-    background-image : url(${Picture});
+    background-image : url(/resource/Profile-zepeto.png);
     background-position : center;
     background-size : 13rem;
     background-color : var(--profile-picture-bg);

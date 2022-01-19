@@ -7,7 +7,7 @@ import { darkMode_state } from '../components/state';
 import { useRecoilValue } from 'recoil';
 
 const IndexPage = () => {
-    const check = useRecoilValue(darkMode_state);
+    const check : boolean = useRecoilValue(darkMode_state);
 
     return (
         <>
@@ -16,7 +16,7 @@ const IndexPage = () => {
                 <Content />
                 <Footer />
             </div>
-            <Modal className="Modal" visible={false}> </Modal>
+            <Modal className="Modal" visible={false} /> 
         </>
     );
 };

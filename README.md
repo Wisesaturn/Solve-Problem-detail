@@ -113,20 +113,25 @@
 
    <br>
 
-+ **`Next` 환경 전환 완료, `JS`에서 `TS`로 전환 완료** (2022-01-19 ~ )    
++ **`Next` 환경 전환** (2022-01-18 ~ 2022-01-19)    
    + `Next.JS` 환경으로 전환하였습니다.    
    + 기존 `create-react-app`을 통해 **React 환경** 에서 구현했을 때 `index.js`에서 `ReactDOM`을 통해 `App` Component를 추출하여 그에 따른 props Components들을 렌더링하였습니다.    
    + `Next`는 `Pages` 폴더 기반으로 **Routing** 을 해주는 기능이 내장되어 있어 기존 `react-router`를 이용할 필요 없이 폴더 내 **파일명** 으로 쉽게 구분이 가능했습니다.    
    + `_app`은 기존 `ReactDOM`과 유사한 기능을 함과 동시에 개별 페이지마다 **공통된 Component** 를 줄 수 있다는 점과 `index`는 **맨 첫 페이지** 라는 사소한 차이가 있었습니다.    
    + `Next` 자체에서 `styled-component`가 적용이 안됩니다. 해결방안으로 `_document`와 `babelrc`를 추가하였습니다. (무슨 내용인지 추후에 자세하게 개발일지에 풀어내보겠습니다.)    
-   + > `npm i -D babel-plugin-styled-components`     
+   + > `npm i -D babel-plugin-styled-components`    
 
+   <br>
+
++ **`Github Commit`정리, `JS`에서 `TS`로 전환** (2022-01-19 ~ )    
+   + `Github Commit`를 정리하였습니다. `Next`환경 이전 Commit은 다른 **branch** 로 옮겨놓았습니다. `main` **branch** 는 *Next 환경 전환 시점* 부터 이어나갈 계획입니다.    
+   + `Commit`을 일관성 있게 **소제목** 을 붙여 정리해보았습니다. 해당 키워드만 보아 쉽게 어떠한 내용을 변경하였는지 유추하도록 하였습니다.    
    <br>
 
    + 🤔 **혹시?** : 음악 플레이어, CRUD 구현    
    + 😓 **오류!**  : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견    
    + 😎 **RULE OF GIT COMMIT LOG**    
-      + UPDATE, REMOVE, REFACTOR, RELEASE, MERGE PULL REQUEST    
+      + UPDATE, REMOVE, REFACTOR, RELEASE, MERGE, FIND, FIX       
       + Use '# + Number'    
    
 ## 📎 학습자료
@@ -158,6 +163,8 @@
 + React로 블로그 만들기 (MySql 이용, 데이터 전달까지) : https://blog.naver.com/sejun3278/221569414455
 + Next에서 styled-component 적용하기 : ['주소'](https://velog.io/@ziyoonee/Next.js%EC%97%90%EC%84%9C-styled-components-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0 "Next.js에서 styled-components 사용하기")
 + Next에서 Image Load하기 : ['주소'](https://velog.io/@pyo-sh/React-NextJS-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-import-%ED%95%98%EA%B8%B0 "[React] NextJS 에서 이미지 import 하기"), ['TypeError: unsupported file type: undefined'](https://exerror.com/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11/ "[Solved] Nextjs: TypeError: unsupported file type: undefined after update to v.11"), ['Module parse failed: Unexpected character'](https://haerang94.tistory.com/297 "[React, NextJS] Module parse failed: Unexpected character '' (1:0) 에러 수정 및 Next에서 이미지 import 되도록 설정")
++ Typescript 학습 : ['여러가지 고급 타입 및 interface와 type의 차이'](https://velog.io/@zeros0623/TypeScript-%EA%B3%A0%EA%B8%89-%ED%83%80%EC%9E%85 "[TypeScript] Advanced Types(고급 타입)"), ['JSX.Element / ReactNode / ReactElement'](https://velog.io/@winney_77/JSX.Element-ReactNode-ReactElement "JSX.Element / ReactNode / ReactElement")
++ Github Commit Template : ['주소'](https://chanhuiseok.github.io/posts/git-4/ "git commit 템플릿 사용하여 commit message convention 준수하기")
 </details>
 
 ## 📎 참고

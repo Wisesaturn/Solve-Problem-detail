@@ -5,7 +5,7 @@ import { Link_Github, Link_Naver, Link_Instagram } from '../state';
 function Footer() {
     return (
         <div className="Footer">
-           © 2022 Wisesaturn All Rights Reserved. Powered by Github with ReactJS. <br/>
+           © 2022 Wisesaturn All Rights Reserved. Powered by Github with React/Next.JS <br/>
            Thanks to Myself by 맨 땅에 헤딩
            <div className="Wrap_SNS">
                 <div className="SNS">
