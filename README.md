@@ -123,8 +123,11 @@
 
    <br>
 
-   + 🤔 <b>혹시?</b> : 음악 플레이어, CRUD 구현<br>
-   + 😓 <b>오류!</b> : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견<br>
+   + 🤔 **혹시?** : 음악 플레이어, CRUD 구현    
+   + 😓 **오류!**  : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견    
+   + 😎 **RULE OF GIT COMMIT LOG**    
+      + UPDATE, REMOVE, REFACTOR, RELEASE, MERGE PULL REQUEST    
+      + Use '# + Number'    
    
 ## 📎 학습자료
 <details>
