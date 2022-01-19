@@ -3,11 +3,12 @@ import { AiFillInstagram, AiFillGithub } from 'react-icons/ai';
 import { Link_Github, Link_Naver, Link_Instagram } from '../state';
 
 function Footer() {
+
     return (
         <div className="Footer">
-           © 2022 Wisesaturn All Rights Reserved. Powered by Github with React/Next.JS <br/>
-           Thanks to Myself by 맨 땅에 헤딩
-           <div className="Wrap_SNS">
+        © 2022 Wisesaturn All Rights Reserved. Powered by Github with React/Next.JS <br/>
+        Thanks to Myself by 맨 땅에 헤딩
+        <div className="Wrap_SNS">
                 <div className="SNS">
                     <a href={Link_Github}><AiFillGithub size="32" /></a>
                 </div>

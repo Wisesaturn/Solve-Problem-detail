@@ -1,11 +1,11 @@
 import React from 'react';
 import Navigator from './Navigator/Navigator';
 import Data from './Data';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { Sitebar_state } from '../state';
 
 function Content() {
-    const [check, setCheck] = useRecoilState(Sitebar_state);
+    const check = useRecoilValue(Sitebar_state);
 
     return (
         <div className="Content">

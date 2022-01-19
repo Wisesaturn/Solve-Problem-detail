@@ -123,16 +123,16 @@
 
    <br>
 
-+ **`Github Commit`정리, `JS`에서 `TS`로 전환** (2022-01-19 ~ )    
++ **`Github Commit`정리, DarkMode 기능 `Contex API`로 재구현** (2022-01-19 ~ )    
    + `Github Commit`를 정리하였습니다. `Next`환경 이전 Commit은 다른 **branch** 로 옮겨놓았습니다. `main` **branch** 는 *Next 환경 전환 시점* 부터 이어나갈 계획입니다.    
-   + `Commit`을 일관성 있게 **소제목** 을 붙여 정리해보았습니다. 해당 키워드만 보아 쉽게 어떠한 내용을 변경하였는지 유추하도록 하였습니다.    
+   + `Commit`을 일관성 있게 **소제목** 을 붙여 정리해보았습니다. 해당 키워드만 보아 쉽게 어떠한 내용을 변경하였는지 유추하도록 하였습니다.   
+   + 기존에 `DarkMode` 기능을 `recoil` 상태 관리 라이브러리를 통해 구현하였습니다. 하지만 `Next` 환경에서는 `RecoilRoot`로 인해 `_app.tsx`안에서 사용하지 못하는 번거로움이 존재합니다. (`Layout` **Component** 로 따로 뺄 수도 없는 상황)
+   + `Header`와 `Footer`가 고정되어 있는 블로그 형식이라 `Page Component`를 가운데에다 배치해야 하는 구성입니다. 이에 따라 **모든 Component** 에 `Darkmode`를 구현하려면 `recoilRoot`에 방해받지 않는 `Context API`를 사용했습니다.
    <br>
 
    + 🤔 **혹시?** : 음악 플레이어, CRUD 구현    
    + 😓 **오류!**  : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견    
-   + 😎 **RULE OF GIT COMMIT LOG**    
-      + UPDATE, REMOVE, REFACTOR, RELEASE, MERGE, FIND, FIX       
-      + Use '# + Number'    
+   + 😎 **FOLLOW THE RULE OF GIT COMMIT LOG**  
    
 ## 📎 학습자료
 <details>
@@ -165,6 +165,7 @@
 + Next에서 Image Load하기 : ['주소'](https://velog.io/@pyo-sh/React-NextJS-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-import-%ED%95%98%EA%B8%B0 "[React] NextJS 에서 이미지 import 하기"), ['TypeError: unsupported file type: undefined'](https://exerror.com/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11/ "[Solved] Nextjs: TypeError: unsupported file type: undefined after update to v.11"), ['Module parse failed: Unexpected character'](https://haerang94.tistory.com/297 "[React, NextJS] Module parse failed: Unexpected character '' (1:0) 에러 수정 및 Next에서 이미지 import 되도록 설정")
 + Typescript 학습 : ['여러가지 고급 타입 및 interface와 type의 차이'](https://velog.io/@zeros0623/TypeScript-%EA%B3%A0%EA%B8%89-%ED%83%80%EC%9E%85 "[TypeScript] Advanced Types(고급 타입)"), ['JSX.Element / ReactNode / ReactElement'](https://velog.io/@winney_77/JSX.Element-ReactNode-ReactElement "JSX.Element / ReactNode / ReactElement")
 + Github Commit Template : ['주소'](https://chanhuiseok.github.io/posts/git-4/ "git commit 템플릿 사용하여 commit message convention 준수하기")
++ Next.JS Loading Page : ['주소'](https://saransh.dev/blog/framework/next-js/adding-a-loading-screen-to-next-js "Next Js adding a loading screen — How I ended up not using a library")
 </details>
 
 ## 📎 참고

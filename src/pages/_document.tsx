@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
   class MyDocument extends Document {
+
     static async getInitialProps(ctx: DocumentContext) {
       const sheet = new ServerStyleSheet()
       const originalRenderPage = ctx.renderPage
@@ -35,8 +37,8 @@ import { ServerStyleSheet } from 'styled-components'
             <meta charSet="utf-8" />
           </Head>
           <body>
-            <Main />
-            <NextScript />
+              <Main />
+              <NextScript />
           </body>
         </Html>
       )
@@ -44,3 +46,6 @@ import { ServerStyleSheet } from 'styled-components'
   }
 
   export default MyDocument
+
+  // styled-components 적용 및 스타일 렌더링 빠르게 하기 위함
+  // Head 부분에 Metatag를 넣기
