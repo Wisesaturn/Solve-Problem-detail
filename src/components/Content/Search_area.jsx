@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { search_active } from '../../js/state';
-import { useRecoilState } from 'recoil';
+import { search_active } from '../state';
+import { useRecoilValue } from 'recoil';
 import { AiOutlineEnter } from 'react-icons/ai'
 
 const Search_area = () => {
-    const [active, setActive] = useRecoilState(search_active);
+    const active = useRecoilValue(search_active);
 
     return (
         <Search_area_wrap active={active}>

@@ -1,4 +1,4 @@
-:root {
+:root {  // Color depending on darkmode
   --darkMode-dark-bg : #1b241f;
   --darkMode-dark-toggle-bg : #212c26;
   --darkMode-dark-sh : #232323;
@@ -72,6 +72,19 @@
     }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+
+* { padding : 0; margin : 0; font-family: 'Gowun Dodum', sans-serif; font-size : 18px;}
+
+html, body, #root { height : 100% !important; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow : hidden;
+}
+
+// Entire CSS @@@@@@@@@@@@@@@@@@@@@@
 #App {
   display : flex;
   flex-direction : column;
@@ -82,7 +95,274 @@
   color : var(--normal-ft);
   background-color : var(--normal-bg);
 }
+// Entire CSS Ended @@@@@@@@@@@@@@@@
 
+// Header CSS @@@@@@@@@@@@@@@@@@@@@@
+.Header {
+    display : flex;
+    flex : none;
+    padding : 0.8rem 12rem;
+    height : 32px;
+
+    background-color : var(--header);
+    box-shadow : 0px -3px 10px 5px var(--header-shadow);
+
+    &:hover {
+        animation : Header_hover .15s ease-out forwards;
+    }
+
+    > a {
+        text-align : center;
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight : bold;
+        color : inherit;
+        margin : auto 0;        
+    }
+
+    > .Sitebar {
+            margin-right : 2rem;
+    }
+
+    > a , .Sitebar > svg {
+        &:hover {
+            animation: Choice .15s ease-out forwards;
+            cursor : pointer;
+        }
+        &:active {
+            animation: Active .15s ease-out forwards;
+            cursor : wait;
+        }
+    }
+}
+
+  // Menu CSS ---------------------------
+  .MenuSpace_wrap {
+      display : flex;
+      margin-left: auto;
+
+      > .MenuSpace {
+          font-weight : bold;     
+          margin : auto 0;
+          display : inline-block;
+          margin-left : 24px;
+
+          &:hover {
+              animation: Choice .15s ease-out forwards;
+              cursor : pointer;
+          }
+          &:active {
+              animation: Active .15s ease-out forwards;
+              cursor : wait;
+          }
+      }
+  }
+
+  // Menu CSS Ended --------------------
+
+  // Darkmode CSS ----------------------
+  .DarkMode_button {
+      position : relative;
+      display : block;
+      width : 3rem;
+      height : .5rem;
+      background-size: 1.2rem;
+
+      input { 
+          opacity : 0; width : 0; height : 0;
+          &:checked {
+              &+.Switch_row {  
+              background-color : var(--darkMode-dark-bg);
+              box-shadow : 0px 0px 2px var(--darkMode-dark-sh) inset;
+                  &:before {
+                      background-image : url(../resource/moon.png);
+                      background-color : var(--darkMode-dark-toggle-bg);
+                      box-shadow : none;
+                      -webkit-transform: translateX(1.6rem); -ms-transform: translateX(1.6rem); transform: translateX(1.6rem);
+                  }
+              }
+          }
+      }
+
+      > .Switch_row {
+          position : absolute;
+          cursor : pointer;
+          top : 0; right : 0; bottom : 0; left : 0;
+          height : inherit;
+          background-color : var(--darkMode-light-bg);
+          box-shadow: 1px 1px 3px var(--darkMode-light-sh);
+          border-radius: 20px;
+
+          &:before {
+              position : absolute;
+              content : "";
+              height : 2rem;
+              width : 1.5rem;
+              top : -13.5px;
+
+              background-image: url("../resource/sun.png");
+              background-position: center;
+              background-color: var(--darkMode-light-toggle-bg);
+              background-repeat: no-repeat;
+
+              border-radius : 10px;
+              box-shadow : 1px 1px 3px var(--darkMode-light-sh);
+          }
+      }
+
+      .Switch_row, .Switch_row:before, .input { -webkit-transition: .6s; transition: .6s; }
+  }
+  // Darkmode CSS Ended -------------
+// Header CSS Ended @@@@@@@@@@@@@@@@@
+
+// Content CSS @@@@@@@@@@@@@@@@@@@@@@
+.Content {
+    display : flex;
+    flex : 1;
+    height : calc(100vh - (60px + 80px + 80px));
+    padding : 1.6rem 12rem;
+}
+
+  // Navigator CSS ------------------
+  .Navigator_all_wrap {
+      animation : Navigator .3s ease-out forwards;
+      display : inline-block;
+      position : relative;
+      height : 100%;
+      background-color : none;
+      min-width : 15rem;
+
+
+      > .Navigator_stuff_wrap {
+          position : relative;
+          left : -3rem;
+          max-width : 4rem;
+      }
+
+      > .Navigator_wrap {
+      position : relative;
+      top : -8rem;
+      width : 100%;
+      }
+  }
+
+  .Navigator_all_wrap_off { display : none; }
+  // Navigator CSS Ended ------------
+
+  // Data CSS -----------------------
+  .Data {
+      display : flex;
+      flex-direction: column;
+      padding : 1rem 2rem;
+      width : 97%;
+      overflow-y : auto;
+      overflow-x : hidden;
+      white-space : pre-wrap;
+
+      &::-webkit-scrollbar {
+          width : 8px;
+
+          &-thumb {
+              background-color : var(--scrollbar);
+              border-radius : 3px;
+              box-shadow : 0px 0px 2px 1px inset var(--scrollbar-bg);
+          }
+
+          &-track {
+              background-color : var(--scrollbar-bg);
+          }
+      }
+
+      > .title_wrap, .comment, .main_content_wrap {
+          width : inherit;
+          border-bottom : 1px solid var(--bottom-line);
+          padding : 1.6rem .8rem;
+      }
+
+      > .title_wrap
+          {
+              > .Category {
+                  padding : 0 0 1rem;
+                  > a {
+                      text-decoration : none;
+                      color : inherit;
+                  }
+              }
+              > .title {
+                  display : flex;
+                  justify-content: space-between;
+                  font-size : 28px;
+                  font-weight : bold;
+                  color : var(--content-ft);
+                  > .Date {
+                      margin-top : auto;
+                      font-size : 16px;
+                      font-weight : normal;
+                      color : var(--normal-ft);
+                  }
+              }
+          }
+
+      > .main_content_wrap {
+          line-height : 32px;
+          > .Tag {
+              display : flex;
+              padding : .6rem;
+              
+              > .Tag_Title, .Tag_List { margin : .6rem; padding : .3rem;}
+              > .Tag_Title {
+                  color : var(--normal-bg);
+                  background-color : var(--normal-ft);
+              }
+          }
+      }
+
+      > .comment {
+          font-size : 16px;
+      }
+  }
+  // Data CSS Ended ----------------------
+// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@
+
+
+// Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.Footer {
+    display : flex;
+    background-color : var(--footer-bg);
+    padding : .8rem 12rem;
+    font-size : 12px;
+    font-weight : bold;
+    white-space : pre-wrap;
+
+    &:hover {
+        animation : Footer_hover .15s ease-out forwards;
+    }
+
+    .Wrap_SNS {
+        margin-left : auto;
+        display : flex;
+
+        > .SNS {
+            display : inherit;
+            vertical-align: middle;
+            margin-left : 48px;
+            
+            > a { color : inherit; }
+
+            &:hover {
+                animation: Choice .15s ease-out forwards;
+                cursor : pointer;
+            }
+            &:active {
+                animation: Active .15s ease-out forwards;
+                cursor : wait;
+            }
+        }
+    }
+}
+// Footer CSS Ended @@@@@@@@@@@@@@@@@@@@@@
+
+// Animation Keyframes @@@@@@@@@@@@@@@@@@@
 @keyframes Choice {
     to { color : var(--normal-after); }
 }
@@ -139,3 +419,4 @@
     from { opacity : .5; top : -3rem; }
       to { opacity : 1; top : 0; }
 }
+// Animation Keyframes Ended @@@@@@@@@@@@@

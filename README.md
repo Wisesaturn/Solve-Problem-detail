@@ -108,10 +108,18 @@
    + 방대한 데이터를 처리하지 않는 **블로그 형태** 의 홈페이지이므로 **굳이** `TS`를 고를 필요는 없습니다.    
    + 하지만 간혹 `boolean`을 이용한 상태에 따른 환경 처리나 동적 타입 할당으로 인한 `undefined` 경우가 가끔씩 생겨 향후엔 절대적으로 필요했습니다.    
    + 내친 김에 `NextJS` 환경 구현과 동시에 `Typescript`로 전환하려고 합니다.    
-   + 생각보다 `Next` 구현 환경에 손 봐야 되는 구석이 많고 모든 `.js` 파일을 바꾸려다보니 시간이 많이 소요될 듯 합니다.    
+   + 생각보다 `Next` 구현 환경에 손 봐야 되는 구석이 많고 모든 `.js` 파일을 바꾸려다보니 시간이 많이 소요될 듯 합니다.     
+   > `npm install --save-dev typescript @types/react @types/node`
    <br>
 
-   + 🤔 <b>혹시?</b> : 음악 플레이어, NextJS(SSR)를 이용해 홈페이지 제작, CRUD 구현<br>
++ **`Next` 환경 전환 완료, `JS`에서 `TS`로 전환 완료** (2022-01-19 ~ )    
+   + `Next.JS` 환경으로 전환하였습니다.    
+   + 기존 `create-react-app`을 통해 **React 환경** 에서 구현했을 때 `index.js`에서 `ReactDOM`을 통해 `App` Component를 추출하여 그에 따른 props Components들을 렌더링하였습니다.    
+   + `Next`는 `Pages` 폴더 기반으로 **Routing** 을 해주는 기능이 내장되어 있어 기존 `react-router`를 이용할 필요 없이 폴더 내 **파일명** 으로 쉽게 구분이 가능했습니다.    
+   + `_app`은 기존 `ReactDOM`과 유사한 기능을 함과 동시에 개별 페이지마다 **공통된 Component** 를 줄 수 있다는 점과 `index`는 **맨 첫 페이지** 라는 사소한 차이가 있었습니다.    
+   + `Next` 자체에서 `styled-component`가 적용이 안되서 방법을 찾고 `_document`와 `babelrc`를 추가하여 해결하였습니다. (추후에 자세하게 개발일지에 풀어내보겠습니다.)    
+
+   + 🤔 <b>혹시?</b> : 음악 플레이어, CRUD 구현<br>
    + 😓 <b>오류!</b> : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견<br>
    
 ## 📎 학습자료
@@ -141,6 +149,8 @@
 + 왜 'React-router'를 버리고 'NextJS'로 가야 하는가? **(CSR과 SSR의 차이, SEO 대응)** : ['주소'](https://velog.io/@thsoon/next.js%EB%A5%BC-%EB%B0%B0%EC%9A%B0%EA%B8%B0-%EC%A0%84%EC%97%90 "Next.js를 배우기전에...!"), ['주소2'](https://proglish.tistory.com/216, "SSR과 CSR의 차이")
 + Gatsby와 NextJS의 차이 : https://yohanpro.com/posts/ssr 
 + React로 블로그 만들기 (MySql 이용, 데이터 전달까지) : https://blog.naver.com/sejun3278/221569414455
++ Next에서 styled-component 적용하기 : ['주소'](https://velog.io/@ziyoonee/Next.js%EC%97%90%EC%84%9C-styled-components-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0 "Next.js에서 styled-components 사용하기")
++ Next에서 Image Load하기 : ['주소'](https://velog.io/@pyo-sh/React-NextJS-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-import-%ED%95%98%EA%B8%B0 "[React] NextJS 에서 이미지 import 하기")
 </details>
 
 ## 📎 참고
