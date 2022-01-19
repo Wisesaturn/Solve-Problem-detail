@@ -109,7 +109,8 @@
    + 하지만 간혹 `boolean`을 이용한 상태에 따른 환경 처리나 동적 타입 할당으로 인한 `undefined` 경우가 가끔씩 생겨 향후엔 절대적으로 필요했습니다.    
    + 내친 김에 `NextJS` 환경 구현과 동시에 `Typescript`로 전환하려고 합니다.    
    + 생각보다 `Next` 구현 환경에 손 봐야 되는 구석이 많고 모든 `.js` 파일을 바꾸려다보니 시간이 많이 소요될 듯 합니다.     
-   > `npm install --save-dev typescript @types/react @types/node`
+   + > `npm install --save-dev typescript @types/react @types/node`    
+
    <br>
 
 + **`Next` 환경 전환 완료, `JS`에서 `TS`로 전환 완료** (2022-01-19 ~ )    
@@ -117,7 +118,10 @@
    + 기존 `create-react-app`을 통해 **React 환경** 에서 구현했을 때 `index.js`에서 `ReactDOM`을 통해 `App` Component를 추출하여 그에 따른 props Components들을 렌더링하였습니다.    
    + `Next`는 `Pages` 폴더 기반으로 **Routing** 을 해주는 기능이 내장되어 있어 기존 `react-router`를 이용할 필요 없이 폴더 내 **파일명** 으로 쉽게 구분이 가능했습니다.    
    + `_app`은 기존 `ReactDOM`과 유사한 기능을 함과 동시에 개별 페이지마다 **공통된 Component** 를 줄 수 있다는 점과 `index`는 **맨 첫 페이지** 라는 사소한 차이가 있었습니다.    
-   + `Next` 자체에서 `styled-component`가 적용이 안되서 방법을 찾고 `_document`와 `babelrc`를 추가하여 해결하였습니다. (추후에 자세하게 개발일지에 풀어내보겠습니다.)    
+   + `Next` 자체에서 `styled-component`가 적용이 안됩니다. 해결방안으로 `_document`와 `babelrc`를 추가하였습니다. (무슨 내용인지 추후에 자세하게 개발일지에 풀어내보겠습니다.)    
+   + > `npm i -D babel-plugin-styled-components`     
+
+   <br>
 
    + 🤔 <b>혹시?</b> : 음악 플레이어, CRUD 구현<br>
    + 😓 <b>오류!</b> : 링크 타고 뒤로가기 했을 때 다크모드 오류 발견<br>
@@ -134,7 +138,7 @@
 + style-component : https://www.daleseo.com/react-styled-components/
 + Modal 참고 : ['주소'](https://medium.com/@bestseob93/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%AA%A8%EB%8B%AC-react-modal-%EB%A7%8C%EB%93%A4%EA%B8%B0-bd003458e9d "효율적인 리액트 모달(react-modal) 만들기")
 + svg 참고 : ['주소'](https://from2020.tistory.com/32#recentEntries "svg Color 동적으로 변경하기"), ['주소2'](https://ossam5.tistory.com/112 "[HTML기초문법] 13강 SVG태그 및 이미지 활용 - OSSAM강좌")
-+ 왜 boolean 값을 읽지를 못하는가!? : ['주소'](https://mygumi.tistory.com/382 "Warning Received `true` for non-boolean attribute :: 마이구미")
++ 왜 boolean 값을 읽지를 못하는가!? (styled-component) : ['주소'](https://mygumi.tistory.com/382 "Warning Received `true` for non-boolean attribute :: 마이구미")
 + Toggle Switch CSS로 제작 (라이브러리 이용 X) : ['주소'](https://ordinary-code.tistory.com/53 "css로 만드는 체크박스 ON/OFF 스위치 버튼 디자인 예제"), ['주소2'](https://m.blog.naver.com/coding-/221400113716 "CSS 토글 버튼, Toggle Switch 만들기")
 + position 개념 정리 : https://creamilk88.tistory.com/m/197
 + Typescript 설치 (React X) : https://doitnow-man.tistory.com/170?category=760521
@@ -150,7 +154,7 @@
 + Gatsby와 NextJS의 차이 : https://yohanpro.com/posts/ssr 
 + React로 블로그 만들기 (MySql 이용, 데이터 전달까지) : https://blog.naver.com/sejun3278/221569414455
 + Next에서 styled-component 적용하기 : ['주소'](https://velog.io/@ziyoonee/Next.js%EC%97%90%EC%84%9C-styled-components-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0 "Next.js에서 styled-components 사용하기")
-+ Next에서 Image Load하기 : ['주소'](https://velog.io/@pyo-sh/React-NextJS-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-import-%ED%95%98%EA%B8%B0 "[React] NextJS 에서 이미지 import 하기")
++ Next에서 Image Load하기 : ['주소'](https://velog.io/@pyo-sh/React-NextJS-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-import-%ED%95%98%EA%B8%B0 "[React] NextJS 에서 이미지 import 하기"), ['TypeError: unsupported file type: undefined'](https://exerror.com/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11/ "[Solved] Nextjs: TypeError: unsupported file type: undefined after update to v.11"), ['Module parse failed: Unexpected character'](https://haerang94.tistory.com/297 "[React, NextJS] Module parse failed: Unexpected character '' (1:0) 에러 수정 및 Next에서 이미지 import 되도록 설정")
 </details>
 
 ## 📎 참고

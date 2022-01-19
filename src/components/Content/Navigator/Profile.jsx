@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Picture from '../../../resource/Profile-zepeto.png';
 import styled from 'styled-components';
 import { Link_Github, Link_Email } from '../../state';
@@ -47,8 +48,8 @@ const Picture_area = styled.div`
     width : 13rem;
     height : 13rem;
     margin : 1rem;
+    
     background-color : none;
-
     background-image : url(${Picture});
     background-position : center;
     background-size : 13rem;
