@@ -123,11 +123,16 @@
 
    <br>
 
-+ **`Github Commit`정리, DarkMode 기능 `Contex API`로 재구현 시도** (2022-01-19 ~ )    
++ **`Github Commit`정리** (2022-01-19)    
    + `Github Commit`를 정리하였습니다. `Next`환경 이전 Commit은 다른 **branch** 로 옮겨놓았습니다. `main` **branch** 는 *Next 환경 전환 시점* 부터 이어나갈 계획입니다.    
    + `Commit`을 일관성 있게 **소제목** 을 붙여 정리해보았습니다. 해당 키워드만 보아 쉽게 어떠한 내용을 변경하였는지 유추하도록 하였습니다.   
+   <br>
+
++ **DarkMode 기능 `Contex API`로 재구현** (2022-01-20 ~ )
    + 기존에 `DarkMode` 기능을 `recoil` 상태 관리 라이브러리를 통해 구현하였습니다. 하지만 `Next` 환경에서는 `RecoilRoot`로 인해 `_app.tsx`안에서 사용하지 못하는 번거로움이 존재합니다. (`Layout` **Component** 로 따로 뺄 수도 없는 상황)
-   + `Header`와 `Footer`가 고정되어 있는 블로그 형식이라 `Page Component`를 가운데에다 배치해야 하는 구성입니다. 이에 따라 **모든 Component** 에 `Darkmode`를 구현하려면 `recoilRoot`에 방해받지 않는 `Context API`를 사용하려고 합니다.
+   + `Header`와 `Footer`가 고정되어 있는 블로그 형식이라 `Page Component`를 가운데에다 배치해야 하는 구성입니다. 이에 따라 **모든 Component** 에 `Darkmode`를 구현하려면 `recoilRoot`에 방해받지 않는 `Context API`를 사용하려고 합니다.    
+   + 하지만, 본질적인 해결방안은 아닙니다. `React Hook`은 최상단에 변수를 줄 수 없는 환경입니다. `RecoilRoot` 아래 단계에 그리고 `body` 윗 단계에서 `className`을 변경하는 방법을 생각해보았습니다.
+   + `Provider.tsx`라는 파일을 하나 더 생성하여 `{children}`을 불러와 그 속에 `<div>` 태그를 적용하여 다시 `return`하는 방식을 차용했습니다. 이 단계에서 `{children}`은 `body` 영역에 해당한다고 보시면 됩니다. 
    <br>
 
    + 🤔 **혹시?** : 음악 플레이어, CRUD 구현    
