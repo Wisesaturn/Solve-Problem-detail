@@ -1,21 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEventHandler } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { subMenu, subMenu_focus } from '../../state';
 
-const Navigator_Menu = (props) => {
+type visible_type = {
+    visible : boolean
+}
+
+type props_type = {
+    content : string,
+    id : any
+}
+
+type e_type = {
+    target: any
+}
+
+const Navigator_Menu = (props : props_type) => {
     const menu = [...subMenu]; // subMenu Swallow Copy
     const [sub, setSub] = useState([]); // extract loction
     const [focus, setFocus] = useState(false); // Is this active?
     const [now, setNow] = useRecoilState(subMenu_focus); // What's actually active.
 
-    const onClick = (e) => {   
+    const onClick = (e: e_type) => {   
         let temp = [...menu[e.target.id-1]]; // When User Click on specific menu, copy on that's Sub.
         setSub(temp); // Select the submenu
         props.id === now ? setNow(0) : setNow(e.target.id); // if it's already open status, just close.
     }
 
-    const subList = sub.map((d, index) => 
+    const subList = sub.map((d, index) : any => 
         <li
             key={index}>
                 {d.icon}
@@ -58,7 +71,7 @@ const Navigator_wrap = styled.div`
 `
 
 const Navigator_sub_wrap = styled.div`
-    display: ${(props) => (props.visible ? 'flex' : 'none')};
+    display: ${(props : visible_type) => (props.visible ? 'flex' : 'none')};
     flex-direction : column;
     position : relative;
 

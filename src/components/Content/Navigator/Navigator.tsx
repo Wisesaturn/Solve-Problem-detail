@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import Profile from './Profile';
 import Navigator_Menu from './Navigator_Menu';
 import Navigator_Stuff from './Navigator_Stuff';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { Sitebar_state, subMenu_focus } from '../../state';
 
-const Navigator = ({visible}) => {
-    const [push, setPush] = useRecoilState(Sitebar_state);
+const Navigator = () => {
+    const push = useRecoilValue(Sitebar_state);
     const [focus, setFocus] = useRecoilState(subMenu_focus);
     useEffect(() => { setFocus(0) }, [push]);
 

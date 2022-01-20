@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { stuffMenu, search_active } from '../../state';
 import { useRecoilState } from 'recoil';
 
-const Navigator_Stuff = (props) => {
+type props_type = {
+    content : string,
+    Click : boolean | string
+}
+
+const Navigator_Stuff = (props : props_type) => {
     const content_filter = stuffMenu.filter(d => d.key === props.content);
     const [active, setActive] = useRecoilState(search_active);
 

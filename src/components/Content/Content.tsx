@@ -1,15 +1,11 @@
 import React from 'react';
 import Navigator from './Navigator/Navigator';
 import Data from './Data';
-import { useRecoilValue } from 'recoil';
-import { Sitebar_state } from '../state';
 
 function Content() {
-    const check = useRecoilValue(Sitebar_state);
-
     return (
         <div className="Content">
-            <Navigator visible={false ? { check } : undefined} />
+            <Navigator />
             <Data />
         </div>
     );

@@ -5,10 +5,10 @@ import { useRecoilValue } from 'recoil';
 import { AiOutlineEnter } from 'react-icons/ai'
 
 const Search_area = () => {
-    const active = useRecoilValue(search_active);
+    const active = useRecoilValue<boolean | null>(search_active);
 
     return (
-        <Search_area_wrap active={active}>
+        <Search_area_wrap<any> active={active}>
             <input type="text" placeholder="검색어를 입력하세요"></input>
             <AiOutlineEnter id="enter"/>
         </Search_area_wrap>
@@ -16,13 +16,13 @@ const Search_area = () => {
 }
 
 const Search_area_wrap = styled.div`
-    display : ${ (props) => props.active ? 'flex' : 'none' };
+    display : ${ (props : any) => props.active ? 'flex' : 'none' };
     position : relative;
     margin : 0 auto;
     border 1px solid var(--search-border);
     border-radius : 5px;
 
-    animation : ${ (props) => props.active
+    animation : ${ (props : any) => props.active
                         ? 'Search_open .4s ease-out forwards'
                         : 'null' };
     
