@@ -2,7 +2,7 @@
 name: "\U0001F41B [BUG]"
 about: 버그가 발생하였다면 이 템플릿을 사용하세요
 title: "[BUG] "
-labels: 버그
+labels: ''
 assignees: ''
 
 ---

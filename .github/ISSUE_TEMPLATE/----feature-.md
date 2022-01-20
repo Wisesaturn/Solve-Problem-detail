@@ -2,7 +2,7 @@
 name: "\U0001F47B [FEATURE]"
 about: 새로운 목표나 기능이 있다면 이 템플릿을 사용하세요.
 title: "[FEATURE]"
-labels: 새로운 기능
+labels: ''
 assignees: ''
 
 ---
