@@ -11,7 +11,7 @@ function App({ Component, pageProps }: AppProps) {
         <RecoilRoot>
             <Provider>
                 <Header />
-                <Component {...pageProps} />
+                <Component {...pageProps}  />
                 <Footer />
             </Provider>
         </RecoilRoot>
