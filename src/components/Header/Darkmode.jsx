@@ -2,7 +2,6 @@ import React from 'react';
 import { darkMode_state } from '../state';
 import { useRecoilState } from 'recoil';
 
-
 const DarkMode_button = () => {
     const [check, setCheck] = useRecoilState(darkMode_state);
 
