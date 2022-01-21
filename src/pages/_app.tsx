@@ -10,14 +10,14 @@ import { RecoilRoot } from 'recoil'
 function App({ Component, pageProps }: AppProps) {
     return (
         <RecoilRoot>
-            <Head>
+            <Provider>
+                <Head>
                 <title>재한쓰의 공부용 블로그 😊</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            </Head>
-            <Provider>
-                <Header />
-                <Component {...pageProps} />
-                <Footer />
+                </Head>
+                    <Header />
+                    <Component {...pageProps} />
+                    <Footer />
             </Provider>
         </RecoilRoot>
     )

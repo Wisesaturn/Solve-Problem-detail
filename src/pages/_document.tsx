@@ -36,6 +36,9 @@ import { ServerStyleSheet } from 'styled-components'
       return (
         <Html>
           <Head>
+            <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
+            <link rel="apple-touch-icon-precomposed" href="public/favicon.ico" />
+
             {/* insert meta tag for SEO */}
               {/* default meta */}
               <meta name="generator" content="React, NextJS, Typescript" />
