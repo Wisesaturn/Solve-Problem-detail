@@ -34,7 +34,35 @@ import { ServerStyleSheet } from 'styled-components'
       return (
         <Html>
           <Head>
-            <meta charSet="utf-8" />
+            {/* insert meta tag for SEO */}
+              {/* default meta */}
+              <meta name="generator" content="React, NextJS, Typescript" />
+              <meta name="author" content="Wisesaturn" />
+              <meta name="keywords" content="블로그, 프로그래밍, React, NextJS, Typescript, 깃허브, 깃허브블로그, Github, 송재한" />
+              <meta name="description" content="공부 및 문제풀이 기록용입니다." />
+              <meta http-equiv="Content-Scription-Type" content="text/javascription" />
+              <meta http-equiv="Page-Enter" content="RevealTrans(Duration=10, Transition=50)" />
+              <meta http-equiv="Page-Exit" content="RevealTrans(Duration=10, Transition=50)" />
+              <meta name="Robots" content="ALL" />
+              <meta http-equiv="Imagetoolbar" content="no" />
+
+              {/* default meta (open graph) */}
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content="http://wisesaturn.github.io/study-blog" />
+              <meta property="og:title" content="재한쓰의 공부용 블로그 😃" />
+              <meta property="og:image" content="/resource/ob-image/main.png" />
+              <meta property="og:description" content="공부 및 문제풀이 기록용입니다." />
+              <meta property="og:locale" content="ko_KR" />
+              <meta property="og:image:width" content="1200" />
+              <meta property="og:image:height" content="630" />
+
+              {/* twitter meta (open graph) */}
+              <meta name="twitter:card" content="summary" />
+              <meta name="twitter:url" content="http://wisesaturn.github.io/study-blog" />
+              <meta name="twitter:title" content="재한쓰의 공부용 블로그 😃" />
+              <meta name="twitter:description" content="공부 및 문제풀이 기록용입니다." />
+              <meta name="twitter:image" content="/resource/ob-image/main.png" />
+            {/* meta tag Ended */}
           </Head>
           <body>
               <Main />
