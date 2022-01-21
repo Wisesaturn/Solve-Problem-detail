@@ -4,6 +4,6 @@ const ErrorPages = () => {
             404 Pages
 
         </>
-    );
-};
+    )
+}
 export default ErrorPages

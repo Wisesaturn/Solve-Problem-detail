@@ -1,13 +1,13 @@
-import React from 'react';
-import { darkMode_state } from '../../components/state';
-import { useRecoilValue } from 'recoil';
-import Content from '../../components/Content/Content';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import Modal from '../../components/Modal';
+import Content from '../../components/Content/Content'
+import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
+import Modal from '../../components/Modal'
+import React from 'react'
+import { darkMode_state } from '../../components/state'
+import { useRecoilValue } from 'recoil'
 
 const Layout = () => {
-    const check: boolean = useRecoilValue(darkMode_state);
+    const check: boolean = useRecoilValue(darkMode_state)
 
     return (
         <>
@@ -18,7 +18,7 @@ const Layout = () => {
             </div>
             <Modal className="Modal" visible={false} /> 
         </>  
-    );
+    )
 }
 
-export default Layout;
+export default Layout

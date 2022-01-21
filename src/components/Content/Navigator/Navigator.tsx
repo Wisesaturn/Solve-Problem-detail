@@ -8,7 +8,7 @@ import { Sitebar_state, subMenu_focus } from '../../state';
 const Navigator = () => {
     const push = useRecoilValue(Sitebar_state);
     const [focus, setFocus] = useRecoilState(subMenu_focus);
-    useEffect(() => { setFocus(0) }, [push]);
+    useEffect(() => { setFocus(0) }, [push]); // Navigator를 끌 때 초기화용
 
     return (
         <div className={`${push ? 'Navigator_all_wrap' : 'Navigator_all_wrap_off'}`} >

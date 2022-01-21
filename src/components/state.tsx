@@ -1,10 +1,10 @@
-import { atom } from 'recoil';
-import { BsSearch } from 'react-icons/bs';
-import { AiFillHome } from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/ai'
+import { BsSearch } from 'react-icons/bs'
+import { atom } from 'recoil'
 
 const ModalMessage = atom({
     key: 'ModalMessage',
-    default: "기본 메세지 입니다. 😁"
+    default: '기본 메세지 입니다. 😁',
 })
 
 const Sitebar_state = atom({
@@ -20,12 +20,12 @@ const darkMode_state = atom({
 const stuffMenu = [
     {
         key : 'Home',
-        icon : <AiFillHome />
+        icon : <AiFillHome />,
     },
     {
         key : 'Search',
-        icon : <BsSearch />
-    }
+        icon : <BsSearch />,
+    },
 ]
 
 const subMenu = [
@@ -33,70 +33,70 @@ const subMenu = [
         {
             title: '서브메뉴 1',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 2',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 3',
             path: '/',
-            icon: "",
-        }
+            icon: '',
+        },
     ],
     [
         {
             title: '서브메뉴 4',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 5',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 6',
             path: '/',
-            icon: "",
-        }
+            icon: '',
+        },
     ],
     [
         {
             title: '서브메뉴 7',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 8',
             path: '/',
-            icon: "",
+            icon: '',
         },
         {
             title: '서브메뉴 9',
             path: '/',
-            icon: "",
-        }
+            icon: '',
+        },
     ],
 ]
 
 const subMenu_focus = atom({
     key : 'subMenu_focus',
-    default : 0
-});
+    default : 0,
+})
 
 const search_active = atom({
     key: 'search_active',
-    default: false
-});
+    default: false,
+})
 
-const Home = "http://wisesaturn.github.io/study-blog";
-const Link_Github = "https://github.com/Wisesaturn";
-const Link_Naver = "https://blog.naver.com/rfv1479";
-const Link_Instagram = "https://www.instagram.com/songjh_97/";
-const Link_Email = "rfv1479@gmail.com";
+const Home = 'http://wisesaturn.github.io/study-blog'
+const Link_Github = 'https://github.com/Wisesaturn'
+const Link_Naver = 'https://blog.naver.com/rfv1479'
+const Link_Instagram = 'https://www.instagram.com/songjh_97/'
+const Link_Email = 'rfv1479@gmail.com'
 
 export { Home, search_active, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu, stuffMenu }
 export { Link_Github, Link_Naver, Link_Instagram, Link_Email }

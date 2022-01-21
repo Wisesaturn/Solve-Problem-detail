@@ -12,6 +12,3 @@ function Content() {
 }
 
 export default Content;
-
-// attribute 오류 수정
-// 그냥 visible={check}로 넣으면 type이 안 정해져 있어서 오류 남!

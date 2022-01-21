@@ -9,7 +9,7 @@ type props_type = {
 }
 
 const Navigator_Stuff = (props : props_type) => {
-    const content_filter = stuffMenu.filter(d => d.key === props.content);
+    const content_filter = stuffMenu.filter(d => d.key === props.content); // state 데이터 속 key와 Component로 받은 content를 비교하여 데이터 filter
     const [active, setActive] = useRecoilState(search_active);
 
     const Click = () => { 

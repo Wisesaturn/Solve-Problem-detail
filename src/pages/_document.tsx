@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -29,6 +28,9 @@ import { ServerStyleSheet } from 'styled-components'
         sheet.seal()
       }
     }
+    // Next에서 styled-components를 사용하다보면 css가 적용되기 전에 먼저 html이 적용되거나 혹은 아예 적용이 안되는 경우가 있습니다.
+    // 이 경우 _document.js에서 직접 css를 SSR 방식으로 넣어주는 방식으로 해결할 수 있습니다.
+    // 즉, SSR 단계에서 스타일링을 내려주면 되면 해결됩니다.
 
     render() {
       return (

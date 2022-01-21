@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const main_content = () => {
     return (
@@ -48,6 +48,6 @@ const main_content = () => {
             </div>
         </div>
     )
-};
+}
 
-export default main_content;
+export default main_content

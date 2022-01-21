@@ -1,26 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link_Github, Link_Email } from '../../state';
-import { AiOutlineMail, AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineMail } from 'react-icons/ai'
+import { Link_Email, Link_Github } from '../../state'
+import React from 'react'
+import styled from 'styled-components'
 
 const Profile = () => {
     return (
-        <Profile_wrap>
-            <Picture_area />
-            <Content_area>
+        <ProfileWrap>
+            <PictureArea />
+            <ContentArea>
                 <p id="title">송재한</p>
                 <p id="content">재한쓰의 공부용 블로그 😃</p>
-                <Navi_Link_area>
+                <NaviLinkArea>
                     <a href={Link_Github}><AiFillGithub size="28" /></a>
                     <a href={Link_Email}><AiOutlineMail size="28" /></a>
-                </Navi_Link_area>
-            </Content_area>
-        </Profile_wrap>
+                </NaviLinkArea>
+            </ContentArea>
+        </ProfileWrap>
 
-    );
+    )
 }
 
-const Navi_Link_area = styled.div`
+const NaviLinkArea = styled.div`
     display : block;
     padding : .5rem 1.5rem;
     > a { 
@@ -32,7 +32,7 @@ const Navi_Link_area = styled.div`
     }
 `
 
-const Profile_wrap = styled.div`
+const ProfileWrap = styled.div`
     display : block;
     background-color : var(--profile-bg);
     height : 22rem;
@@ -40,7 +40,7 @@ const Profile_wrap = styled.div`
     box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
 `
 
-const Picture_area = styled.div`
+const PictureArea = styled.div`
     position : relative;
     display : inherit;
     width : 13rem;
@@ -59,7 +59,7 @@ const Picture_area = styled.div`
     transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
 `
 
-const Content_area = styled.div`
+const ContentArea = styled.div`
     display : block;
     > p {
         padding : .5rem 1.5rem;
@@ -70,4 +70,4 @@ const Content_area = styled.div`
     }
 `
 
-export default Profile;
+export default Profile

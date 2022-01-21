@@ -1,21 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
-import { search_active } from '../state';
-import { useRecoilValue } from 'recoil';
 import { AiOutlineEnter } from 'react-icons/ai'
+import React from 'react'
+import { search_active } from '../state'
+import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 
 const Search_area = () => {
-    const active = useRecoilValue<boolean | null>(search_active);
+    const active = useRecoilValue<boolean | null>(search_active)
 
     return (
-        <Search_area_wrap<any> active={active}>
+        <SearchAreaWrap<any> active={active}>
             <input type="text" placeholder="검색어를 입력하세요"></input>
             <AiOutlineEnter id="enter"/>
-        </Search_area_wrap>
+        </SearchAreaWrap>
     )
 }
 
-const Search_area_wrap = styled.div`
+const SearchAreaWrap = styled.div`
     display : ${ (props : any) => props.active ? 'flex' : 'none' };
     position : relative;
     margin : 0 auto;
@@ -43,4 +43,4 @@ const Search_area_wrap = styled.div`
     }
 `
 
-export default Search_area;
+export default Search_area

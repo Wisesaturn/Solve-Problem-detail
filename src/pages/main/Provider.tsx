@@ -6,6 +6,7 @@ export default ({ children } : any) => {
     const [prevent, setPrevent] = React.useState(false);
     const check = useRecoilValue(darkMode_state);
 
+    // useEffect안에서 동작하는 데이터는 SSR되지 않는 점을 이용, 화면 상태 체크
     React.useEffect(() => {
         setPrevent(true);
     }, []);

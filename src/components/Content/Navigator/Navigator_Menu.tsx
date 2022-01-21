@@ -1,7 +1,7 @@
-import React, { useState, useEffect, MouseEventHandler } from 'react';
-import { useRecoilState } from 'recoil';
-import styled from 'styled-components';
-import { subMenu, subMenu_focus } from '../../state';
+import React, { useEffect, useState } from 'react'
+import { subMenu, subMenu_focus } from '../../state'
+import styled from 'styled-components'
+import { useRecoilState } from 'recoil'
 
 type visible_type = {
     visible : boolean
@@ -17,15 +17,15 @@ type e_type = {
 }
 
 const Navigator_Menu = (props : props_type) => {
-    const menu = [...subMenu]; // subMenu Swallow Copy
-    const [sub, setSub] = useState([]); // extract loction
-    const [focus, setFocus] = useState(false); // Is this active?
-    const [now, setNow] = useRecoilState(subMenu_focus); // What's actually active.
+    const menu = [...subMenu] // subMenu Swallow Copy
+    const [sub, setSub] = useState([]) // extract loction
+    const [focus, setFocus] = useState(false) // Is this active?
+    const [now, setNow] = useRecoilState(subMenu_focus) // What's actually active.
 
     const onClick = (e: e_type) => {   
-        let temp = [...menu[e.target.id-1]]; // When User Click on specific menu, copy on that's Sub.
-        setSub(temp); // Select the submenu
-        props.id === now ? setNow(0) : setNow(e.target.id); // if it's already open status, just close.
+        let temp = [...menu[e.target.id-1]] // When User Click on specific menu, copy on that's Sub.
+        setSub(temp) // Select the submenu
+        props.id === now ? setNow(0) : setNow(e.target.id) // if it's already open status, just close.
     }
 
     const subList = sub.map((d, index) : any => 
@@ -33,23 +33,23 @@ const Navigator_Menu = (props : props_type) => {
             key={index}>
                 {d.icon}
                 <span>{d.title}</span>
-        </li>
-    ); // Use map, make the <li> tags using menu array.
+        </li>,
+    ) // Use map, make the <li> tags using menu array.
 
-    useEffect( () => { (props.id === now ? setFocus(true) : setFocus(false)) },[now]);
+    useEffect(() => { (props.id === now ? setFocus(true) : setFocus(false)) }, [now])
     // detect when User click on other menu.
 
     return (
-        <Navigator_wrap>
+        <NavigatorWrap>
                 <li onClick={onClick} id={props.id}> {props.content} </li>
-            <Navigator_sub_wrap visible={focus} id={props.id}>
+            <NavigatorSubWrap visible={focus} id={props.id}>
                 {subList}
-            </Navigator_sub_wrap>
-        </Navigator_wrap>
-    );
+            </NavigatorSubWrap>
+        </NavigatorWrap>
+    )
 }
 
-const Navigator_wrap = styled.div`
+const NavigatorWrap = styled.div`
     display : flex;
     flex-direction : column;
     text-decoration : none;
@@ -70,7 +70,7 @@ const Navigator_wrap = styled.div`
     }
 `
 
-const Navigator_sub_wrap = styled.div`
+const NavigatorSubWrap = styled.div`
     display: ${(props : visible_type) => (props.visible ? 'flex' : 'none')};
     flex-direction : column;
     position : relative;
@@ -87,4 +87,4 @@ const Navigator_sub_wrap = styled.div`
     }
 `
 
-export default Navigator_Menu;
+export default Navigator_Menu

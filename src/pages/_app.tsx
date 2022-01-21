@@ -1,11 +1,11 @@
-import React from 'react';
-import { AppProps } from 'next/app';
-import { RecoilRoot } from 'recoil';
-import '../css/App.scss';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import Provider from './main/Provider';
-import Head from 'next/head';
+import '../css/App.scss'
+import { AppProps } from 'next/app'
+import Footer from '../components/Footer/Footer'
+import Head from 'next/head'
+import Header from '../components/Header/Header'
+import Provider from './main/Provider'
+import React from 'react'
+import { RecoilRoot } from 'recoil'
 
 function App({ Component, pageProps }: AppProps) {
     return (
@@ -20,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
                 <Footer />
             </Provider>
         </RecoilRoot>
-    );
+    )
 }
 
 export default App

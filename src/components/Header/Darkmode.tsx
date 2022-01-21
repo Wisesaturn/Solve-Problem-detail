@@ -1,9 +1,9 @@
-import React from 'react';
-import { darkMode_state } from '../state';
-import { useRecoilState } from 'recoil';
+import React from 'react'
+import { darkMode_state } from '../state'
+import { useRecoilState } from 'recoil'
 
 const DarkMode_button = () => {
-    const [check, setCheck] = useRecoilState(darkMode_state);
+    const [check, setCheck] = useRecoilState(darkMode_state)
 
     return (
         <>
@@ -12,7 +12,7 @@ const DarkMode_button = () => {
                 <span className="Switch_row"/>
             </label>
         </>
-    );
+    )
 }
 
-export default DarkMode_button;
+export default DarkMode_button

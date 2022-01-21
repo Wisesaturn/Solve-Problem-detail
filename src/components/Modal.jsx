@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { RiCheckboxCircleFill } from 'react-icons/ri';
-import { ModalMessage } from './state';
+import { ModalMessage } from './state'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { RiCheckboxCircleFill } from 'react-icons/ri'
+import styled from 'styled-components'
+import { useRecoilState } from 'recoil'
 
 function Modal({ className, visible }) {
-    const [Message, setMessage] = useRecoilState(ModalMessage);
+    const [Message, setMessage] = useRecoilState(ModalMessage)
 
     return (
         <>

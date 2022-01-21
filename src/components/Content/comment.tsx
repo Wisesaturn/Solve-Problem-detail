@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const comment = () => {
     return (
@@ -9,6 +9,6 @@ const comment = () => {
             😁
         </div>
     )
-};
+}
 
-export default comment;
+export default comment

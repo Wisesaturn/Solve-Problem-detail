@@ -1,8 +1,10 @@
-{
-    "presets": [
+const env = require('./env-config')
+
+module.exports = {
+    presets: [
         "next/babel"
     ],
-    "plugins": [
+    plugins: [
         [
             "styled-components",
             {

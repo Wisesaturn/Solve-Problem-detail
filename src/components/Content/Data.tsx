@@ -1,18 +1,18 @@
-import React from 'react';
-import Title from './title';
-import Main_content from './main-content';
-import Comment from './comment';
-import Search_area from './Search_area';
+import Comment from './comment'
+import MainContent from './main-content'
+import React from 'react'
+import SearchArea from './Search_area'
+import Title from './title'
 
 const Data = () => {
      return (
          <div className="Data">
-             <Search_area />
+             <SearchArea />
              <Title />
-             <Main_content />
+             <MainContent />
              <Comment />
          </div>
-     );
+     )
 }
 
-export default Data;
+export default Data
