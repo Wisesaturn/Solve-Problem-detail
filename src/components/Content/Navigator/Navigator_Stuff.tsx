@@ -14,7 +14,7 @@ const Navigator_Stuff = (props: props_type) => {
 
     const Click = () => {
         props.Click === 'Search' ? setActive(!active)
-            : props.Click === 'Home' ? setActive(false) : setActive(null)
+            : props.Click === 'Home' ? setActive(false) : setActive(false)
         
     }
 

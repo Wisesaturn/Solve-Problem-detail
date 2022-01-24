@@ -20,10 +20,12 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "dev": "next dev",
-    "start": "next start",
+    "dev": "cross-env NODE_ENV=development next dev",
+    "start": "cross-env NODE_ENV=production next start",
+    "start:dev": "cross-env NODE_ENV=development next start",
     "export": "next export",
-    "build": "npm run predeploy && next build",
+    "build": "cross-env NODE_ENV=production next build",
+    "build:dev": "cross-env NODE_ENV=devlopment next build",
     "predeploy": "rd /s /q \".next/cache\"",
     "deploy": "npm run build && git config --global core.autocrlf true && npm run export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy :: Revise Pages (Next.js Environment)\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages && rd /s /q \"out\""
   },
@@ -53,6 +55,9 @@
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "babel-plugin-styled-components": "^2.0.2",
+    "cross-env": "^7.0.3",
+    "dotenv-webpack": "^7.0.3",
+    "env-cmd": "^10.1.0",
     "eslint": "^8.7.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",

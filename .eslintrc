@@ -7,12 +7,20 @@
     "eslint:recommended",
     "plugin:@next/next/recommended"
   ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "es6": true
+    },
   "plugins": [
+    "@typescript-eslint",
     "react-hooks",
     "simple-import-sort",
     "prettier"
   ],
   "rules": {
+    "no-unused-vars": "warn",
     "prettier/prettier": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off",

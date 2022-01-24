@@ -36,8 +36,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
-          <link rel="apple-touch-icon-precomposed" href="public/favicon.ico" />
+          <link rel="icon" href="favicon.ico" type="image/x-icon" />
+          <link rel="apple-touch-icon-precomposed" href="favicon.ico" />
 
           {/* insert meta tag for SEO */}
           {/* default meta */}
@@ -45,11 +45,11 @@ class MyDocument extends Document {
           <meta name="author" content="Wisesaturn" />
           <meta name="keywords" content="블로그, 프로그래밍, React, NextJS, Typescript, 깃허브, 깃허브블로그, Github, 송재한" />
           <meta name="description" content="공부 및 문제풀이 기록용입니다." />
-          <meta http-equiv="Content-Scription-Type" content="text/javascription" />
-          <meta http-equiv="Page-Enter" content="RevealTrans(Duration=10, Transition=50)" />
-          <meta http-equiv="Page-Exit" content="RevealTrans(Duration=10, Transition=50)" />
+          <meta httpEquiv="Content-Scription-Type" content="text/javascription" />
+          <meta httpEquiv="Page-Enter" content="RevealTrans(Duration=10, Transition=50)" />
+          <meta httpEquiv="Page-Exit" content="RevealTrans(Duration=10, Transition=50)" />
           <meta name="Robots" content="ALL" />
-          <meta http-equiv="Imagetoolbar" content="no" />
+          <meta httpEquiv="Imagetoolbar" content="no" />
 
           {/* default meta (open graph) */}
           <meta property="og:type" content="website" />
