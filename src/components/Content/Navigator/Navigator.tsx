@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react'
 import { SitebarState, subMenuFocus } from '../../state'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import NavigatorMenu from './Navigator_Menu'
 import NavigatorStuff from './Navigator_Stuff'
 import Profile from './Profile'
 
-const Navigator = () => {
+interface Nprops {
+    content : string
+}
+
+const Navigator = (props: Nprops) => {
     const push = useRecoilValue(SitebarState)
-    const [focus, setFocus] = useRecoilState(subMenuFocus)
-    useEffect(() => { setFocus(0); console.log(focus) }, [push]) // Navigator를 끌 때 초기화용
+    const setFocus = useSetRecoilState(subMenuFocus)
+    useEffect(() => { setFocus(0) }, [push]) // Navigator를 끌 때 초기화용
 
     return (
         <div className={`${push ? 'Navigator_all_wrap' : 'Navigator_all_wrap_off'}`} >

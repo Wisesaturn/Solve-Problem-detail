@@ -1,6 +1,10 @@
 import React from 'react'
 
-const title = () => {
+interface Tprops {
+    content : string
+}
+
+const title = (props: Tprops) => {
     return (
         <div className="title_wrap">
             <div className="Category">

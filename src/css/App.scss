@@ -38,6 +38,7 @@
 		--profile-picture-bg: #374d44;
 		--profile-picture-shadow: #23352c;
 		--search-border: #999;
+		--Error-ft: rgb(214, 106, 106);
 	}
 
 	.light {
@@ -70,6 +71,7 @@
 		--profile-picture-bg: #7bb197;
 		--profile-picture-shadow: #85b39c;
 		--search-border: #7bb197;
+		--Error-ft: rgb(165, 54, 54);
 	}
 }
 
@@ -174,14 +176,7 @@ body {
 // Menu CSS Ended --------------------
 // Header CSS Ended @@@@@@@@@@@@@@@@@
 
-// Content CSS @@@@@@@@@@@@@@@@@@@@@@
-.Content {
-	display: flex;
-	flex: 1;
-	height: calc(100vh - (60px + 80px + 80px));
-	padding: 1.6rem 12rem;
-}
-
+// Content CSS @@@@@@@@@@@@@@@@@@@@@
 // Navigator CSS ------------------
 .Navigator_all_wrap {
 	animation: Navigator 0.3s ease-out forwards;
@@ -209,84 +204,6 @@ body {
 }
 // Navigator CSS Ended ------------
 
-// Data CSS -----------------------
-.Data {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem 2rem;
-	width: 97%;
-	overflow-y: auto;
-	overflow-x: hidden;
-	white-space: pre-wrap;
-
-	&::-webkit-scrollbar {
-		width: 8px;
-
-		&-thumb {
-			background-color: var(--scrollbar);
-			border-radius: 3px;
-			box-shadow: 0px 0px 2px 1px inset var(--scrollbar-bg);
-		}
-
-		&-track {
-			background-color: var(--scrollbar-bg);
-		}
-	}
-
-	> .title_wrap,
-	.comment,
-	.main_content_wrap {
-		width: inherit;
-		border-bottom: 1px solid var(--bottom-line);
-		padding: 1.6rem 0.8rem;
-	}
-
-	> .title_wrap {
-		> .Category {
-			padding: 0 0 1rem;
-			> a {
-				text-decoration: none;
-				color: inherit;
-			}
-		}
-		> .title {
-			display: flex;
-			justify-content: space-between;
-			font-size: 28px;
-			font-weight: bold;
-			color: var(--content-ft);
-			> .Date {
-				margin-top: auto;
-				font-size: 16px;
-				font-weight: normal;
-				color: var(--normal-ft);
-			}
-		}
-	}
-
-	> .main_content_wrap {
-		line-height: 32px;
-		> .Tag {
-			display: flex;
-			padding: 0.6rem;
-
-			> .Tag_Title,
-			.Tag_List {
-				margin: 0.6rem;
-				padding: 0.3rem;
-			}
-			> .Tag_Title {
-				color: var(--normal-bg);
-				background-color: var(--normal-ft);
-			}
-		}
-	}
-
-	> .comment {
-		font-size: 16px;
-	}
-}
-// Data CSS Ended ----------------------
 // Content CSS Ended @@@@@@@@@@@@@@@@@@@@@
 
 // Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@

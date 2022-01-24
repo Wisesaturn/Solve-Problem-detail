@@ -4,9 +4,13 @@ import { searchActive } from '../state'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
 
-const Search_area = () => {
-    const active = useRecoilValue<boolean | null>(searchActive)
+interface Sprops {
+    content : string
+}
 
+const Search_area = (props: Sprops) => {
+    const active = useRecoilValue<boolean | null>(searchActive)
+    
     return (
         <SearchAreaWrap<any> active={active}>
             <input type="text" placeholder="검색어를 입력하세요"></input>
@@ -16,6 +20,7 @@ const Search_area = () => {
 }
 
 const SearchAreaWrap = styled.div`
+// SearchArea CSS ---------------------------
     display : ${(props: any) => props.active ? 'flex' : 'none'};
     position : relative;
     margin : 0 auto;

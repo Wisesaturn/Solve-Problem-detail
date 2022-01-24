@@ -1,11 +1,16 @@
+import Content from '../components/Content/Content'
 import React from 'react'
+import styled from 'styled-components'
 
-const ErrorPages = () => {
+const ErrorPages = (): React.ReactElement => {
     return (
-        <>
-            404 Pages
-
-        </>
+        <Error404>
+            <Content content="404" />
+        </Error404>
     )
 }
 export default ErrorPages
+
+const Error404 = styled.div`
+    display : block;
+`

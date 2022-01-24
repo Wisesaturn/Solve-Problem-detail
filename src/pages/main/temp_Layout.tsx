@@ -13,7 +13,7 @@ const Layout = () => {
         <>
             <div id="App" className={`${check ? 'dark' : 'light'}`}>
                 <Header />
-                <Content />
+                <Content content="main" />
                 <Footer />
             </div>
             <Modal className="Modal" visible={false} />

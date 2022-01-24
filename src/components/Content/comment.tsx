@@ -1,6 +1,10 @@
 import React from 'react'
 
-const comment = () => {
+interface commentProps {
+    content : string
+}
+
+const comment = (props: commentProps) => {
     return (
         <div className="comment">
             여기에가다 댓글을 답니다.<br />

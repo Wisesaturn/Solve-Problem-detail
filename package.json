@@ -71,7 +71,8 @@
     "gh-pages": "^3.2.3",
     "prettier": "^2.5.1",
     "react-app": "^1.1.2",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5",
+    "typescript-styled-plugin": "^0.18.2"
   },
   "description": "+ 이 곳은 저의 **공부 및 문제풀이용 블로그**입니다.\r + 앞으로 여러 가지 내용들을 넣을 예정입니다! 😊  \r ---\r ## 💻 코딩테스트 문제풀이 모음집 해설\r + ` Code `  내용을 보실려면 ['문제풀이'](https://github.com/Wisesaturn/Solve-Problem \"재한쓰의 코딩테스트 문제풀이 모음집\")를 이용해주세요.\r ---\r ### 🤗 Page Update Log (2021-01-03 ~ )\r + **기본 틀 제작 및 HTML 학습** *(2022-01-03 ~ 2022-01-04)*   \r   + **HTML, CSS, JS**를 다시 복습하는 동안 *React, Bootstrap, SASS(SCSS)* 개념을 공부했다. 👀    \r <br>",
   "main": "index.js",
