@@ -1,6 +1,6 @@
-import React from 'react';
-import Navigator from './Navigator/Navigator';
-import Data from './Data';
+import Data from './Data'
+import Navigator from './Navigator/Navigator'
+import React from 'react'
 
 function Content() {
     return (
@@ -8,7 +8,7 @@ function Content() {
             <Navigator />
             <Data />
         </div>
-    );
+    )
 }
 
-export default Content;
+export default Content

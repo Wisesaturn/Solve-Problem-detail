@@ -1,11 +1,11 @@
-import { Home, Sitebar_state } from '../state'
+import { Home, SitebarState } from '../state'
 import { HiOutlineViewList } from 'react-icons/hi'
 import Menu from './Menu'
 import React from 'react'
 import { useRecoilState } from 'recoil'
 
 function Header() {
-    const [push, setPush] = useRecoilState(Sitebar_state)
+    const [push, setPush] = useRecoilState(SitebarState)
 
     const Sitebar_button = () => {
         setPush(!push) // 'Sitebar_button' 함수가 다 끝나고 작동

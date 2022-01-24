@@ -7,6 +7,7 @@ import { useRecoilState } from 'recoil'
 
 function Modal({ className, visible }) {
     const [Message, setMessage] = useRecoilState(ModalMessage)
+    setMessage('ee') // 임시용
 
     return (
         <>

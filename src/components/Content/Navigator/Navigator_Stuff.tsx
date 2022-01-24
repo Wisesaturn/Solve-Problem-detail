@@ -1,31 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
-import { stuffMenu, search_active } from '../../state';
-import { useRecoilState } from 'recoil';
+import { searchActive, stuffMenu } from '../../state'
+import React from 'react'
+import styled from 'styled-components'
+import { useRecoilState } from 'recoil'
 
 type props_type = {
-    content : string,
-    Click : boolean | string
+    content: string,
+    Click: boolean | string
 }
 
-const Navigator_Stuff = (props : props_type) => {
-    const content_filter = stuffMenu.filter(d => d.key === props.content); // state 데이터 속 key와 Component로 받은 content를 비교하여 데이터 filter
-    const [active, setActive] = useRecoilState(search_active);
+const Navigator_Stuff = (props: props_type) => {
+    const content_filter = stuffMenu.filter(d => d.key === props.content) // state 데이터 속 key와 Component로 받은 content를 비교하여 데이터 filter
+    const [active, setActive] = useRecoilState(searchActive)
 
-    const Click = () => { 
-        props.Click === "Search" ? setActive(!active)
-            : props.Click === "Home" ? setActive(false) : setActive(null);
-        ;
+    const Click = () => {
+        props.Click === 'Search' ? setActive(!active)
+            : props.Click === 'Home' ? setActive(false) : setActive(null)
+        
     }
 
     return (
-        <Stuff_wrap onClick={Click}>
+        <StuffWrap onClick={Click}>
             {content_filter[0].icon}
-        </Stuff_wrap>
-    );
+        </StuffWrap>
+    )
 }
 
-const Stuff_wrap = styled.div`
+const StuffWrap = styled.div`
     position : relative;
     left : 0;
     width : 4rem;
@@ -52,6 +52,5 @@ const Stuff_wrap = styled.div`
         animation : Stuff_hover_active ease-out forwards;
     }
 `
-
 
 export default Navigator_Stuff

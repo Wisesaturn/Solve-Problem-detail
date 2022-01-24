@@ -4,7 +4,7 @@ const title = () => {
     return (
         <div className="title_wrap">
             <div className="Category">
-                <a href="#">Home</a> / <a href="#">Menu</a> / <a href="#">Content</a>
+                <a href="Home">Home</a> / <a href="Menu">Menu</a> / <a href="Content">Content</a>
             </div>
             <div className="title">
                 제목입니다.

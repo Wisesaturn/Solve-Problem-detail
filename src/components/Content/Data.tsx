@@ -5,14 +5,14 @@ import SearchArea from './Search_area'
 import Title from './title'
 
 const Data = () => {
-     return (
-         <div className="Data">
-             <SearchArea />
-             <Title />
-             <MainContent />
-             <Comment />
-         </div>
-     )
+    return (
+        <div className="Data">
+            <SearchArea />
+            <Title />
+            <MainContent />
+            <Comment />
+        </div>
+    )
 }
 
 export default Data

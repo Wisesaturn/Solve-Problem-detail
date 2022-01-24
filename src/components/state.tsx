@@ -7,24 +7,24 @@ const ModalMessage = atom({
     default: '기본 메세지 입니다. 😁',
 })
 
-const Sitebar_state = atom({
+const SitebarState = atom({
     key: 'Sitebar_state',
     default: false,
 })
 
-const darkMode_state = atom({
+const darkModeState = atom({
     key: 'darkMode_state',
     default: true,
 })
 
 const stuffMenu = [
     {
-        key : 'Home',
-        icon : <AiFillHome />,
+        key: 'Home',
+        icon: <AiFillHome />,
     },
     {
-        key : 'Search',
-        icon : <BsSearch />,
+        key: 'Search',
+        icon: <BsSearch />,
     },
 ]
 
@@ -82,12 +82,12 @@ const subMenu = [
     ],
 ]
 
-const subMenu_focus = atom({
-    key : 'subMenu_focus',
-    default : 0,
+const subMenuFocus = atom({
+    key: 'subMenu_focus',
+    default: 0,
 })
 
-const search_active = atom({
+const searchActive = atom({
     key: 'search_active',
     default: false,
 })
@@ -98,5 +98,5 @@ const Link_Naver = 'https://blog.naver.com/rfv1479'
 const Link_Instagram = 'https://www.instagram.com/songjh_97/'
 const Link_Email = 'rfv1479@gmail.com'
 
-export { Home, search_active, ModalMessage, Sitebar_state, darkMode_state, subMenu_focus, subMenu, stuffMenu }
+export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu, stuffMenu }
 export { Link_Github, Link_Naver, Link_Instagram, Link_Email }

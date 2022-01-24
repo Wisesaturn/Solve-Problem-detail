@@ -1,38 +1,38 @@
 import React, { useEffect, useState } from 'react'
-import { subMenu, subMenu_focus } from '../../state'
+import { subMenu, subMenuFocus } from '../../state'
 import styled from 'styled-components'
 import { useRecoilState } from 'recoil'
 
 type visible_type = {
-    visible : boolean
+    visible: boolean
 }
 
 type props_type = {
-    content : string,
-    id : any
+    content: string,
+    id: any
 }
 
 type e_type = {
     target: any
 }
 
-const Navigator_Menu = (props : props_type) => {
+const Navigator_Menu = (props: props_type) => {
     const menu = [...subMenu] // subMenu Swallow Copy
     const [sub, setSub] = useState([]) // extract loction
     const [focus, setFocus] = useState(false) // Is this active?
-    const [now, setNow] = useRecoilState(subMenu_focus) // What's actually active.
+    const [now, setNow] = useRecoilState(subMenuFocus) // What's actually active.
 
-    const onClick = (e: e_type) => {   
-        let temp = [...menu[e.target.id-1]] // When User Click on specific menu, copy on that's Sub.
+    const onClick = (e: e_type) => {
+        let temp = [...menu[e.target.id - 1]] // When User Click on specific menu, copy on that's Sub.
         setSub(temp) // Select the submenu
         props.id === now ? setNow(0) : setNow(e.target.id) // if it's already open status, just close.
     }
 
-    const subList = sub.map((d, index) : any => 
+    const subList = sub.map((d, index): any =>
         <li
             key={index}>
-                {d.icon}
-                <span>{d.title}</span>
+            {d.icon}
+            <span>{d.title}</span>
         </li>,
     ) // Use map, make the <li> tags using menu array.
 
@@ -41,7 +41,7 @@ const Navigator_Menu = (props : props_type) => {
 
     return (
         <NavigatorWrap>
-                <li onClick={onClick} id={props.id}> {props.content} </li>
+            <li onClick={onClick} id={props.id}> {props.content} </li>
             <NavigatorSubWrap visible={focus} id={props.id}>
                 {subList}
             </NavigatorSubWrap>
@@ -71,7 +71,7 @@ const NavigatorWrap = styled.div`
 `
 
 const NavigatorSubWrap = styled.div`
-    display: ${(props : visible_type) => (props.visible ? 'flex' : 'none')};
+    display: ${(props: visible_type) => (props.visible ? 'flex' : 'none')};
     flex-direction : column;
     position : relative;
 

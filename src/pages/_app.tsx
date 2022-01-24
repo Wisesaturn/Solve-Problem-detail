@@ -12,12 +12,12 @@ function App({ Component, pageProps }: AppProps) {
         <RecoilRoot>
             <Provider>
                 <Head>
-                <title>재한쓰의 공부용 블로그 😊</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <title>재한쓰의 공부용 블로그 😊</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 </Head>
-                    <Header />
-                    <Component {...pageProps} />
-                    <Footer />
+                <Header />
+                <Component {...pageProps} />
+                <Footer />
             </Provider>
         </RecoilRoot>
     )
