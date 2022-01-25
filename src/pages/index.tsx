@@ -4,7 +4,7 @@ import React from 'react'
 const IndexPage = () => {
     return (
         <>
-            <Content />
+            <Content content="index"/>
         </>
     )
 }

@@ -12,9 +12,9 @@ const Show_Error = (props: Eprops) => {
     return (
         <ShowErrorWrap content={ErrorContent}>
             <MdOutlineError className="icon"/>
-            <p>404 Pages</p>
-            <p id="sub">잘못된 접근입니다.</p>
-            <p id="back">(( 뒤로가기 버튼 ))</p>
+                <p>Page Not Found</p>
+                <p id="sub">페이지를 찾을 수 없습니다. 😂</p>
+                <p id="back">(( 뒤로가기 버튼 ))</p>
         </ShowErrorWrap>
     )
 }

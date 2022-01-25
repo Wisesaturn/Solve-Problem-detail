@@ -1,4 +1,4 @@
-import '../css/App.scss'
+import '../../public/App.scss'
 import { AppProps } from 'next/app'
 import Footer from '../components/Footer/Footer'
 import Head from 'next/head'

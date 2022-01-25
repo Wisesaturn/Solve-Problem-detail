@@ -9,7 +9,7 @@ interface Sprops {
 }
 
 const Search_area = (props: Sprops) => {
-    const active = useRecoilValue<boolean | null>(searchActive)
+    const active = useRecoilValue<boolean | null>(searchActive) // Did you Push the Search Button?
     
     return (
         <SearchAreaWrap<any> active={active}>
@@ -24,7 +24,7 @@ const SearchAreaWrap = styled.div`
     display : ${(props: any) => props.active ? 'flex' : 'none'};
     position : relative;
     margin : 0 auto;
-    border 1px solid var(--search-border);
+    border : 1px solid var(--search-border);
     border-radius : 5px;
 
     animation : ${(props: any) => props.active

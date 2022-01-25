@@ -6,17 +6,26 @@ import { useRecoilState } from 'recoil'
 const DarkMode_button = () => {
     const [check, setCheck] = useRecoilState(darkModeState)
 
+    const confirm = () => {
+        setCheck(localStorage.getItem('Darkmode') === 'true' ? false : true)
+        // 값이 변할 때 (스위치를 눌렀을 때) Boolean 값 전환
+        localStorage.setItem('Darkmode', check === true ? 'false' : 'true')
+        // localStorage에서도 Boolean 값 전환 (check === true로 조건을 보는 이유는 setCheck는 confirm 함수가 끝날 때 적용이 된다)
+    }
+
     return (
         <>
             <DarkmodeButton>
                 <label className="DarkMode_button">
-                    <input type="checkbox" defaultChecked onClick={() => { setCheck(!check) }} />
+                    <input type="checkbox" checked={check} onChange={confirm} />
                     <span className="Switch_row" />
                 </label>
             </DarkmodeButton>
         </>
     )
 }
+
+// 메모 : onChange = { (e) => confirm(e) } 한 후, const confirm = ({target})을 통해 타겟을 불러올 수 있음 (타입스크립트 오류 방지)
 
 const DarkmodeButton = styled.div`
 // Darkmode CSS ----------------------

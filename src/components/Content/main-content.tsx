@@ -8,6 +8,7 @@ interface Mprops {
 const main_content = (props: Mprops) => {
     return (
         <MainContentWrap>
+            <>
             게시물 내용입니다.<br/>
             <br/>
             <br/>
@@ -19,6 +20,7 @@ const main_content = (props: Mprops) => {
             <br/><br/>
             <br/><br/>
             <br/>
+            </>
             <div className="Tag">
                 <div className="Tag_Title">Tags</div>
                 <div className="Tag_List">List 1</div>
