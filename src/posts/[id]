@@ -1,0 +1,38 @@
+/*
+import MDLoader_Path from '../components/MdLoader'
+import { MDLoader_PostData } from '../components/MdLoader'
+
+const Posts = ({ postData }) => {
+    return (
+        <>
+            {postData.title}
+            <br />
+            {postData.id}
+            <br />
+            {postData.date}
+        </>
+    )
+}
+
+export const getStaticPaths = async () => {
+    const paths = MDLoader_Path()
+
+    return {
+        paths,
+        fallback : false,
+        // fallback이 false라면 이 함수 안에서 반환되지 않은 path는 404 페이지를 반환한다.
+    }
+}
+
+export const getStaticProps = async ({ params }) => {
+    const postData = MDLoader_PostData(params.id)
+    
+    return {
+        props: {
+            postData,
+        },
+    }
+}
+
+export default Posts
+*/
