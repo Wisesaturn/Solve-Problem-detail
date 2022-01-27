@@ -1,4 +1,3 @@
-/*
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -12,7 +11,8 @@ interface Post_type {
     date?: string
 }
 
-const MDLoader_List = () => {
+// 날짜별로 게시물을 정리해놓는 함수 (default) ---------------------
+const MDLoader_Sort = () => {
     const fileNames = fs.readdirSync(postsDir)
     // '현재 작업 Directory/posts' = postsDir의 경로를 읽어옵니다. (readdirSync : 동기 함수)
     const allPostsData = fileNames.map(fileName => {
@@ -38,6 +38,7 @@ const MDLoader_List = () => {
     })
 }
 
+// 각 'md'파일 별로 Post될 Data를 가져오는 함수 ----------------
 export const MDLoader_PostData = (id : string) => {
     const fullPath = path.join(postsDir, `${id}.md`)
         // postsDir 경로에 가서 'id'에 해당하는 path를 가져옵니다.
@@ -52,6 +53,8 @@ export const MDLoader_PostData = (id : string) => {
     } // id와 matterResult의 data를 합칩니다.
 }
 
+// (( 'md파일'을 추가하면 동적으로 페이지를 생성해주는 역할 ))
+// FileName을 Path를 이용하여 parameter로 저장해 놓는 함수 ---------------------
 export const MDLoader_Path = () => {
     const fileNames = fs.readdirSync(postsDir)
 
@@ -65,5 +68,4 @@ export const MDLoader_Path = () => {
     })
 }
 
-export default MDLoader_List
-*/
+export default MDLoader_Sort

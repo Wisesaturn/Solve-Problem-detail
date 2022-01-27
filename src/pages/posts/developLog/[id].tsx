@@ -1,6 +1,5 @@
-/*
-import MDLoader_Path from '../components/MdLoader'
-import { MDLoader_PostData } from '../components/MdLoader'
+import { MDLoader_Path, MDLoader_PostData } from '../../../components/MdLoader'
+import React from 'react'
 
 const Posts = ({ postData }) => {
     return (
@@ -35,4 +34,3 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default Posts
-*/

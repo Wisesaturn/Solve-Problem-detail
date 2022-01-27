@@ -3,7 +3,7 @@ import { AppProps } from 'next/app'
 import Footer from '../components/Footer/Footer'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
-import Provider from './main/Provider'
+import Provider from './provider'
 import React from 'react'
 import { RecoilRoot } from 'recoil'
 
