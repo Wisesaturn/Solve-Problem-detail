@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 interface Tprops {
@@ -9,7 +8,7 @@ const title = (props: Tprops) => {
     return (
         <div className="title_wrap">
             <div className="Category">
-                <Link href="/Home">Home</Link> / <Link href="/Menu">Menu</Link> / <Link href="/Content">Content</Link>
+                카데고리 영역입니다.
             </div>
             <div className="title">
                 제목입니다.

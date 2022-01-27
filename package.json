@@ -60,6 +60,7 @@
     "@typescript-eslint/parser": "^5.10.0",
     "babel-plugin-styled-components": "^2.0.2",
     "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
     "dotenv-webpack": "^7.0.3",
     "env-cmd": "^10.1.0",
     "eslint": "^8.7.0",
@@ -82,8 +83,11 @@
     "react-app": "^1.1.2",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-react": "^9.0.1",
     "typescript": "^4.5.5",
-    "typescript-styled-plugin": "^0.18.2"
+    "typescript-styled-plugin": "^0.18.2",
+    "unified": "^10.1.1"
   },
   "description": "+ 이 곳은 저의 **공부 및 문제풀이용 블로그**입니다.\r + 앞으로 여러 가지 내용들을 넣을 예정입니다! 😊  \r ---\r ## 💻 코딩테스트 문제풀이 모음집 해설\r + ` Code `  내용을 보실려면 ['문제풀이'](https://github.com/Wisesaturn/Solve-Problem \"재한쓰의 코딩테스트 문제풀이 모음집\")를 이용해주세요.\r ---\r ### 🤗 Page Update Log (2021-01-03 ~ )\r + **기본 틀 제작 및 HTML 학습** *(2022-01-03 ~ 2022-01-04)*   \r   + **HTML, CSS, JS**를 다시 복습하는 동안 *React, Bootstrap, SASS(SCSS)* 개념을 공부했다. 👀    \r <br>",
   "main": "index.tsx",

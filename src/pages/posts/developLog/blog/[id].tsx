@@ -1,4 +1,5 @@
 import { MDLoader_Path, MDLoader_PostData } from '../../../../components/MdLoader'
+import Date from '../../../../components/Date'
 import React from 'react'
 
 const Posts = ({ postData }) => {
@@ -8,7 +9,9 @@ const Posts = ({ postData }) => {
             <br />
             {postData.id}
             <br />
-            {postData.date}
+            <Date dateString={postData.date} /> 
+            <br />
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
         </>
     )
 }
@@ -24,7 +27,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const postData = MDLoader_PostData(params.id)
+    const postData = await MDLoader_PostData(params.id)
     
     return {
         props: {

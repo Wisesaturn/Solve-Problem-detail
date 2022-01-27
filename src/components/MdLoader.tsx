@@ -1,6 +1,9 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+import remarkHtml from 'remark-html'
+import remarkParse from 'remark-parse'
+import { unified } from 'unified'
 
 const postsDir = path.join(process.cwd(), 'src/pages/posts/developLog/blog')
 // process.cwd() : 현재 작업 Directory 반환
@@ -43,14 +46,23 @@ export const MDLoader_PostData = async (id : string) => {
     const fullPath = path.join(postsDir, `${id}.md`)
         // postsDir 경로에 가서 'id'에 해당하는 path를 가져옵니다.
     const fullContents = fs.readFileSync(fullPath, 'utf8')
-    // fullpath에 대한하는 파일을 'utf8' 형식을 통해 내용을 읽어옵니다. (readFileSync : 동기 함수)
+    // fullpath에 해당하는 파일을 'utf8' 형식을 통해 내용을 읽어옵니다. (readFileSync : 동기 함수)
     const matterResult = matter(fullContents)
     // 'gray-matter'의 'matter'를 사용하여 post할 data의 section를 파싱(parse)합니다.
+    
+    const processedContent = await unified()
+        .use(remarkParse)
+        .use(remarkHtml)
+        .process(matterResult.content)
+    // remark 라이브러리를 이용하여 md 파일(matterResult에 저장된 내용)을 HTML 값으로 변환해줍니다.
+    const contentHTML = processedContent.toString()
+    // HTML 값으로 받아온 데이터를 string 값으로 변환합니다.
 
     return {
         id,
+        contentHTML,
         ...matterResult.data,
-    } // id와 matterResult의 data를 합칩니다.
+    } // id와 contentHTML, matterResult의 data를 합칩니다.
 }
 
 // (( 'md파일'을 추가하면 동적으로 페이지를 생성해주는 역할 ))

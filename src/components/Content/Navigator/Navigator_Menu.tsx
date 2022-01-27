@@ -9,8 +9,9 @@ type visible_type = {
 }
 
 type props_type = {
-    content: string,
+    content: string
     id: any
+    subLink? : string
 }
 
 type e_type = {
@@ -30,7 +31,7 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <Link href={d.path}>
+        <Link href={`/posts/[subLink]/${d.path}`} as={`posts/${props.subLink}/${d.path}`}>
             <li
                 key={index}>
                 {d.icon}
@@ -43,8 +44,8 @@ const Navigator_Menu = (props: props_type) => {
     // detect when User click on other menu.
 
     return (
-        <NavigatorWrap>
-            <li onClick={onClick} id={props.id}> {props.content} </li>
+        <NavigatorWrap>      
+                <li onClick={onClick} id={props.id}> {props.content} </li>
             <NavigatorSubWrap visible={focus} id={props.id}>
                 {subList}
             </NavigatorSubWrap>

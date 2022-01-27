@@ -46,7 +46,7 @@ const subMenu = [
     [
         {
             title: 'Blog',
-            path: 'posts/developLog/blog',
+            path: '/blog',
             icon: '',
         },
     ],
