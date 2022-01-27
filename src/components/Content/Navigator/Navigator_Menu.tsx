@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { subMenu, subMenuFocus } from '../../state'
+import Link from 'next/Link'
 import styled from 'styled-components'
 import { useRecoilState } from 'recoil'
 
@@ -29,11 +30,13 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <li
-            key={index}>
-            {d.icon}
-            <span>{d.title}</span>
-        </li>,
+        <Link href={d.path}>
+            <li
+                key={index}>
+                {d.icon}
+                <span>{d.title}</span>
+            </li>
+        </Link>,
     ) // Use map, make the <li> tags using menu array.
 
     useEffect(() => { (props.id === now ? setFocus(true) : setFocus(false)) }, [now])

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { SitebarState, subMenuFocus } from '../../state'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
+import Link from 'next/Link'
 import NavigatorMenu from './Navigator_Menu'
 import NavigatorStuff from './Navigator_Stuff'
 import Profile from './Profile'
@@ -17,17 +18,20 @@ const Navigator = (props: Nprops) => {
     return (
         <div className={`${push ? 'Navigator_all_wrap' : 'Navigator_all_wrap_off'}`} >
             <div className="Navigator_stuff_wrap" >
-                <NavigatorStuff content="Home" Click="Home" />
+                <Link href="/"><NavigatorStuff content="Home" Click="Home" /></Link>
                 <NavigatorStuff content="Search" Click="Search" />
             </div>
             <div className="Navigator_wrap">
                 <Profile />
-                <NavigatorMenu content="메뉴1" id="1" />
-                <NavigatorMenu content="메뉴2" id="2" />
-                <NavigatorMenu content="메뉴3" id="3" />
+                <NavigatorMenu content="기록" id="3" />
             </div>
         </div>
     )
 }
 
 export default Navigator
+
+/* 보류
+                <NavigatorMenu content="코딩테스트" id="1" />
+                <NavigatorMenu content="공부" id="2" /> 
+*/

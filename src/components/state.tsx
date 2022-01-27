@@ -31,52 +31,22 @@ const stuffMenu = [
 const subMenu = [
     [
         {
-            title: '서브메뉴 1',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 2',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 3',
-            path: '/',
+            title: '프로그래머스',
+            path: '/programmers',
             icon: '',
         },
     ],
     [
         {
-            title: '서브메뉴 4',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 5',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 6',
-            path: '/',
+            title: 'Unity',
+            path: '/unity',
             icon: '',
         },
     ],
     [
         {
-            title: '서브메뉴 7',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 8',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 9',
-            path: '/',
+            title: 'Blog',
+            path: 'posts/developLog/blog',
             icon: '',
         },
     ],

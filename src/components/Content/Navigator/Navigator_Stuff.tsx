@@ -13,8 +13,11 @@ const Navigator_Stuff = (props: props_type) => {
     const [active, setActive] = useRecoilState(searchActive)
 
     const Click = () => {
-        props.Click === 'Search' ? setActive(!active)
-            : props.Click === 'Home' ? setActive(false) : setActive(false)
+        props.Click === 'Search'
+            ? setActive(!active)
+            : props.Click === 'Home'
+                ? setActive(false)
+                : setActive(false)
         
     }
 

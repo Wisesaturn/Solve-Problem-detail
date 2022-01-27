@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.2"
   },
   "browser": {
-    "fs" : false
+    "fs": false
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev",
@@ -80,6 +80,8 @@
     "path": "^0.12.7",
     "prettier": "^2.5.1",
     "react-app": "^1.1.2",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
     "typescript": "^4.5.5",
     "typescript-styled-plugin": "^0.18.2"
   },
