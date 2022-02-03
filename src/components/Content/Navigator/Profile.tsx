@@ -48,7 +48,7 @@ const PictureArea = styled.div`
     margin : 1rem;
     
     background-color : none;
-    background-image : url(resource/Profile-zepeto.png);
+    background-image : url(/resource/Profile-zepeto.png);
     background-position : center;
     background-size : 13rem;
     background-color : var(--profile-picture-bg);

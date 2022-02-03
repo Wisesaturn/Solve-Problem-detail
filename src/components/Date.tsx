@@ -1,9 +1,16 @@
 import { format, parseISO } from 'date-fns'
 
-const Date = ({ dateString }) => {
-    const date = parseISO(dateString)
+interface Date_Type {
+    dateString : string,
+    theme : string
+}
 
-    return <time dateTime={dateString}>{format(date, 'MM/dd, yyyy')} </time>
+const Date = ({ dateString, theme } : Date_Type) => {
+    const date = parseISO(dateString)
+    if (theme === 'category')
+     { return <time dateTime={dateString}>{format(date, 'MM/dd, yyyy')} </time> }
+    else if (theme === 'post')
+     { return <time dateTime={dateString}>{format(date, 'yyyy-MM-dd hh:mm')} </time> }
 }
 
 export default Date

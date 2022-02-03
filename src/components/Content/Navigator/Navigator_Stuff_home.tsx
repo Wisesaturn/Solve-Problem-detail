@@ -1,32 +1,17 @@
-import { searchActive, stuffMenu } from '../../state'
+import { AiFillHome } from 'react-icons/ai'
+import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
-import { useRecoilState } from 'recoil'
 
-type props_type = {
-    content: string,
-    Click: boolean | string
-}
-
-const Navigator_Stuff = (props: props_type) => {
-    const content_filter = stuffMenu.filter(d => d.key === props.content) // state 데이터 속 key와 Component로 받은 content를 비교하여 데이터 filter
-    const [active, setActive] = useRecoilState(searchActive)
-
-    const Click = () => {
-        props.Click === 'Search'
-            ? setActive(!active)
-            : props.Click === 'Home'
-                ? setActive(false)
-                : setActive(false)
-        
-    }
-
+const Navigator_Stuff = () => {
     return (
-        <StuffWrap onClick={Click}>
-            {content_filter[0].icon}
+        <StuffWrap>
+            <Link href='/' passHref>
+                <AiFillHome />
+            </Link>
         </StuffWrap>
     )
-}
+} // passHref : 자식에게 강제로 'href' props 전달
 
 const StuffWrap = styled.div`
     position : relative;

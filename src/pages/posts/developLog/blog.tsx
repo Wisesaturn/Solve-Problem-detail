@@ -1,29 +1,51 @@
-import Link from 'next/Link'
-import MDLoader_Sort from '../../../components/MdLoader'
+import Category from '../../../components/Category'
+import Layout from '../../../components/Content/contentLayout'
+import MDLoader_Sort from '../../../components/MDLoader/MdLoader_blog'
 import React from 'react'
+import styled from 'styled-components'
 
-const categoriesPage = ({ allPostsData }) => {
+interface D_Type {
+    id : string,
+    date : string,
+    categories : string,
+    detail? : string,
+    title : string,
+}
+
+const categoryBlog = ({ allPostsData }) => {
     return (
-        <>
-            카테고리 페이지 입니다.
-            {allPostsData.map ((Data) => {
-                return (
-                    <Link href="/posts/developLog/blog/[Data.id]" as={`/posts/developLog/blog/${Data.id}`}>
-                        <p>
-                            {Data.title}
-                            <br />
-                            {Data.id}
-                            <br />
-                            {Data.categories}
-                            <br/>
-                        </p>
-                    </Link>
-                )
-            })}
-        </>
+        <Layout>
+            <DataWrap>
+                <h2>Blog</h2>
+                <ul>
+                    {allPostsData.map ((Data: D_Type)  => {
+                        return <Category key={Data.id} Data={Data} whatPage='developLog/blog'/>
+                    })}
+                </ul>
+            </DataWrap>
+        </Layout>
     )
 }
-export default categoriesPage
+
+// CSS ---------------------------------------------
+const DataWrap = styled.div`
+    margin : 0rem 1rem;
+
+    h2 {  // 카테고리 제목
+        font-size : 2rem;
+        margin-bottom : 1rem;
+        padding : 1rem 3rem;
+        display: block;
+        justify-content: space-between;
+        font-weight: bold;
+        color: var(--content-ft);
+        border-bottom : .5px solid var(--bottom-line);
+    }
+
+    ul { list-style : none; }
+`
+
+export default categoryBlog
 
 // HTML Build 할 때 props를 불러옵니다.
 export const getStaticProps = async () => {

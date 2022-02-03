@@ -11,7 +11,6 @@ type visible_type = {
 type props_type = {
     content: string
     id: any
-    subLink? : string
 }
 
 type e_type = {
@@ -31,7 +30,7 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <Link href={`/posts/[subLink]/${d.path}`} as={`posts/${props.subLink}/${d.path}`}>
+        <Link href={`${d.path}`} as={`${d.path}`}>
             <li
                 key={index}>
                 {d.icon}

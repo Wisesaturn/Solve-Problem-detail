@@ -39,6 +39,8 @@
 		--profile-picture-shadow: #23352c;
 		--search-border: #999;
 		--Error-ft: rgb(214, 106, 106);
+		--category-bg: #0c2017;
+		--category-hover: #383d3b;
 	}
 
 	.light {
@@ -72,10 +74,13 @@
 		--profile-picture-shadow: #85b39c;
 		--search-border: #7bb197;
 		--Error-ft: rgb(165, 54, 54);
+		--category-bg: #b3e9cf;
+		--category-hover: #d9e9e1;
 	}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
 
 * {
 	padding: 0;
@@ -203,7 +208,121 @@ body {
 	display: none;
 }
 // Navigator CSS Ended ------------
+.contentWrap {
+	// content layout 용
+	display: flex;
+	flex: 1;
+	height: calc(100vh - (25px + 80px + 80px));
+	padding: 1.6rem 12rem;
+}
 
+.dataWrap {
+	//data Layout 용
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 0 1.6rem 1.6rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	white-space: pre-wrap;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+
+		&-thumb {
+			background-color: var(--scrollbar);
+			border-radius: 3px;
+			box-shadow: 0px 0px 2px 1px inset var(--scrollbar-bg);
+		}
+
+		&-track {
+			background-color: var(--scrollbar-bg);
+		}
+	}
+}
+
+// 내용 폰트 CSS --------------------------------------------------
+.content {
+	// 공통 CSS
+	pre {
+		// ``` { 내용 } ```
+		padding: 1rem 1.5rem;
+		margin: 0 1.6rem;
+		border-radius: 5px;
+		code {
+			// {코드 내용}ㄴ
+			font-size: 14px;
+			font-family: 'Hack', monospace;
+			font-weight: bold;
+		}
+	}
+
+	h1 {
+		// # {내용}
+		font-size: 2rem;
+		color: var(--content-ft);
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h2 {
+		font-size: 1.6rem;
+		color: var(--content-ft);
+		padding: 0.8rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h3 {
+		font-size: 1.2rem;
+		padding-top: 0.6rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+		padding-top: 0.6rem;
+	}
+
+	blockquote > p,
+	blockquote {
+		// > {내용}
+		font-size: 14px;
+		font-family: 'Hack', monospace;
+		font-weight: normal;
+		padding: 0.2rem 0;
+		padding-left: 0.6rem;
+		display: flex;
+		flex-direction: column;
+		border-radius: 3px;
+	}
+}
+
+#dark {
+	// 'Dark' 모드일 때
+	pre {
+		// ``` {내용} ```
+		background-color: #344d40;
+	}
+
+	blockquote {
+		// 인용구
+		border-left: 7px solid #9fb1a8;
+	}
+
+	p > code {
+		// 글자 배경색
+		background-color: #435f51;
+		padding: 0.1rem 0.6rem;
+		border-radius: 3px;
+	}
+}
+
+#light {
+	// 'light' 모드일 때
+	pre {
+		background-color: #abcebe;
+	}
+}
+// 내용 폰트 CSS 끝 -----------------------------------------------
 // Content CSS Ended @@@@@@@@@@@@@@@@@@@@@
 
 // Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@

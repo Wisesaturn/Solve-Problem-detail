@@ -4,11 +4,7 @@ import { searchActive } from '../state'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
 
-interface Sprops {
-    content : string
-}
-
-const Search_area = (props: Sprops) => {
+const Search_area = () => {
     const active = useRecoilValue<boolean | null>(searchActive) // Did you Push the Search Button?
     
     return (

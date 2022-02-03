@@ -1,22 +1,11 @@
-import Content from '../../src/components/Content/Content'
-import MDLoader_Sort from '../components/MdLoader'
+import Layout from '../components/Content/contentLayout'
 import React from 'react'
 
-const IndexPage = ({ allPostsData }) => {
+const IndexPage = () => {
     return (
-        <>
-            <Content content="Index" /> 
-        </>
+        <Layout>
+                첫페이지입니다.
+        </Layout>
     )
 }
 export default IndexPage
-
-export const MDLoader_GetPosts = async () => {
-    const allPostsData = MDLoader_Sort()
-
-    return {
-        props: {
-            allPostsData,
-        },
-    }
-}

@@ -45,7 +45,7 @@ const DarkmodeButton = styled.div`
                 background-color: var(--darkMode-dark-bg);
                 box-shadow: 0px 0px 2px var(--darkMode-dark-sh) inset;
                 &:before {
-                    background-image: url(resource/moon.png);
+                    background-image: url(/resource/moon.png);
                     background-color: var(--darkMode-dark-toggle-bg);
                     box-shadow: none;
                     -webkit-transform: translateX(1.6rem);
@@ -75,7 +75,7 @@ const DarkmodeButton = styled.div`
             width: 1.5rem;
             top: -13.5px;
 
-            background-image: url(resource/sun.png);
+            background-image: url(/resource/sun.png);
             background-position: center;
             background-color: var(--darkMode-light-toggle-bg);
             background-repeat: no-repeat;

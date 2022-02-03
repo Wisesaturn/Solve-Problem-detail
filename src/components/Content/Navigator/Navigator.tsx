@@ -2,14 +2,11 @@ import React, { useEffect } from 'react'
 import { SitebarState, subMenuFocus } from '../../state'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import NavigatorMenu from './Navigator_Menu'
-import NavigatorStuff from './Navigator_Stuff'
+import NavigatorStuffHome from './Navigator_Stuff_home'
+import NavigatorStuffSearch from './Navigator_Stuff_search'
 import Profile from './Profile'
 
-interface Nprops {
-    content : string
-}
-
-const Navigator = (props: Nprops) => {
+const Navigator = () => {
     const push = useRecoilValue(SitebarState) // 사이트바 버튼 클릭 상태 확인용
     const setFocus = useSetRecoilState(subMenuFocus) // 열린 목록바 판단용
     useEffect(() => { setFocus(0) }, [push]) // Navigator를 끌 때 초기화용
@@ -17,12 +14,12 @@ const Navigator = (props: Nprops) => {
     return (
         <div className={`${push ? 'Navigator_all_wrap' : 'Navigator_all_wrap_off'}`} >
             <div className="Navigator_stuff_wrap" >
-                <NavigatorStuff content="Home" Click="Home" />
-                <NavigatorStuff content="Search" Click="Search" />
+                <NavigatorStuffHome />
+                <NavigatorStuffSearch />
             </div>
             <div className="Navigator_wrap">
                 <Profile />
-                <NavigatorMenu subLink="developLog" content="기록" id="3" />
+                <NavigatorMenu content="기록" id="3" />
             </div>
         </div>
     )

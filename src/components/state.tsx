@@ -1,5 +1,3 @@
-import { AiFillHome } from 'react-icons/ai'
-import { BsSearch } from 'react-icons/bs'
 import { atom } from 'recoil'
 
 const ModalMessage = atom({
@@ -16,17 +14,6 @@ const darkModeState = atom({
     key: 'darkMode_state',
     default: true,
 })
-
-const stuffMenu = [
-    {
-        key: 'Home',
-        icon: <AiFillHome />,
-    },
-    {
-        key: 'Search',
-        icon: <BsSearch />,
-    },
-]
 
 const subMenu = [
     [
@@ -46,7 +33,7 @@ const subMenu = [
     [
         {
             title: 'Blog',
-            path: '/blog',
+            path: '/posts/developLog/blog',
             icon: '',
         },
     ],
@@ -68,5 +55,5 @@ const Link_Naver = 'https://blog.naver.com/rfv1479'
 const Link_Instagram = 'https://www.instagram.com/songjh_97/'
 const Link_Email = 'rfv1479@gmail.com'
 
-export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu, stuffMenu }
+export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu }
 export { Link_Github, Link_Naver, Link_Instagram, Link_Email }
