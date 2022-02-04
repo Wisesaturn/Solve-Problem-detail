@@ -1,6 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+import remarkGfm from 'remark-gfm'
 import remarkHtml from 'remark-html'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
@@ -15,7 +16,7 @@ interface Post_type {
 }
 
 const detailFilter = (d : string) => {
-    const resultContent = d .replace(/([*_#`>])|(^ )/g, '') // markdown 기호 삭제
+    const resultContent = d .replace(/([*_#`>])|(^ )| {4}|&nbsp;/g, '') // markdown 기호 삭제, 첫문단 첫번째 공백 삭제, tab 키 삭제, &nbsp;(강제 줄바꿈용) 삭제
                             .replace(/[\n]/g, ' ') // 줄바꿈 공백으로 변경
 
     return resultContent
@@ -64,8 +65,10 @@ export const MDLoader_PostData = async (id : string) => {
     
     const processedContent = await unified()
         .use(remarkParse) // metadate 무시 (오로지 내용만)
+        .use(remarkGfm) // 깃허브용 md 파일 형식 추가 (취소선, 표 등의 기능)
         .use(remarkHtml)
         .process(matterResult.content)
+        
     // remark 라이브러리를 이용하여 md 파일(matterResult에 저장된 내용)을 HTML 값으로 변환해줍니다.
     const contentHTML = processedContent.toString()
     // HTML 값으로 받아온 데이터를 string 값으로 변환합니다.

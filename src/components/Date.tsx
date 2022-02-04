@@ -10,7 +10,7 @@ const Date = ({ dateString, theme } : Date_Type) => {
     if (theme === 'category')
      { return <time dateTime={dateString}>{format(date, 'MM/dd, yyyy')} </time> }
     else if (theme === 'post')
-     { return <time dateTime={dateString}>{format(date, 'yyyy-MM-dd hh:mm')} </time> }
+     { return <time dateTime={dateString}>{format(date, 'yyyy-MM-dd HH:mm')} </time> }
 }
 
 export default Date

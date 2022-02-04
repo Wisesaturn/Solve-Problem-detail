@@ -32,18 +32,13 @@ const CateWrap = styled.div`
     display : block;
     padding : .2rem 1.2rem;
 
-    h3 {
-        font-size: 1.4rem;
-        font-size : bold;
-    }
-
-    li {
+    li { // 목록 전체
         padding : 1rem 1rem;
         margin-bottom : .2rem;
         height : 7rem;
         border-bottom : 1px solid var(--bottom-line);
 
-        span {
+        span { // 목록의 설명 영역
             display : -webkit-box;
             padding : .7rem .2rem .1rem;
             text-align : justify;
@@ -53,10 +48,15 @@ const CateWrap = styled.div`
             -webkit-box-orient: vertical;
         }
 
-        > .sub {
+        > .sub { // 목록의 제목 영역
             display : flex;
             align-items : center;
             justify-content : space-between;
+
+                h3 { // 목록의 제목
+                    font-size: 1.4rem;
+                    font-size : bold;
+                }
         }
 
         &:hover {
