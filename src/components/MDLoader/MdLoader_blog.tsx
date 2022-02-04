@@ -16,7 +16,7 @@ interface Post_type {
 }
 
 const detailFilter = (d : string) => {
-    const resultContent = d .replace(/([*_#`>])|(^ )| {4}|&nbsp;/g, '') // markdown 기호 삭제, 첫문단 첫번째 공백 삭제, tab 키 삭제, &nbsp;(강제 줄바꿈용) 삭제
+    const resultContent = d .replace(/([*_#`<>~])|(^ )| {4}|&nbsp;/g, '') // markdown 기호 삭제, 첫문단 첫번째 공백 삭제, tab 키 삭제, &nbsp;(강제 줄바꿈용) 삭제
                             .replace(/[\n]/g, ' ') // 줄바꿈 공백으로 변경
 
     return resultContent

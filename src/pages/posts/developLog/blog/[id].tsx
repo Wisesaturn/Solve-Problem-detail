@@ -1,8 +1,10 @@
 import { MDLoader_Path, MDLoader_PostData } from '../../../../components/MDLoader/MdLoader_blog'
 import Date from '../../../../components/Date'
+import Head from 'next/head'
 import Layout from '../../../../components/Content/contentLayout'
 import Link from 'next/link'
 import React from 'react'
+import Utterance from '../../../../components/utterance'
 import { darkModeState } from '../../../../components/state'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
@@ -13,6 +15,9 @@ const Posts = ({ postData }) => {
 
     return (
         <Layout>
+            <Head>
+                <title>재한쓰의 공부용 블로그 😊 - {postData.id}</title>
+            </Head>
             <Post>
                 <div className="postCategory">
                     <Link href="/">Home</Link> / <Link href={`/posts/${whatPage}`}> blog </Link> / {postData.id}
@@ -22,6 +27,8 @@ const Posts = ({ postData }) => {
                     <span id="date"><Date dateString={postData.date} theme="post" /> </span>
                 </div>
                 <div className="content" id={`${ darkMode ? 'dark' : 'light'}`} dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+                <div className="tag">{postData.tags}</div>
+                <Utterance />
             </Post>
         </Layout>
     )
@@ -29,12 +36,12 @@ const Posts = ({ postData }) => {
 
 const Post = styled.div`
 
-    .postCategory {
+    .postCategory { // 카테고리 영역
         padding : 1.6rem;
         padding-bottom : 0;
         font-size : 14px;
 
-        > a {
+        > a { // 카테고리 링크
             font-size : 14px;
             text-decoration : none;
             color : var(--normal-ft);
@@ -45,20 +52,20 @@ const Post = styled.div`
          }
     }
 
-    .titleArea { 
+    .titleArea { // 타이틀 영역 (제목, 날짜)
         display : flex;
         padding : 1.6rem;
         padding-top : .8rem;
         border-bottom : 2px solid var(--bottom-line);
         justify-content : space-between;
 
-        #title {
+        #title { // 제목 영역
             font-size: 28px;
             font-weight: bold;
             color: var(--content-ft);
         }
 
-        #date, #date>time {
+        #date, #date>time { // 날짜 영역
             font-size: 16px;
             font-weight: normal;
             color: var(--normal-ft);
@@ -66,9 +73,13 @@ const Post = styled.div`
         }
     }
 
-    .content {
+    .content { // 내용
         padding : 1.2rem 1.2rem 0 1.2rem;
         line-height: 1.6rem;
+    }
+
+    .tag { // 태그
+        padding : 1.2rem;
     }
 `
 

@@ -1,4 +1,5 @@
 import Category from '../../../components/Category'
+import Head from 'next/head'
 import Layout from '../../../components/Content/contentLayout'
 import MDLoader_Sort from '../../../components/MDLoader/MdLoader_blog'
 import React from 'react'
@@ -15,6 +16,9 @@ interface D_Type {
 const categoryBlog = ({ allPostsData }) => {
     return (
         <Layout>
+            <Head>
+                <title>재한쓰의 공부용 블로그 😊 - 기록/blog</title>
+            </Head>
             <DataWrap>
                 <h2>Blog</h2>
                 <ul>

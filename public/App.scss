@@ -179,7 +179,7 @@ body {
 }
 
 // Menu CSS Ended --------------------
-// Header CSS Ended @@@@@@@@@@@@@@@@@
+// Header CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Content CSS @@@@@@@@@@@@@@@@@@@@@
 // Navigator CSS ------------------
@@ -308,7 +308,17 @@ body {
 	h4 {
 		// #### {내용}
 		font-size: 1rem;
+		counter-increment: h4;
+		display: list-item;
 		padding-top: 0.8rem;
+	}
+
+	h4::marker {
+		// #### marker
+		display: list-item;
+		content: '#' counter(h4) '  ';
+		color: lightsalmon;
+		font-weight: bold;
 	}
 
 	blockquote > p,
@@ -331,10 +341,20 @@ body {
 	ul,
 	ol {
 		// 목록형
-		line-height: 0.9rem;
-		padding-left: 1.2rem;
-		:nth-child(n) {
-			padding-left: 0.3rem;
+		line-height: 0.5rem;
+		list-style-type: '🔸';
+		padding-inline-start: 1rem;
+		li > p {
+			// 목룍형 속 내용
+			text-indent: 0rem;
+			padding-left: 0.5rem;
+			display: block;
+		}
+		li {
+			// 목록형 (한줄)
+			padding-left: 0.7rem;
+			line-height: 1.2rem;
+			display: list-item;
 		}
 	}
 
@@ -378,7 +398,7 @@ body {
 	}
 }
 // 내용 폰트 CSS 끝 -----------------------------------------------
-// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@
+// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .Footer {
