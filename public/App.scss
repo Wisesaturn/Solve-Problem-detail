@@ -81,11 +81,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+@font-face {
+	font-family: 'Apple';
+	src: url(./resource/fonts/AppleSDGothicNeoB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoEB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
+}
 
 * {
 	padding: 0;
 	margin: 0;
-	font-family: 'Gowun Dodum', sans-serif;
+	font-family: 'Apple';
 	font-size: 18px;
 }
 
@@ -245,6 +253,7 @@ body {
 .content {
 	// CSS 초기화(기본값)
 	line-height: 1.2rem !important;
+	padding: 1.2rem 1.2rem 0 1.2rem;
 	p,
 	ol,
 	ul,
@@ -267,10 +276,11 @@ body {
 		padding: 1rem 1.5rem;
 		margin: 1.2rem 1.6rem;
 		border-radius: 5px;
+		code > span,
 		code {
-			// {코드 내용}
-			font-size: 14px;
-			font-family: 'Hack', monospace;
+			// {코드 내용} (색상 : dark 모드가 default)
+			font-size: 14px !important;
+			font-family: 'Hack', monospace !important;
 			font-weight: bold;
 		}
 	}
@@ -325,7 +335,6 @@ body {
 	blockquote {
 		// > {내용}
 		font-size: 14px;
-		font-family: 'Hack', monospace;
 		font-weight: normal;
 		padding-left: 0.5rem;
 		display: flex;
@@ -386,7 +395,7 @@ body {
 		// ``` {내용} ``` 제외 <code> 태그
 		// 글자 배경색
 		background-color: #435f51;
-		padding: 0.1rem 0.6rem;
+		padding: 0.2rem 0.3rem;
 		border-radius: 3px;
 	}
 }
@@ -394,10 +403,35 @@ body {
 #light {
 	// 'light' 모드일 때
 	pre {
+		// ``` {내용} ```
 		background-color: #abcebe;
+	}
+	blockquote {
+		// 인용구
+		border-left: 7px solid #5e8a73;
+	}
+
+	:not(pre) > code {
+		// ``` {내용} ``` 제외 <code> 태그
+		// 글자 배경색
+		background-color: #a4e2c3;
+		padding: 0.2rem 0.3rem;
+		border-radius: 3px;
 	}
 }
 // 내용 폰트 CSS 끝 -----------------------------------------------
+// Comment CSS ---------------------
+.countComment {
+	:nth-child(2) {
+		display: none;
+	}
+} // 임시 댓글창 없애기
+
+.utterances {
+	max-width: 97% !important;
+}
+// Comment CSS 끝 ------------------
+
 // Content CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@

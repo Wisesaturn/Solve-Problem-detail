@@ -4,6 +4,7 @@ import path from 'path'
 import remarkGfm from 'remark-gfm'
 import remarkHtml from 'remark-html'
 import remarkParse from 'remark-parse'
+import remarkPrism from 'remark-prism'
 import { unified } from 'unified'
 
 const postsDir = path.join(process.cwd(), 'src/pages/posts/developLog/blog')
@@ -66,7 +67,9 @@ export const MDLoader_PostData = async (id : string) => {
     const processedContent = await unified()
         .use(remarkParse) // metadate 무시 (오로지 내용만)
         .use(remarkGfm) // 깃허브용 md 파일 형식 추가 (취소선, 표 등의 기능)
-        .use(remarkHtml)
+        //@ts-ignore (remarkPrism ts 규칙 무시)
+        .use(remarkPrism) // <code>용 highlight
+        .use(remarkHtml, { sanitize: false })
         .process(matterResult.content)
         
     // remark 라이브러리를 이용하여 md 파일(matterResult에 저장된 내용)을 HTML 값으로 변환해줍니다.

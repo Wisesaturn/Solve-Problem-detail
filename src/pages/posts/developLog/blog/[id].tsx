@@ -17,6 +17,7 @@ const Posts = ({ postData }) => {
         <Layout>
             <Head>
                 <title>재한쓰의 공부용 블로그 😊 - {postData.id}</title>
+                
             </Head>
             <Post>
                 <div className="postCategory">
@@ -28,7 +29,7 @@ const Posts = ({ postData }) => {
                 </div>
                 <div className="content" id={`${ darkMode ? 'dark' : 'light'}`} dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
                 <div className="tag">{postData.tags}</div>
-                <Utterance />
+                <div className="countComment"><Utterance /></div>
             </Post>
         </Layout>
     )
@@ -71,11 +72,6 @@ const Post = styled.div`
             color: var(--normal-ft);
             margin-top : auto;
         }
-    }
-
-    .content { // 내용
-        padding : 1.2rem 1.2rem 0 1.2rem;
-        line-height: 1.6rem;
     }
 
     .tag { // 태그

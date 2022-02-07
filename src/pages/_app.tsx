@@ -1,3 +1,4 @@
+import 'prismjs/themes/prism-okaidia.css'
 import '../../public/App.scss'
 import { AppProps } from 'next/app'
 import Footer from '../components/Footer/Footer'
