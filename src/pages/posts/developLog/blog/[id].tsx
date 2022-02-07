@@ -75,7 +75,8 @@ const Post = styled.div`
     }
 
     .tag { // 태그
-        padding : 1.2rem;
+        padding : 1.6rem 1.2rem;
+        border-bottom : 2px solid var(--bottom-line);
     }
 `
 

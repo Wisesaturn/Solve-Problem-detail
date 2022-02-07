@@ -377,15 +377,14 @@ body {
 			color: var(--normal-active);
 		}
 	}
-}
-
-#dark {
-	// 'Dark' 모드일 때
 	pre {
 		// ``` {내용} ```
 		background-color: #344d40;
 	}
+}
 
+#dark {
+	// 'Dark' 모드일 때
 	blockquote {
 		// 인용구
 		border-left: 7px solid #9fb1a8;
@@ -402,10 +401,6 @@ body {
 
 #light {
 	// 'light' 모드일 때
-	pre {
-		// ``` {내용} ```
-		background-color: #abcebe;
-	}
 	blockquote {
 		// 인용구
 		border-left: 7px solid #5e8a73;

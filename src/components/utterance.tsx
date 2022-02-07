@@ -38,7 +38,7 @@ const Utterances = () => {
 }, [themeMode])
 
     return (
-        <div id='post-comments' ref={containerRef} />
+        <div ref={containerRef} />
     )
 }
 // 4. useRef를 이용해 ref를 직접 수정하는 방식
