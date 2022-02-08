@@ -571,3 +571,108 @@ body {
 	}
 }
 // Animation Keyframes Ended @@@@@@@@@@@@@
+
+// media query (반응형) @@@@@@@@@@@@@@@@@
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+	// 태블릿 ~ 노트북
+	.contentWrap {
+		padding: 1.6rem 4rem;
+		flex-direction: column;
+	}
+
+	.Header,
+	.Footer {
+		padding: 0.8rem 4rem;
+	}
+
+	.dataWrap {
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		padding: 0;
+	}
+
+	.Navigator_wrap {
+		flex-direction: row;
+		display: flex;
+	}
+
+	.Navigator_all_wrap {
+		height: 25%;
+		top: -1.5rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	// 모바일 ~ 태블릿
+	.contentWrap {
+		padding: 0;
+		flex-direction: column;
+	}
+
+	.Header,
+	.Footer {
+		padding: 0.6rem;
+	}
+
+	.Footer {
+		font-size: 1px;
+		text-align: justify;
+		padding: 0.6rem 1.2rem;
+
+		.Wrap_SNS {
+			margin-left: auto;
+			align-items: center;
+			justify-content: center;
+			> .SNS {
+				margin: 0 0.8rem;
+				> a > svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+
+	.dataWrap {
+		font-size: 14px;
+		padding: 0;
+		padding-top: 1.4rem;
+	}
+
+	.content {
+		line-height: 0.6rem !important;
+		padding: 1rem 1rem 0 1rem;
+		p {
+			font-size: 16px;
+		}
+
+		h4 {
+			margin-left: 1.4rem;
+		}
+		blockquote > p {
+			overflow-x: auto;
+		}
+	}
+
+	.Navigator_all_wrap {
+		height: 30%;
+		z-index: 5;
+		.Navigator_stuff_wrap {
+			max-width: 10rem;
+			left: 2.5rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.Navigator_all_wrap {
+		height: calc(45% + 2vh);
+		.Navigator_stuff_wrap {
+			max-width: 10rem;
+			left: 1rem;
+		}
+	}
+}
+
+// media query (반응형) 끝 @@@@@@@@@@@@@@@@@

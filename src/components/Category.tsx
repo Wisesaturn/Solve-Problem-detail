@@ -65,6 +65,25 @@ const CateWrap = styled.div`
             background-color : var(--category-hover);
         }
     }
+ 
+    @media only screen and (max-width: 768px) {
+        // 모바일 ~ 태블릿
+        li {
+            padding : .2rem 0;
+            height : 4.8rem;
+
+            span {
+                font-size : .7rem;
+                padding : .7rem .2rem 0;
+            }
+
+            > .sub {
+                h3 {
+                    font-size : 1rem;
+                }
+            }
+        }
+    }
 `
 
 export default Category

@@ -78,6 +78,27 @@ const Post = styled.div`
         padding : 1.6rem 1.2rem;
         border-bottom : 2px solid var(--bottom-line);
     }
+
+    @media only screen and (max-width: 768px) {
+        // 모바일 ~ 태블릿
+        .postCategory {
+            padding : .8rem;
+        }
+
+        .titleArea {
+            padding : .8rem;
+            flex-direction : column;
+
+            #title {
+                font-size : 1.3rem;
+            }
+
+            #date, #date>time { // 날짜 영역
+            font-size: .8rem;
+            margin-top : .3rem;
+        }
+        }
+    }
 `
 
 export const getStaticPaths = async () => {

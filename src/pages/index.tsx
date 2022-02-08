@@ -33,11 +33,10 @@ const IndexPage = () => {
 
     return (
         <BG>
-            <div id="indexNavigator">
+            <div className="indexNavigator">
                 <Navigator />
             </div>
             <Wrap>
-                <Search />
                 <Title>
                     <h2 id='title'>{text}<span>|</span></h2>
                 </Title>
@@ -85,6 +84,7 @@ const IndexPage = () => {
                         </SwiperSlide>
                        </Swiper>
                 </Area>
+                <Search />
             </Wrap>
         </BG>
     )
@@ -97,6 +97,10 @@ const Wrap = styled.div`
     display : flex;
     flex-direction : column;
     padding-bottom : 11rem;
+
+     @media only screen and (min-width: 769px) and (max-width: 1200px) {
+        height : 60%;
+     }    
 `
 
 const BG = styled.div`
@@ -110,8 +114,25 @@ const BG = styled.div`
     background-size : cover;
     background-position : 50% 50%;
 
-    #indexNavigator {
-        height : 90%;
+    @media only screen and (min-width: 769px) and (max-width: 1200px) {
+        flex-direction : column;
+        height : 85%;
+        .indexNavigator {
+            position : absolute;
+            top : 10%;
+            height : 20%;
+            width : 85%;   
+        }
+    }
+
+    @media only screen and (max-width :768px) {
+        flex-direction : column;
+        .indexNavigator {
+            position : absolute;
+            top : 6.5%;
+            display : flex;
+            z-index : 5;
+        }
     }
 `
 

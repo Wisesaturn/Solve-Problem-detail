@@ -47,6 +47,14 @@ const DataWrap = styled.div`
     }
 
     ul { list-style : none; }
+
+    @media only screen and (max-width: 768px) {
+        // 모바일 ~ 태블릿
+        h2 {
+            font-size : 1.4rem;
+            padding : .9rem 0 .3rem;
+        }
+    }
 `
 
 export default categoryBlog

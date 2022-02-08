@@ -30,6 +30,16 @@ const NaviLinkArea = styled.div`
         &:hover { color : var(--normal-after);}
         &:active { color : var(--normal-active);}
     }
+
+    @media only screen and (min-width:769px) and (max-width:1200px) {
+        // 태블릿 ~ 노트북
+        padding : .5rem 1rem;
+    }
+
+    @media only screen and (max-width:768px) {
+        // 모바일 ~ 태블릿
+        text-align : center;
+    }
 `
 
 const ProfileWrap = styled.div`
@@ -38,6 +48,23 @@ const ProfileWrap = styled.div`
     height : 22rem;
     font-weight : bold;
     box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
+
+    @media only screen and (min-width:769px) and (max-width:1200px) {
+        // 태블릿 ~ 노트북
+        height : 9rem;
+        display : flex;
+    }
+
+    @media only screen and (min-width:426px) and (max-width:768px) {
+        // 모바일 ~ 태블릿
+        display : flex;
+        height : 11rem;
+    }
+
+    @media only screen and (max-width:425px) {
+        display : block;
+        height : 18rem;
+    }
 `
 
 const PictureArea = styled.div`
@@ -57,9 +84,27 @@ const PictureArea = styled.div`
     box-shadow : 0px 1px 3px 2px var(--profile-picture-shadow);
 
     transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
+
+    @media only screen and (min-width:769px) and (max-width:1200px) {
+        // 태블릿 ~ 노트북
+        width : 6rem;
+        height : 6rem;
+        background-size : 6rem;
+        margin : .5rem;
+    }
+
+    @media only screen and (max-width:768px) {
+        // 모바일 ~ 태블릿
+        width : 8rem;
+        height : 8rem;
+        background-size : 8rem;
+        margin : 0 auto;
+        top : 1rem;
+    }
 `
 
 const ContentArea = styled.div`
+    position : relative;
     display : block;
     > p {
         padding : .5rem 1.5rem;
@@ -67,6 +112,24 @@ const ContentArea = styled.div`
             font-size : 1.2rem; 
         };
         &#content {font-size : .8rem; };
+    }
+
+    @media only screen and (min-width:769px) and (max-width:1200px) {
+        // 태블릿 ~ 노트북
+        > p {
+            padding : .2rem 1rem;
+        }
+        margin-top : 1rem;
+    }
+
+    @media only screen and (max-width:768px) {
+        // 모바일 ~ 태블릿
+        top : 2rem;
+        right : 4rem;
+        > p {
+            padding : .3rem 1.5rem;
+            text-align : center;
+        }
     }
 `
 

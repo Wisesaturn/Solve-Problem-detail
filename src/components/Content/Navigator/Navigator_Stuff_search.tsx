@@ -41,6 +41,28 @@ const StuffWrap = styled.div`
     &:active {
         animation : Stuff_hover_active ease-out forwards;
     }
+
+     @media only screen and (max-width:768px) {
+         // ~ 태블릿
+        position : relative;
+        z-index : 6;
+        width : 5rem;
+        top : 1rem;
+        animation : none; 
+
+        svg {
+            display : block;
+            margin : 0 auto;
+        }
+        
+        &:hover, &:active {
+            animation : none;
+        }
+
+        &:hover {
+            cursor : pointer;
+        }
+    }
 `
 
 export default Navigator_Stuff
