@@ -284,7 +284,9 @@ body {
 			font-weight: bold;
 		}
 	}
-
+	strong {
+		color: var(--content-ft);
+	}
 	h1,
 	h2,
 	h3,
