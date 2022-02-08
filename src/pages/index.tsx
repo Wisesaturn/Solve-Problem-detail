@@ -1,42 +1,129 @@
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCoverflow } from 'swiper'
 import Image from 'next/image'
-import Layout from '../components/Content/contentLayout'
 import Link from 'next/link'
-import React from 'react'
+import Navigator from '../components/Content/Navigator/Navigator'
 import styled from 'styled-components'
 
+// import required modules
+
 const IndexPage = () => {
+    const typingContent = '재한쓰 스터디 블로그'
+    const [text, setText] = useState('')
+    const [iter, setIter] = useState(0)
+
+    useEffect(() => {
+        const time = setInterval(() => {
+            setText(text + typingContent[iter])
+            setIter(iter + 1)
+        }, 300)
+        if (text.length === typingContent.length) {
+            clearInterval(time)
+        }
+
+        return () => clearInterval(time)
+    })
+    // Title 타이핑용 (useEffect 이용)
+    // 참고 : https://wazacs.tistory.com/35
+
     return (
-        <Layout>
+        <BG>
+            <Wrap>
                 <Title>
-                    <h2>재한쓰 스터디 블로그</h2>
+                    <h2 id='title'>{text}<span>|</span></h2>
                 </Title>
                 <Area>
-                    <Link href='/posts/developLog/blog' passHref>
-                        <div className="box">
-                            <div className="imgbox">
-                                <Image
-                                    src='/resource/photo/write.jpg'
-                                    width='200px'
-                                    height='200px'
-                                    layout='intrinsic' />
+                    <Swiper /* Swiper 설정값 */
+                        effect={'coverflow'}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={'auto'}
+                        spaceBetween={50}
+                        loop={true}
+                        loopedSlides={1}
+                        coverflowEffect={{
+                        rotate: 20,
+                        stretch: 0,
+                        depth: 50,
+                        modifier: 1,
+                        slideShadows: false,
+                        }}
+                        modules={[EffectCoverflow]}
+                        className="mySwiper"
+                        autoplay={{
+                            delay: 1500,
+                            disableOnInteraction :false,
+                        }}
+                    >
+                        {/* 카테고리 - 기록 */}
+                        <SwiperSlide>  {/* Slide Box */}
+                            <div className="swiper-slide">
+                                <Link href='/posts/developLog/blog' passHref>
+                                    <div className="box">
+                                        <div className="imgbox">
+                                            <Image
+                                                src='/resource/photo/write.jpg'
+                                                width='200px'
+                                                height='200px'
+                                                layout='intrinsic' />
+                                        </div>
+                                        <div className="contentBox">
+                                                <h2>Blog<br/><span>기록</span></h2>
+                                        </div>
+                                    </div>
+                                </Link>
                             </div>
-                            <div className="contentBox">
-                                    <h2>Blog<br/><span>기록</span></h2>
-                            </div>
-                        </div>
-                    </Link>
+                        </SwiperSlide>
+                       </Swiper>
                 </Area>
-        </Layout>
+            </Wrap>
+        </BG>
     )
 }
 
+// Swiper 참고 : https://youtu.be/kX6MLRc_Qmg
+
+const Wrap = styled.div`
+    // 세로 정렬용 (flex)
+    display : flex;
+    flex-direction : column;
+`
+
+const BG = styled.div`
+    // 배경사진
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    width : 100%;
+    height : 100%;
+    background : url(/resource/photo/main.jpg) no-repeat;
+    background-size : cover;
+    background-position : 50% 50%;
+    padding-bottom : 11rem;
+`
+
 const Area = styled.div`
+// 슬라이드 영역
 // 참고 : https://youtu.be/RPFfpG0SvV0
     display : flex;
     justify-content : center;
     align-items : center;
     flex-wrap : wrap;
     min-height : 30vh;
+
+    .swiper-slide {
+        display : flex;
+        background-position : center;
+        background-size : cover;
+        width : 300px;
+        height : 300px;
+        -webkit-box-reflect : below 1px linear-gradient(transparent,transparent,#0006);
+    }
 
     .box {
         position : relative;
@@ -149,12 +236,35 @@ const Area = styled.div`
 `
 
 const Title = styled.div`
+// 제목 영역
     display : block;
-    height : 30vh;
+    height : 20vh;
     h2 {
         font-size : 36px;
         text-align : center;
+        color : #222;
         margin-top : 5vh;
+        
+        > span {
+            font-size : 36px;
+            padding-left : 4px;
+            animation : typing 1.4s infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                opacity : 1;
+            }
+            49% {
+                opacity : 1;
+            }
+            50% {
+                opacity : 0;
+            }
+            100% {
+                opacity : 0;
+            }
+        }
     }   
 `
 
