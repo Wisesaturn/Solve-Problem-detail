@@ -31,7 +31,7 @@ const NaviLinkArea = styled.div`
         &:active { color : var(--normal-active);}
     }
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         padding : .5rem 1rem;
     }
@@ -49,19 +49,19 @@ const ProfileWrap = styled.div`
     font-weight : bold;
     box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         height : 9rem;
         display : flex;
     }
 
-    @media only screen and (min-width:426px) and (max-width:768px) {
+    @media only screen and (min-width:651px) and (max-width:768px) {
         // 모바일 ~ 태블릿
         display : flex;
         height : 11rem;
     }
 
-    @media only screen and (max-width:425px) {
+    @media only screen and (max-width:650px) {
         display : block;
         height : 18rem;
     }
@@ -85,7 +85,7 @@ const PictureArea = styled.div`
 
     transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         width : 6rem;
         height : 6rem;
@@ -114,7 +114,7 @@ const ContentArea = styled.div`
         &#content {font-size : .8rem; };
     }
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         > p {
             padding : .2rem 1rem;
@@ -125,11 +125,15 @@ const ContentArea = styled.div`
     @media only screen and (max-width:768px) {
         // 모바일 ~ 태블릿
         top : 2rem;
-        right : 4rem;
+        right : 4vw;
         > p {
             padding : .3rem 1.5rem;
             text-align : center;
         }
+    }
+
+    @media only screen and (max-width:650px) {
+        right : 0;
     }
 `
 

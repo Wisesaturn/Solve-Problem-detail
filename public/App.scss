@@ -573,7 +573,7 @@ body {
 // Animation Keyframes Ended @@@@@@@@@@@@@
 
 // media query (반응형) @@@@@@@@@@@@@@@@@
-@media only screen and (min-width: 769px) and (max-width: 1200px) {
+@media only screen and (min-width: 769px) and (max-width: 1440px) {
 	// 태블릿 ~ 노트북
 	.contentWrap {
 		padding: 1.6rem 4rem;
@@ -665,7 +665,7 @@ body {
 	}
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 650px) {
 	.Navigator_all_wrap {
 		height: calc(45% + 2vh);
 		.Navigator_stuff_wrap {

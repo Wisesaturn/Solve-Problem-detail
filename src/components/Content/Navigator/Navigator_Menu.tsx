@@ -72,7 +72,7 @@ const NavigatorWrap = styled.div`
         > li { animation : Subnav_menu_hover .3s ease-out forwards }
     }
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         flex-direction : row;
         > li {
@@ -102,7 +102,7 @@ const NavigatorSubWrap = styled.div`
         &:active { animation : Subnav_active .3s ease-out forwards }
     }
 
-    @media only screen and (min-width:769px) and (max-width:1200px) {
+    @media only screen and (min-width:769px) and (max-width:1440px) {
         // 태블릿 ~ 노트북
         flex-direction : row;
         > li {

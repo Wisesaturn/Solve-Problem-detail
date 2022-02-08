@@ -98,7 +98,7 @@ const Wrap = styled.div`
     flex-direction : column;
     padding-bottom : 11rem;
 
-     @media only screen and (min-width: 769px) and (max-width: 1200px) {
+     @media only screen and (min-width: 769px) and (max-width: 1440px) {
         height : 60%;
      }    
 `
@@ -114,7 +114,7 @@ const BG = styled.div`
     background-size : cover;
     background-position : 50% 50%;
 
-    @media only screen and (min-width: 769px) and (max-width: 1200px) {
+    @media only screen and (min-width: 769px) and (max-width: 1440px) {
         flex-direction : column;
         height : 85%;
         .indexNavigator {
@@ -299,3 +299,9 @@ const Title = styled.div`
 `
 
 export default IndexPage
+
+// 1. Index 페이지 다시 만들기 (카테고리 영역처럼 확실하게 Navigator, Data 영역으로 나눈 후에 할 것)
+// 2. Navigator 버튼 애니메이션 넣기 (기본 말고 중간 width 밑으로 animation이 없음)
+// 3. Navigator 중간 디자인 다시 손보기 (그대로 가기엔 뭔가 미흡)
+// 이것만 해결하면 반응형 끝
+// 구글 검색만 넣으면 완성
