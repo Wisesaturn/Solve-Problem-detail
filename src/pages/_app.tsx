@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer'
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import NextNProgress from 'nextjs-progressbar'
-import Provider from './provider'
+import Provider from '../components/provider'
 import React from 'react'
 import { RecoilRoot } from 'recoil'
 

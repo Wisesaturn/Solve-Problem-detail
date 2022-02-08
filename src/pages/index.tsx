@@ -8,8 +8,8 @@ import { EffectCoverflow } from 'swiper'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navigator from '../components/Content/Navigator/Navigator'
+import Search from '../components/Content/Search_area'
 import styled from 'styled-components'
-
 // import required modules
 
 const IndexPage = () => {
@@ -23,7 +23,7 @@ const IndexPage = () => {
             setIter(iter + 1)
         }, 300)
         if (text.length === typingContent.length) {
-            clearInterval(time)
+            clearInterval(time) // 길이가 같으면 setInterval 종료
         }
 
         return () => clearInterval(time)
@@ -33,7 +33,11 @@ const IndexPage = () => {
 
     return (
         <BG>
+            <div id="indexNavigator">
+                <Navigator />
+            </div>
             <Wrap>
+                <Search />
                 <Title>
                     <h2 id='title'>{text}<span>|</span></h2>
                 </Title>
@@ -92,6 +96,7 @@ const Wrap = styled.div`
     // 세로 정렬용 (flex)
     display : flex;
     flex-direction : column;
+    padding-bottom : 11rem;
 `
 
 const BG = styled.div`
@@ -104,7 +109,10 @@ const BG = styled.div`
     background : url(/resource/photo/main.jpg) no-repeat;
     background-size : cover;
     background-position : 50% 50%;
-    padding-bottom : 11rem;
+
+    #indexNavigator {
+        height : 90%;
+    }
 `
 
 const Area = styled.div`
@@ -224,7 +232,7 @@ const Area = styled.div`
                 line-height : 20px;
                 letter-spacing : 1px;
 
-                span {
+                > span {
                     font-size : .8rem;
                     color : #71B280;
                     font-weight : 200;
@@ -248,6 +256,7 @@ const Title = styled.div`
         > span {
             font-size : 36px;
             padding-left : 4px;
+            color : black;
             animation : typing 1.4s infinite;
         }
 
