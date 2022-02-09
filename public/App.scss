@@ -599,10 +599,18 @@ body {
 // Animation Keyframes Ended @@@@@@@@@@@@@
 
 // media query (반응형) @@@@@@@@@@@@@@@@@
+$boundaryMax: 1920px; // Max Resolution
 $boundary0: 1280px; // Laptop ~ Desktop
 $boundary1: 1024px; // Laptop
 $boundary2: 768px; // Tablet
 $boundary3: 425px; // Mobile
+
+@media only screen and (min-width: $boundaryMax) {
+	// Max Resolution
+	.Navigator_all_wrap {
+		min-width: 20rem !important;
+	}
+}
 
 @media only screen and (min-width: $boundary2) and (max-width: $boundary1) {
 	// 태블릿 ~ 노트북

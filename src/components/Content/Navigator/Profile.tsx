@@ -30,8 +30,13 @@ const ProfileWrap = styled.div`
     box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
 
     // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @media only screen and (min-width:1440px) {
-        height: 25rem;
+    @media only screen and (min-width:1920px) {
+        // Max Resolution
+        height : 30rem;
+        width : 20rem;
+    }
+    @media only screen and (min-width:1440px) and (max-width:1920px) {
+        height: 50vh;
     }
     @media only screen and (min-width:768px) and (max-width:1024px) {
         height : 18rem;
@@ -56,6 +61,14 @@ const PictureArea = styled.div`
     box-shadow : 0px 1px 3px 2px var(--profile-picture-shadow);
 
     transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
+    @media only screen and (min-width:1920px) {
+        // Max Resolution
+        width : 17rem;
+        height : 17rem;
+        border-radius : 9rem;
+        background-size : 17rem;
+        margin : 0 1.5rem;
+    }
 `
 
 const ContentArea = styled.div`
