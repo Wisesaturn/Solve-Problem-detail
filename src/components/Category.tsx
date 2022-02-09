@@ -66,6 +66,14 @@ const CateWrap = styled.div`
         }
     }
  
+    /*
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        $boundary0: 1280px; // Laptop ~ Desktop
+        $boundary1: 1024px; // Laptop
+        $boundary2: 768px; // Tablet
+        $boundary3: 425px; // Mobile
+    */
+
     @media only screen and (max-width: 768px) {
         // 모바일 ~ 태블릿
         li {

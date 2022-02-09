@@ -33,8 +33,10 @@ const IndexPage = () => {
 
     return (
         <BG>
-            <div className="indexNavigator">
+            <Search />
+            <div className="forIndexNavi">
                 <Navigator />
+                <div className="dim" />
             </div>
             <Wrap>
                 <Title>
@@ -84,7 +86,6 @@ const IndexPage = () => {
                         </SwiperSlide>
                        </Swiper>
                 </Area>
-                <Search />
             </Wrap>
         </BG>
     )
@@ -96,43 +97,24 @@ const Wrap = styled.div`
     // 세로 정렬용 (flex)
     display : flex;
     flex-direction : column;
-    padding-bottom : 11rem;
-
-     @media only screen and (min-width: 769px) and (max-width: 1440px) {
-        height : 60%;
-     }    
+    height : 100%;  
+    padding-top : 2rem;
 `
 
 const BG = styled.div`
     // 배경사진
     display : flex;
     justify-content : center;
-    align-items : center;
+    position : relative;
     width : 100%;
     height : 100%;
+    padding : 2rem 0;
     background : url(/resource/photo/main.jpg) no-repeat;
     background-size : cover;
     background-position : 50% 50%;
 
-    @media only screen and (min-width: 769px) and (max-width: 1440px) {
+    @media only screen and (max-width:768px) {
         flex-direction : column;
-        height : 85%;
-        .indexNavigator {
-            position : absolute;
-            top : 10%;
-            height : 20%;
-            width : 85%;   
-        }
-    }
-
-    @media only screen and (max-width :768px) {
-        flex-direction : column;
-        .indexNavigator {
-            position : absolute;
-            top : 6.5%;
-            display : flex;
-            z-index : 5;
-        }
     }
 `
 
@@ -146,6 +128,7 @@ const Area = styled.div`
     min-height : 30vh;
 
     .swiper-slide {
+        // custom data
         display : flex;
         background-position : center;
         background-size : cover;
@@ -155,6 +138,7 @@ const Area = styled.div`
     }
 
     .box {
+        // 메뉴 전체 영역
         position : relative;
         width : 200px;
         height : 200px;
@@ -164,27 +148,30 @@ const Area = styled.div`
         margin : auto;
         transition : .5s;
 
+        // 메뉴 영역 hover 상태 ---------------------
         &:hover {
             height : 270px;
             cursor : pointer;
-
             > .imgbox {
+                // imgbox의 hover 상태
                 background-color : none;
                 img {
+                    // img hover
                     opacity : 1;
                 }
             }
-
             .contentBox {
+                // contentBox의 hover 상태
                 opacity : 1;
             }
-
         }
+        // 메뉴 영역 hover 상태 ---------------------
 
         &:active {
             cursor : wait;
         }
 
+        // 메뉴 뒤 색상용 ---------------------
          &:before {
             content: '';
             position : absolute;
@@ -211,8 +198,10 @@ const Area = styled.div`
         &:before, &:after {
             background: linear-gradient(235deg,#71B280,#222,#38ef7d);
         }
+        // 메뉴 뒤 색상용 ---------------------
         
         .imgbox {
+            // 이미지 영역
             position : absolute;
             top : 0;
             left : 0;
@@ -232,6 +221,7 @@ const Area = styled.div`
         }
 
         .contentBox {
+            // 내용 영역
             position : absolute;
             left : 10px;
             right : 10px;

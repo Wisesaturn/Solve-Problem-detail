@@ -6,8 +6,8 @@ const Layout = ({ children }) => {
     return (
         <div className="contentWrap">
             <Navigator />
+            <SearchArea />
             <div className="dataWrap">
-                <SearchArea />
                 { children }
             </div>
         </div>

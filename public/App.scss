@@ -130,7 +130,7 @@ body {
 	flex: none;
 	padding: 0.8rem 12rem;
 	height: 32px;
-	z-index: 3;
+	z-index: 9999;
 
 	background-color: var(--header);
 	box-shadow: 0px -3px 10px 5px var(--header-shadow);
@@ -193,20 +193,24 @@ body {
 // Content CSS @@@@@@@@@@@@@@@@@@@@@
 // Navigator CSS ------------------
 .Navigator_all_wrap {
+	// Navigator 전체
 	animation: Navigator 0.3s ease-out forwards;
 	display: inline-block;
 	position: relative;
 	height: 100%;
 	background-color: none;
-	min-width: 15rem;
+	min-width: 18vw;
+	z-index: 1000;
 
 	> .Navigator_stuff_wrap {
+		// Navigator 버튼 (float 이용 X)
 		position: relative;
 		left: -3rem;
 		max-width: 4rem;
 	}
 
 	> .Navigator_wrap {
+		// Navigator 내용
 		position: relative;
 		top: -8rem;
 		width: 100%;
@@ -214,8 +218,30 @@ body {
 }
 
 .Navigator_all_wrap_off {
+	// Navigator 꺼졌을 때
 	display: none;
 }
+
+.forIndexNavi {
+	// Index Page의 Navigator
+	position: absolute;
+	display: flex;
+	top: 2rem;
+	left: 4rem;
+
+	.Navigator_all_wrap ~ .dim {
+		// 뒷배경 흐릿하게 (Index 용)
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.4);
+		width: 100%;
+		height: 100%;
+		transition: 0.5s;
+	}
+}
+
 // Navigator CSS Ended ------------
 .contentWrap {
 	// content layout 용
@@ -440,7 +466,7 @@ body {
 	font-size: 12px;
 	font-weight: bold;
 	white-space: pre-wrap;
-	z-index: 3;
+	z-index: 9999;
 
 	&:hover {
 		animation: Footer_hover 0.15s ease-out forwards;
@@ -563,84 +589,78 @@ body {
 @keyframes Search_open {
 	from {
 		opacity: 0.5;
-		top: -3rem;
+		top: 0;
 	}
 	to {
 		opacity: 1;
-		top: 0;
+		top: -3rem;
 	}
 }
 // Animation Keyframes Ended @@@@@@@@@@@@@
 
 // media query (반응형) @@@@@@@@@@@@@@@@@
-@media only screen and (min-width: 769px) and (max-width: 1440px) {
-	// 태블릿 ~ 노트북
-	.contentWrap {
-		padding: 1.6rem 4rem;
-		flex-direction: column;
-	}
+$boundary0: 1280px; // Laptop ~ Desktop
+$boundary1: 1024px; // Laptop
+$boundary2: 768px; // Tablet
+$boundary3: 425px; // Mobile
 
+@media only screen and (min-width: $boundary2) and (max-width: $boundary1) {
+	// 태블릿 ~ 노트북
 	.Header,
 	.Footer {
+		// Header, Footer
 		padding: 0.8rem 4rem;
 	}
 
+	.contentWrap {
+		// Content 영역
+		padding: 1.6rem 4rem;
+	}
+
 	.dataWrap {
+		// Content 영역 중 Data 영역
 		&::-webkit-scrollbar {
 			width: 6px;
 		}
 		padding: 0;
 	}
-
-	.Navigator_wrap {
-		flex-direction: row;
-		display: flex;
-	}
-
-	.Navigator_all_wrap {
-		height: 25%;
-		top: -1.5rem;
-	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $boundary2) {
 	// 모바일 ~ 태블릿
+	.Header,
+	.Footer {
+		padding: 0.6rem 1.2rem;
+	}
+
 	.contentWrap {
+		// Content 영역
 		padding: 0;
 		flex-direction: column;
 	}
 
-	.Header,
-	.Footer {
-		padding: 0.6rem;
-	}
+	.forIndexNavi {
+		// Index Page의 Navigator
+		flex-direction: column;
+		width: 100%;
+		left: 0;
+		top: 0;
 
-	.Footer {
-		font-size: 1px;
-		text-align: justify;
-		padding: 0.6rem 1.2rem;
-
-		.Wrap_SNS {
-			margin-left: auto;
-			align-items: center;
-			justify-content: center;
-			> .SNS {
-				margin: 0 0.8rem;
-				> a > svg {
-					width: 24px;
-					height: 24px;
-				}
-			}
+		.forIndexSearch {
+			// Index Page의 Search
+			position: relative;
 		}
 	}
 
 	.dataWrap {
+		// Content 영역 중 Data 영역
 		font-size: 14px;
 		padding: 0;
 		padding-top: 1.4rem;
 	}
 
 	.content {
+		// 내용 폰트
 		line-height: 0.6rem !important;
 		padding: 1rem 1rem 0 1rem;
 		p {
@@ -655,12 +675,23 @@ body {
 		}
 	}
 
-	.Navigator_all_wrap {
-		height: 30%;
-		z-index: 5;
-		.Navigator_stuff_wrap {
-			max-width: 10rem;
-			left: 2.5rem;
+	.Footer {
+		// Footer
+		font-size: 1px;
+		text-align: justify;
+
+		.Wrap_SNS {
+			// SNS Link 영역
+			margin-left: auto;
+			align-items: center;
+			justify-content: center;
+			> .SNS {
+				margin: 0 0.8rem;
+				> a > svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
 		}
 	}
 }

@@ -72,18 +72,6 @@ const NavigatorWrap = styled.div`
         > li { animation : Subnav_menu_hover .3s ease-out forwards }
     }
 
-    @media only screen and (min-width:769px) and (max-width:1440px) {
-        // 태블릿 ~ 노트북
-        flex-direction : row;
-        > li {
-            padding : .5rem 5vw;
-            max-height : 1.2rem;
-        }
-
-        &:hover {
-            > li { animation : none; }
-        }
-    }
 `
 
 const NavigatorSubWrap = styled.div`
@@ -100,20 +88,6 @@ const NavigatorSubWrap = styled.div`
 
         &:hover { animation : Subnav_hover .3s ease-out forwards }
         &:active { animation : Subnav_active .3s ease-out forwards }
-    }
-
-    @media only screen and (min-width:769px) and (max-width:1440px) {
-        // 태블릿 ~ 노트북
-        flex-direction : row;
-        > li {
-            max-height : 1.2rem;
-            z-index : 1;
-            padding : .5rem 5vw;
-            box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
-            
-            &:hover { animation : none; }
-            &:active { animation : none; }
-        }
     }
 `
 
