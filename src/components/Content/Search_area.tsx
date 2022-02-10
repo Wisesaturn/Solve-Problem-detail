@@ -50,6 +50,13 @@ const SearchAreaWrap = styled.div`
         padding : 0 .7vw;
         display : block;
     }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width:786px) {
+        > input {
+            width : 65vw;
+        }
+    }
 `
 
 const Wrap = styled.div`

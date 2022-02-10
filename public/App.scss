@@ -370,6 +370,7 @@ body {
 		flex-direction: column;
 		line-height: 1.6rem;
 		text-indent: 0;
+		overflow-x: auto;
 	}
 	img {
 		// 이미지
@@ -561,6 +562,20 @@ body {
 	}
 }
 
+@keyframes Stuff_mobile_hover {
+	to {
+		background-color: var(--stuff-after);
+		color: var(--stuff-ft);
+	}
+}
+
+@keyframes Stuff_mobile_active {
+	to {
+		background-color: var(--stuff-active);
+		color: var(--stuff-ft-active);
+	}
+}
+
 @keyframes Subnav_menu_hover {
 	to {
 		padding-left: 1rem;
@@ -647,17 +662,22 @@ $boundary3: 425px; // Mobile
 		flex-direction: column;
 	}
 
+	.Navigator_all_wrap {
+		// Navigator 전체 영역
+		height: 40%;
+		> .Navigator_stuff_wrap {
+			left: 2rem;
+			top: 2rem;
+			position: absolute;
+		}
+	}
+
 	.forIndexNavi {
 		// Index Page의 Navigator
 		flex-direction: column;
 		width: 100%;
 		left: 0;
 		top: 0;
-
-		.forIndexSearch {
-			// Index Page의 Search
-			position: relative;
-		}
 	}
 
 	.dataWrap {
@@ -700,16 +720,6 @@ $boundary3: 425px; // Mobile
 					height: 24px;
 				}
 			}
-		}
-	}
-}
-
-@media only screen and (max-width: 650px) {
-	.Navigator_all_wrap {
-		height: calc(45% + 2vh);
-		.Navigator_stuff_wrap {
-			max-width: 10rem;
-			left: 1rem;
 		}
 	}
 }
