@@ -44,6 +44,11 @@ const ProfileWrap = styled.div`
         height : 50vh;
         width : 100%;
     }
+
+    @media only screen and (max-width:425px) {
+        // 모바일
+        height : 47vh;
+    }
 `
 
 const PictureArea = styled.div`
@@ -88,6 +93,7 @@ const PictureArea = styled.div`
         height : 25vw;
         background-size : 25vw;
         border-radius : 12.5vw;
+        top : 25vh;
     }
 `
 
@@ -128,12 +134,27 @@ const ContentArea = styled.div`
         > p {
         padding : .2rem 1rem;
 
-        &#title { 
-            font-size : 1.4rem; 
-        };
-        &#content {font-size : .8rem; };
+            &#title { 
+                font-size : 1.4rem; 
+            };
+            &#content {font-size : .8rem; };
+        }
     }
-}
+
+    @media only screen and (max-width : 425px) {
+        // 모바일
+        top : 25vh;
+        > p {
+        padding : .1rem 1.6rem;
+
+        &#title { 
+            font-size : 1rem; 
+        }
+            &#content {
+                display : none;
+             }
+        }
+    }
 `
 
 const NaviLinkArea = styled.div`
@@ -146,6 +167,11 @@ const NaviLinkArea = styled.div`
         color : inherit;
         &:hover { color : var(--normal-after);}
         &:active { color : var(--normal-active);}
+    }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width : 425px) {
+        display : none;
     }
 `
 

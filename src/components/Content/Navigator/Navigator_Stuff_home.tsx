@@ -44,13 +44,16 @@ const StuffWrap = styled.div`
     @media only screen and (max-width : 768px) {
         // 모바일 ~ 태블릿
         z-index : 1000;
-        left : 0rem;
-        top : 0rem;
-        width : 12vw;
+        left : 0;
+        top : 0;
         animation : none;
 
+        width : 10vw;
+        height : 10vw;
         svg {
-            margin : 0 auto;
+            width : 5vw;
+            height : 5vw;
+            padding : 2.5vw;
         }
 
         &:hover {
@@ -65,10 +68,12 @@ const StuffWrap = styled.div`
 
     @media only screen and (max-width : 425px) {
         // 모바일
+        width : 13vw;
+        height : 13vw;
         svg {
-            width : 1.4rem;
-            height : 1.4rem;
-            padding : .8rem;
+            width : 7vw;
+            height : 7vw;
+            padding : 3vw;
         }
     }
 `

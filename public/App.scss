@@ -664,10 +664,10 @@ $boundary3: 425px; // Mobile
 
 	.Navigator_all_wrap {
 		// Navigator 전체 영역
-		height: 40%;
+		height: 50%;
 		> .Navigator_stuff_wrap {
-			left: 2rem;
-			top: 2rem;
+			left: 5vw;
+			top: 5vw;
 			position: absolute;
 		}
 	}
@@ -720,6 +720,29 @@ $boundary3: 425px; // Mobile
 					height: 24px;
 				}
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: $boundary3) {
+	// 모바일
+	.Header {
+		// Header
+		> a {
+			font-size: 0.6rem;
+		}
+
+		> .Sitebar {
+			margin-right: 1rem;
+		}
+	}
+
+	.Footer {
+		// Footer
+		display: inline-block;
+
+		.Wrap_SNS {
+			padding-top: 0.6rem;
 		}
 	}
 }

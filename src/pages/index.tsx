@@ -108,7 +108,6 @@ const BG = styled.div`
     position : relative;
     width : 100%;
     height : 100%;
-    padding : 2rem 0;
     background : url(/resource/photo/main.jpg) no-repeat;
     background-size : cover;
     background-position : 50% 50%;

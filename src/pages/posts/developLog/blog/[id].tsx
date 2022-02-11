@@ -17,6 +17,10 @@ const Posts = ({ postData }) => {
         <Layout>
             <Head>
                 <title>재한쓰의 공부용 블로그 😊 - {postData.id}</title>
+                <meta property="og:title" content={`{재한쓰의 공부용 블로그 😃 - ${postData.id}`} />
+                <meta property="twitter:title" content={`{재한쓰의 공부용 블로그 😃 - ${postData.id}`} />
+                <meta property="og:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
+                <meta property="twitter:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
                 
             </Head>
             <Post>

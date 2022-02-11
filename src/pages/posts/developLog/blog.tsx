@@ -18,6 +18,10 @@ const categoryBlog = ({ allPostsData }) => {
         <Layout>
             <Head>
                 <title>재한쓰의 공부용 블로그 😊 - 기록/blog</title>
+                <meta property="og:title" content={'{재한쓰의 공부용 블로그 😃 - 기록/blog'} />
+                <meta property="twitter:title" content={'{재한쓰의 공부용 블로그 😃 - 기록/blog'} />
+                <meta property="og:url" content={'http://wisesaturn.github.io/study-blog/posts/developLog/blog'} />
+                <meta property="twitter:url" content={'http://wisesaturn.github.io/study-blog/posts/developLog/blog'} />
             </Head>
             <DataWrap>
                 <h2>Blog</h2>
@@ -47,6 +51,15 @@ const DataWrap = styled.div`
     }
 
     ul { list-style : none; }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width : 425px) {
+        // 모바일
+        h2 {
+            font-size : 1.4rem;
+            padding : .6rem 1rem;
+        }
+    }
 `
 
 export default categoryBlog

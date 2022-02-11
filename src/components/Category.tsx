@@ -92,6 +92,29 @@ const CateWrap = styled.div`
             }
         }
     }
+
+    @media only screen and (max-width: 325px) {
+        // 모바일 S 이하 (갤럭시 폴더 등)
+        li {
+            padding : .1rem 0;
+            height : 4rem;
+
+            span {
+                font-size : .4rem;
+                padding : .5rem .2rem 0;
+            }
+
+            > .sub {
+                white-space : nowrap;
+                h3 {
+                    font-size : .7rem;
+                }
+                time {
+                    font-size : .7rem;
+                }
+            }
+        }
+    }
 `
 
 export default Category
