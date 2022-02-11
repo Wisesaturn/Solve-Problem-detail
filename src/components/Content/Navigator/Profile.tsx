@@ -1,12 +1,21 @@
 import { AiFillGithub, AiOutlineMail } from 'react-icons/ai'
 import { Link_Email, Link_Github } from '../../state'
 import React from 'react'
+import { checkEnv } from '../../../components/state'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
+
+interface Profile_Type {
+
+    profile : string
+}
 
 const Profile = () => {
+    const ENV = useRecoilValue(checkEnv)
+
      return (
         <ProfileWrap>
-            <PictureArea />
+            <PictureArea<React.ComponentType<Profile_Type>> profile={`${ENV}/resource/Profile-zepeto.png`}/>
             <ContentArea>
                 <p id="title">송재한</p>
                 <p id="content">재한쓰의 공부용 블로그 😃</p>
@@ -20,7 +29,145 @@ const Profile = () => {
     )
 }
 
+const ProfileWrap = styled.div`
+    // 프로필 전체 영역
+    display : block;
+    background-color : var(--profile-bg);
+    width : 18vw;
+    height : 22rem;
+    font-weight : bold;
+    box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (min-width:1920px) {
+        // Max Resolution
+        height : 30rem;
+        width : 20rem;
+    }
+    @media only screen and (min-width:1440px) and (max-width:1920px) {
+        // 데스크탑 이상 Resolution
+        height: 50vh;
+    }
+    @media only screen and (max-width:768px) {
+        // 모바일 ~ 태블릿
+        height : 50vh;
+        width : 100%;
+    }
+
+    @media only screen and (max-width:425px) {
+        // 모바일
+        height : 47vh;
+    }
+`
+
+const PictureArea = styled.div<Profile_Type>`
+    // Navigator 프로필 사진 영역
+    position : relative;
+    display : inherit;
+    width : 15vw;
+    height : 15vw;
+    margin : 0 1.5vw;
+    
+    background-color : none;
+    background-image : url(${props => props.profile});
+    background-position : center;
+    background-size : 15vw;
+    background-color : var(--profile-picture-bg);
+    background-repeat : no-repeat;
+    border-radius : 8vw;
+    box-shadow : 0px 1px 3px 2px var(--profile-picture-shadow);
+
+    transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (min-width:1920px) {
+        // Max Resolution
+        width : 17rem;
+        height : 17rem;
+        border-radius : 9rem;
+        background-size : 17rem;
+        margin : 0 1.5rem;
+    }
+
+    @media only screen and (max-width : 768px) {
+        // 모바일 ~ 태블릿 
+        text-align : center;
+        margin : 0 auto;
+        top : 40%;
+    }
+
+    @media only screen and (max-width : 425px) {
+        // 모바일
+        width : 25vw;
+        height : 25vw;
+        background-size : 25vw;
+        border-radius : 12.5vw;
+        top : 25vh;
+    }
+`
+
+const ContentArea = styled.div`
+    // Navigator 프로필 내용 영역
+    position : relative;
+    display : block;
+    padding-top : 1rem;
+
+    > p {
+        padding : .5rem 1.5rem;
+
+        &#title { 
+            font-size : 1.2rem; 
+        };
+        &#content {font-size : .8rem; };
+    }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (min-width : 768px) and (max-width : 1024px) {
+        padding-top : 1.5rem;
+        > p {
+            padding : .5rem 1.2rem;
+
+            &#title {
+                font-size : 1rem;
+            }
+            &#content {
+                font-size : .7rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width : 768px) {
+        // 모바일 ~ 태블릿
+        text-align : center;
+        top : 39%;
+        > p {
+        padding : .2rem 1rem;
+
+            &#title { 
+                font-size : 1.4rem; 
+            };
+            &#content {font-size : .8rem; };
+        }
+    }
+
+    @media only screen and (max-width : 425px) {
+        // 모바일
+        top : 25vh;
+        > p {
+        padding : .1rem 1.6rem;
+
+        &#title { 
+            font-size : 1rem; 
+        }
+            &#content {
+                display : none;
+             }
+        }
+    }
+`
+
 const NaviLinkArea = styled.div`
+    // Navigator 프로필 내용 영역 중 Link 영역
     display : block;
     padding : .5rem 1.5rem;
     > a { 
@@ -30,43 +177,10 @@ const NaviLinkArea = styled.div`
         &:hover { color : var(--normal-after);}
         &:active { color : var(--normal-active);}
     }
-`
 
-const ProfileWrap = styled.div`
-    display : block;
-    background-color : var(--profile-bg);
-    height : 22rem;
-    font-weight : bold;
-    box-shadow : 0px 1px 3px 1px var(--submenu-shadow);
-`
-
-const PictureArea = styled.div`
-    position : relative;
-    display : inherit;
-    width : 13rem;
-    height : 13rem;
-    margin : 1rem;
-    
-    background-color : none;
-    background-image : url(resource/Profile-zepeto.png);
-    background-position : center;
-    background-size : 13rem;
-    background-color : var(--profile-picture-bg);
-    background-repeat : no-repeat;
-    border-radius : 6.5rem;
-    box-shadow : 0px 1px 3px 2px var(--profile-picture-shadow);
-
-    transition: .6s; -webkit-transition : .6s; -mos-transition : .6s;
-`
-
-const ContentArea = styled.div`
-    display : block;
-    > p {
-        padding : .5rem 1.5rem;
-        &#title { 
-            font-size : 1.2rem; 
-        };
-        &#content {font-size : .8rem; };
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width : 425px) {
+        display : none;
     }
 `
 

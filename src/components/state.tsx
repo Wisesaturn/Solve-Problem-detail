@@ -1,5 +1,3 @@
-import { AiFillHome } from 'react-icons/ai'
-import { BsSearch } from 'react-icons/bs'
 import { atom } from 'recoil'
 
 const ModalMessage = atom({
@@ -17,66 +15,25 @@ const darkModeState = atom({
     default: true,
 })
 
-const stuffMenu = [
-    {
-        key: 'Home',
-        icon: <AiFillHome />,
-    },
-    {
-        key: 'Search',
-        icon: <BsSearch />,
-    },
-]
-
 const subMenu = [
     [
         {
-            title: '서브메뉴 1',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 2',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 3',
-            path: '/',
+            title: '프로그래머스',
+            path: '/programmers',
             icon: '',
         },
     ],
     [
         {
-            title: '서브메뉴 4',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 5',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 6',
-            path: '/',
+            title: 'Unity',
+            path: '/unity',
             icon: '',
         },
     ],
     [
         {
-            title: '서브메뉴 7',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 8',
-            path: '/',
-            icon: '',
-        },
-        {
-            title: '서브메뉴 9',
-            path: '/',
+            title: 'Blog',
+            path: '/posts/developLog/blog',
             icon: '',
         },
     ],
@@ -92,11 +49,16 @@ const searchActive = atom({
     default: false,
 })
 
+const checkEnv = atom({
+    key: 'checkEnivronment',
+    default : `${process.env.NODE_ENV === 'production' ? 'study-blog' : ''}`,
+})
+
 const Home = 'http://wisesaturn.github.io/study-blog'
 const Link_Github = 'https://github.com/Wisesaturn'
 const Link_Naver = 'https://blog.naver.com/rfv1479'
 const Link_Instagram = 'https://www.instagram.com/songjh_97/'
 const Link_Email = 'rfv1479@gmail.com'
 
-export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu, stuffMenu }
+export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu, checkEnv }
 export { Link_Github, Link_Naver, Link_Instagram, Link_Email }

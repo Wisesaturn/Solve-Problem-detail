@@ -39,6 +39,8 @@
 		--profile-picture-shadow: #23352c;
 		--search-border: #999;
 		--Error-ft: rgb(214, 106, 106);
+		--category-bg: #0c2017;
+		--category-hover: #383d3b;
 	}
 
 	.light {
@@ -72,15 +74,26 @@
 		--profile-picture-shadow: #85b39c;
 		--search-border: #7bb197;
 		--Error-ft: rgb(165, 54, 54);
+		--category-bg: #b3e9cf;
+		--category-hover: #d9e9e1;
 	}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+@font-face {
+	font-family: 'Apple';
+	src: url(./resource/fonts/AppleSDGothicNeoB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoEB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
+}
 
 * {
 	padding: 0;
 	margin: 0;
-	font-family: 'Gowun Dodum', sans-serif;
+	font-family: 'Apple';
 	font-size: 18px;
 }
 
@@ -117,6 +130,7 @@ body {
 	flex: none;
 	padding: 0.8rem 12rem;
 	height: 32px;
+	z-index: 9999;
 
 	background-color: var(--header);
 	box-shadow: 0px -3px 10px 5px var(--header-shadow);
@@ -174,25 +188,29 @@ body {
 }
 
 // Menu CSS Ended --------------------
-// Header CSS Ended @@@@@@@@@@@@@@@@@
+// Header CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Content CSS @@@@@@@@@@@@@@@@@@@@@
 // Navigator CSS ------------------
 .Navigator_all_wrap {
+	// Navigator 전체
 	animation: Navigator 0.3s ease-out forwards;
 	display: inline-block;
 	position: relative;
 	height: 100%;
 	background-color: none;
-	min-width: 15rem;
+	min-width: 18vw;
+	z-index: 1000;
 
 	> .Navigator_stuff_wrap {
+		// Navigator 버튼 (float 이용 X)
 		position: relative;
 		left: -3rem;
 		max-width: 4rem;
 	}
 
 	> .Navigator_wrap {
+		// Navigator 내용
 		position: relative;
 		top: -8rem;
 		width: 100%;
@@ -200,11 +218,246 @@ body {
 }
 
 .Navigator_all_wrap_off {
+	// Navigator 꺼졌을 때
 	display: none;
 }
-// Navigator CSS Ended ------------
 
-// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@
+.forIndexNavi {
+	// Index Page의 Navigator
+	position: absolute;
+	display: flex;
+	top: 2rem;
+	left: 4rem;
+
+	.Navigator_all_wrap ~ .dim {
+		// 뒷배경 흐릿하게 (Index 용)
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.4);
+		width: 100%;
+		height: 100%;
+		transition: 0.5s;
+	}
+}
+
+// Navigator CSS Ended ------------
+.contentWrap {
+	// content layout 용
+	display: flex;
+	flex: 1;
+	height: calc(100vh - (25px + 80px + 80px));
+	padding: 1.6rem 12rem;
+}
+
+.dataWrap {
+	//data Layout 용
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 0 1.6rem 1.6rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	white-space: pre-wrap;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+
+		&-thumb {
+			background-color: var(--scrollbar);
+			border-radius: 3px;
+			box-shadow: 0px 0px 2px 1px inset var(--scrollbar-bg);
+		}
+
+		&-track {
+			background-color: var(--scrollbar-bg);
+		}
+	}
+}
+
+// 내용 폰트 CSS --------------------------------------------------
+.content {
+	// CSS 초기화(기본값)
+	line-height: 1.2rem !important;
+	padding: 1.2rem 1.2rem 0 1.2rem;
+	p,
+	ol,
+	ul,
+	code {
+		margin-block-start: 0;
+		margin-block-end: 0;
+		padding-inline-start: 0;
+	}
+	// CSS 초기화 끝
+
+	// 공통 CSS
+	p {
+		// 일반 { 내용 }
+		line-height: 1.6rem;
+		text-align: justify;
+		text-indent: 1rem;
+	}
+	pre {
+		// ``` { 내용 } ```
+		padding: 1rem 1.5rem;
+		margin: 1.2rem 1.6rem;
+		border-radius: 5px;
+		code > span,
+		code {
+			// {코드 내용} (색상 : dark 모드가 default)
+			font-size: 14px !important;
+			font-family: 'Hack', monospace !important;
+			font-weight: bold;
+		}
+	}
+	strong {
+		color: var(--content-ft);
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1.6rem;
+	}
+
+	h1 {
+		// # {내용}
+		font-size: 2rem;
+		color: var(--content-ft);
+		padding: 1.4rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h2 {
+		// ## {내용}
+		font-size: 1.6rem;
+		color: var(--content-ft);
+		padding: 1.2rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h3 {
+		// ### {내용}
+		font-size: 1.2rem;
+		color: var(--content-ft);
+		padding-top: 1rem;
+	}
+
+	h4 {
+		// #### {내용}
+		font-size: 1rem;
+		counter-increment: h4;
+		display: list-item;
+		padding-top: 0.8rem;
+	}
+
+	h4::marker {
+		// #### marker
+		display: list-item;
+		content: '#' counter(h4) '  ';
+		color: lightsalmon;
+		font-weight: bold;
+	}
+
+	blockquote > p,
+	blockquote {
+		// > {내용}
+		font-size: 14px;
+		font-weight: normal;
+		padding-left: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		line-height: 1.6rem;
+		text-indent: 0;
+		overflow-x: auto;
+	}
+	img {
+		// 이미지
+		width: 65%;
+		height: 65%;
+	}
+	ul,
+	ol {
+		// 목록형
+		line-height: 0.5rem;
+		list-style-type: '🔸';
+		padding-inline-start: 1rem;
+		li > p {
+			// 목룍형 속 내용
+			text-indent: 0rem;
+			padding-left: 0.5rem;
+			display: block;
+		}
+		li {
+			// 목록형 (한줄)
+			padding-left: 0.7rem;
+			line-height: 1.2rem;
+			display: list-item;
+		}
+	}
+
+	a {
+		// 링크
+		color: var(--normal-ft);
+		&:hover {
+			color: var(--normal-after);
+		}
+		&:active {
+			color: var(--normal-active);
+		}
+	}
+	pre {
+		// ``` {내용} ```
+		background-color: #344d40;
+	}
+}
+
+#dark {
+	// 'Dark' 모드일 때
+	blockquote {
+		// 인용구
+		border-left: 7px solid #9fb1a8;
+	}
+
+	:not(pre) > code {
+		// ``` {내용} ``` 제외 <code> 태그
+		// 글자 배경색
+		background-color: #435f51;
+		padding: 0.2rem 0.3rem;
+		border-radius: 3px;
+	}
+}
+
+#light {
+	// 'light' 모드일 때
+	blockquote {
+		// 인용구
+		border-left: 7px solid #5e8a73;
+	}
+
+	:not(pre) > code {
+		// ``` {내용} ``` 제외 <code> 태그
+		// 글자 배경색
+		background-color: #a4e2c3;
+		padding: 0.2rem 0.3rem;
+		border-radius: 3px;
+	}
+}
+// 내용 폰트 CSS 끝 -----------------------------------------------
+// Comment CSS ---------------------
+.countComment {
+	:nth-child(2) {
+		display: none;
+	}
+} // 임시 댓글창 없애기
+
+.utterances {
+	max-width: 97% !important;
+}
+// Comment CSS 끝 ------------------
+
+// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .Footer {
@@ -214,6 +467,7 @@ body {
 	font-size: 12px;
 	font-weight: bold;
 	white-space: pre-wrap;
+	z-index: 9999;
 
 	&:hover {
 		animation: Footer_hover 0.15s ease-out forwards;
@@ -308,6 +562,20 @@ body {
 	}
 }
 
+@keyframes Stuff_mobile_hover {
+	to {
+		background-color: var(--stuff-after);
+		color: var(--stuff-ft);
+	}
+}
+
+@keyframes Stuff_mobile_active {
+	to {
+		background-color: var(--stuff-active);
+		color: var(--stuff-ft-active);
+	}
+}
+
 @keyframes Subnav_menu_hover {
 	to {
 		padding-left: 1rem;
@@ -336,11 +604,147 @@ body {
 @keyframes Search_open {
 	from {
 		opacity: 0.5;
-		top: -3rem;
+		top: 0;
 	}
 	to {
 		opacity: 1;
-		top: 0;
+		top: -3rem;
 	}
 }
 // Animation Keyframes Ended @@@@@@@@@@@@@
+
+// media query (반응형) @@@@@@@@@@@@@@@@@
+$boundaryMax: 1920px; // Max Resolution
+$boundary0: 1280px; // Laptop ~ Desktop
+$boundary1: 1024px; // Laptop
+$boundary2: 768px; // Tablet
+$boundary3: 425px; // Mobile
+
+@media only screen and (min-width: $boundaryMax) {
+	// Max Resolution
+	.Navigator_all_wrap {
+		min-width: 20rem !important;
+	}
+}
+
+@media only screen and (min-width: $boundary2) and (max-width: $boundary1) {
+	// 태블릿 ~ 노트북
+	.Header,
+	.Footer {
+		// Header, Footer
+		padding: 0.8rem 4rem;
+	}
+
+	.contentWrap {
+		// Content 영역
+		padding: 1.6rem 4rem;
+	}
+
+	.dataWrap {
+		// Content 영역 중 Data 영역
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: $boundary2) {
+	// 모바일 ~ 태블릿
+	.Header,
+	.Footer {
+		padding: 0.6rem 1.2rem;
+	}
+
+	.contentWrap {
+		// Content 영역
+		padding: 0;
+		flex-direction: column;
+	}
+
+	.Navigator_all_wrap {
+		// Navigator 전체 영역
+		height: 50%;
+		> .Navigator_stuff_wrap {
+			left: 5vw;
+			top: 5vw;
+			position: absolute;
+		}
+	}
+
+	.forIndexNavi {
+		// Index Page의 Navigator
+		flex-direction: column;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.dataWrap {
+		// Content 영역 중 Data 영역
+		font-size: 14px;
+		padding: 0;
+		padding-top: 1.4rem;
+	}
+
+	.content {
+		// 내용 폰트
+		line-height: 0.6rem !important;
+		padding: 1rem 1rem 0 1rem;
+		p {
+			font-size: 16px;
+		}
+
+		h4 {
+			margin-left: 1.4rem;
+		}
+		blockquote > p {
+			overflow-x: auto;
+		}
+	}
+
+	.Footer {
+		// Footer
+		font-size: 1px;
+		text-align: justify;
+
+		.Wrap_SNS {
+			// SNS Link 영역
+			margin-left: auto;
+			align-items: center;
+			justify-content: center;
+			> .SNS {
+				margin: 0 0.8rem;
+				> a > svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $boundary3) {
+	// 모바일
+	.Header {
+		// Header
+		> a {
+			font-size: 0.6rem;
+		}
+
+		> .Sitebar {
+			margin-right: 1rem;
+		}
+	}
+
+	.Footer {
+		// Footer
+		display: inline-block;
+
+		.Wrap_SNS {
+			padding-top: 0.6rem;
+		}
+	}
+}
+
+// media query (반응형) 끝 @@@@@@@@@@@@@@@@@

@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { checkEnv } from '../state'
 import { darkModeState } from '../state'
 import styled from 'styled-components'
-import { useRecoilState } from 'recoil'
+
+interface Button_Type {
+    children : ReactNode
+    moon : string
+    sun : string
+}
 
 const DarkMode_button = () => {
     const [check, setCheck] = useRecoilState(darkModeState)
+    const ENV = useRecoilValue(checkEnv)
 
     const confirm = () => {
         setCheck(localStorage.getItem('Darkmode') === 'true' ? false : true)
@@ -15,7 +23,9 @@ const DarkMode_button = () => {
 
     return (
         <>
-            <DarkmodeButton>
+            <DarkmodeButton<React.ComponentType<Button_Type>> 
+                moon={`${ENV}/resource/moon.png`}
+                sun={`${ENV}/resource/sun.png`}>
                 <label className="DarkMode_button">
                     <input type="checkbox" checked={check} onChange={confirm} />
                     <span className="Switch_row" />
@@ -27,7 +37,7 @@ const DarkMode_button = () => {
 
 // 메모 : onChange = { (e) => confirm(e) } 한 후, const confirm = ({target})을 통해 타겟을 불러올 수 있음 (타입스크립트 오류 방지)
 
-const DarkmodeButton = styled.div`
+const DarkmodeButton = styled.div<Button_Type>`
 // Darkmode CSS ----------------------
 .DarkMode_button {
     position: relative;
@@ -45,7 +55,7 @@ const DarkmodeButton = styled.div`
                 background-color: var(--darkMode-dark-bg);
                 box-shadow: 0px 0px 2px var(--darkMode-dark-sh) inset;
                 &:before {
-                    background-image: url(resource/moon.png);
+                    background-image: url(${props => props.moon});
                     background-color: var(--darkMode-dark-toggle-bg);
                     box-shadow: none;
                     -webkit-transform: translateX(1.6rem);
@@ -75,7 +85,7 @@ const DarkmodeButton = styled.div`
             width: 1.5rem;
             top: -13.5px;
 
-            background-image: url(resource/sun.png);
+            background-image: url(${props => props.sun});
             background-position: center;
             background-color: var(--darkMode-light-toggle-bg);
             background-repeat: no-repeat;

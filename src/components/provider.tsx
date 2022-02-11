@@ -1,5 +1,5 @@
 import React from 'react'
-import { darkModeState } from '../../components/state'
+import { darkModeState } from './state'
 import { useRecoilState } from 'recoil'
 
 export default ({ children } : any) => {

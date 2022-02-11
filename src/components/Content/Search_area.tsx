@@ -4,28 +4,32 @@ import { searchActive } from '../state'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
 
-interface Sprops {
-    content : string
-}
-
-const Search_area = (props: Sprops) => {
+const Search_area = () => {
     const active = useRecoilValue<boolean | null>(searchActive) // Did you Push the Search Button?
     
     return (
-        <SearchAreaWrap<any> active={active}>
-            <input type="text" placeholder="검색어를 입력하세요"></input>
-            <AiOutlineEnter id="enter" />
-        </SearchAreaWrap>
+        <Wrap<any> active={active}>
+            <SearchAreaWrap<any> active={active}>
+                <input type="text" placeholder="검색어를 입력하세요"></input>
+                <AiOutlineEnter id="enter" />
+            </SearchAreaWrap>
+            <div className="dim" />
+        </Wrap>
     )
 }
 
 const SearchAreaWrap = styled.div`
 // SearchArea CSS ---------------------------
     display : ${(props: any) => props.active ? 'flex' : 'none'};
-    position : relative;
-    margin : 0 auto;
+    position: fixed;
+    left: 50vw;
+    transform: translateX(-50%);
+    margin : 90vh auto 0;
+    background-color : var(--normal-bg);
+
     border : 1px solid var(--search-border);
     border-radius : 5px;
+    z-index : 1000;
 
     animation : ${(props: any) => props.active
         ? 'Search_open .4s ease-out forwards'
@@ -45,6 +49,29 @@ const SearchAreaWrap = styled.div`
         margin : auto 0;
         padding : 0 .7vw;
         display : block;
+    }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width:786px) {
+         margin : 85vh auto 0;
+        > input {
+            width : 65vw;
+        }
+    }
+`
+
+const Wrap = styled.div`
+    // Search 전체 영역
+    .dim {
+        opacity : ${(props: any) => props.active ? '1' : '0'};
+        z-index : ${(props: any) => props.active ? '999' : '-1'};
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
     }
 `
 

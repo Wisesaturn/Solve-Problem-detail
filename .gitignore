@@ -6,6 +6,9 @@
 .pnp.js
 .next
 
+# prism.js <code> tag
+prism.js
+prism.css
 
 # testing
 /coverage

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { subMenu, subMenuFocus } from '../../state'
+import Link from 'next/Link'
 import styled from 'styled-components'
 import { useRecoilState } from 'recoil'
 
@@ -8,7 +9,7 @@ type visible_type = {
 }
 
 type props_type = {
-    content: string,
+    content: string
     id: any
 }
 
@@ -29,19 +30,21 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <li
-            key={index}>
-            {d.icon}
-            <span>{d.title}</span>
-        </li>,
+        <Link href={`${d.path}`} as={`${d.path}`}>
+            <li
+                key={index}>
+                {d.icon}
+                <span>{d.title}</span>
+            </li>
+        </Link>,
     ) // Use map, make the <li> tags using menu array.
 
     useEffect(() => { (props.id === now ? setFocus(true) : setFocus(false)) }, [now])
     // detect when User click on other menu.
 
     return (
-        <NavigatorWrap>
-            <li onClick={onClick} id={props.id}> {props.content} </li>
+        <NavigatorWrap>      
+                <li onClick={onClick} id={props.id}> {props.content} </li>
             <NavigatorSubWrap visible={focus} id={props.id}>
                 {subList}
             </NavigatorSubWrap>
@@ -68,6 +71,7 @@ const NavigatorWrap = styled.div`
         cursor : pointer;
         > li { animation : Subnav_menu_hover .3s ease-out forwards }
     }
+
 `
 
 const NavigatorSubWrap = styled.div`
