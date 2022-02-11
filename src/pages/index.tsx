@@ -2,17 +2,25 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow } from 'swiper'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navigator from '../components/Content/Navigator/Navigator'
 import Search from '../components/Content/Search_area'
+import { checkEnv } from '../components/state'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 // import required modules
 
+interface BG_Type {
+    children : ReactNode
+    main : string
+}
+
 const IndexPage = () => {
+    const ENV = useRecoilValue(checkEnv)
     const typingContent = '재한쓰 스터디 블로그'
     const [text, setText] = useState('')
     const [iter, setIter] = useState(0)
@@ -32,7 +40,7 @@ const IndexPage = () => {
     // 참고 : https://wazacs.tistory.com/35
 
     return (
-        <BG>
+        <BG main={`${ENV}/resource/photo/main.jpg`}>
             <Search />
             <div className="forIndexNavi">
                 <Navigator />
@@ -101,14 +109,14 @@ const Wrap = styled.div`
     padding-top : 2rem;
 `
 
-const BG = styled.div`
+const BG = styled.div<BG_Type>`
     // 배경사진
     display : flex;
     justify-content : center;
     position : relative;
     width : 100%;
     height : 100%;
-    background : url(/resource/photo/main.jpg) no-repeat;
+    background : url(${props => props.main}) no-repeat;
     background-size : cover;
     background-position : 50% 50%;
 

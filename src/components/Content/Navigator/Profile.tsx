@@ -1,12 +1,21 @@
 import { AiFillGithub, AiOutlineMail } from 'react-icons/ai'
 import { Link_Email, Link_Github } from '../../state'
 import React from 'react'
+import { checkEnv } from '../../../components/state'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
+
+interface Profile_Type {
+
+    profile : string
+}
 
 const Profile = () => {
+    const ENV = useRecoilValue(checkEnv)
+
      return (
         <ProfileWrap>
-            <PictureArea />
+            <PictureArea<React.ComponentType<Profile_Type>> profile={`${ENV}/resource/Profile-zepeto.png`}/>
             <ContentArea>
                 <p id="title">송재한</p>
                 <p id="content">재한쓰의 공부용 블로그 😃</p>
@@ -51,7 +60,7 @@ const ProfileWrap = styled.div`
     }
 `
 
-const PictureArea = styled.div`
+const PictureArea = styled.div<Profile_Type>`
     // Navigator 프로필 사진 영역
     position : relative;
     display : inherit;
@@ -60,7 +69,7 @@ const PictureArea = styled.div`
     margin : 0 1.5vw;
     
     background-color : none;
-    background-image : url(/resource/Profile-zepeto.png);
+    background-image : url(${props => props.profile});
     background-position : center;
     background-size : 15vw;
     background-color : var(--profile-picture-bg);

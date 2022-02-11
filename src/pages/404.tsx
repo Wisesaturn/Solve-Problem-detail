@@ -26,26 +26,28 @@ const ShowErrorWrap = styled.div`
         left : 50%;
         top : 2%;
         transform: translateX(-50%);
-        color : var(--Error-ft)
+        color : var(--Error-ft);
+        padding-bottom : 2rem;
     }
 
     p {
         display : block;
         text-align : center;
-        font-size : 5rem;
+        font-size : 3.5rem;
         font-weight : bold;
 
         &#sub {
-            padding : 2rem 1rem;
-            font-size : 2rem;
+            padding : 1.5rem 1rem;
+            font-size : 1.6rem;
             font-weight : bold;
             text-align : center;
         }
     }
 
     #back {
-        width : 3vw;
-        height : 3vh;
+        width : 4vw;
+        height : 4vw;
+        margin-top : 10vh;
         color : var(--normal-ft);
         padding : .8rem 1.2rem;
         border-radius : 10px;
@@ -64,6 +66,30 @@ const ShowErrorWrap = styled.div`
             color : var(--normal-active);
             background-color : var(--stuff-active);
             transition : none;
+        }
+    }
+
+    // 반응형 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @media only screen and (max-width : 768px) {
+        // 모바일 ~ 태블릿
+        .icon {
+            padding-bottom : 5vw;
+            width : 20vw;
+            height : 20vw;
+        }
+        p {
+            font-size : 5vw;
+            &#sub {
+                font-size : 3vw;
+                padding : 1rem;
+            }
+        }
+
+        #back {
+            margin-top : 5vh;
+            padding : 2vw 4vw;
+            width : 5vw;
+            height : 5vw;
         }
     }
 `

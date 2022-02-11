@@ -49,11 +49,16 @@ const searchActive = atom({
     default: false,
 })
 
+const checkEnv = atom({
+    key: 'checkEnivronment',
+    default : `${process.env.NODE_ENV === 'production' ? 'study-blog' : ''}`,
+})
+
 const Home = 'http://wisesaturn.github.io/study-blog'
 const Link_Github = 'https://github.com/Wisesaturn'
 const Link_Naver = 'https://blog.naver.com/rfv1479'
 const Link_Instagram = 'https://www.instagram.com/songjh_97/'
 const Link_Email = 'rfv1479@gmail.com'
 
-export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu }
+export { Home, searchActive, ModalMessage, SitebarState, darkModeState, subMenuFocus, subMenu, checkEnv }
 export { Link_Github, Link_Naver, Link_Instagram, Link_Email }
