@@ -50,6 +50,7 @@ class MyDocument extends Document {
           <meta httpEquiv="Page-Exit" content="RevealTrans(Duration=10, Transition=50)" />
           <meta name="Robots" content="ALL" />
           <meta httpEquiv="Imagetoolbar" content="no" />
+          <meta name="google-site-verification" content="dXVEfB1LROulVhRk0kb3VLPiWLypVQ6O2X7ezmO0EKk" />
 
           {/* default meta (open graph) */}
           <meta property="og:type" content="website" />

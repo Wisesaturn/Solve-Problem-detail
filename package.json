@@ -25,14 +25,14 @@
     "fs": false
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development next dev",
+    "dev": "cls && echo @@@@ 개발환경 시작 && echo @@@ && echo @@ && cross-env NODE_ENV=development next dev",
     "start": "cross-env NODE_ENV=production next start",
     "start:dev": "cross-env NODE_ENV=development next start",
     "export": "next export",
     "build": "cross-env NODE_ENV=production next build",
     "build:dev": "cross-env NODE_ENV=devlopment next build",
-    "predeploy": "rd /s /q \".next/cache\"",
-    "deploy": "npm run build && git config --global core.autocrlf true && npm run export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy :: Revise Pages (Next.js Environment)\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages && rd /s /q \"out\""
+    "predeploy": "echo cache를 제거합니다. && rd /s /q \".next/cache\" && echo cache 제거 완료",
+    "deploy": "cls && echo @@@@ 배포환경 시작 && echo @@@ && echo @@ && echo build를 시작합니다. && npm run build && git config --global core.autocrlf true && echo build 완료 && echo @@@ && echo 배포를 시작합니다. && npm run export && touch out/.nojekyll && echo sitemap 설정을 복사합니다 && cp ./google/robots.txt ./out/robots.txt && cp ./google/sitemap.xml ./out/sitemap.xml && cp ./google/google015a102233d64e8e.html ./out/google015a102233d64e8e.html && echo sitemap 설정 복사 완료 && echo 배포 파일을 분류합니다. && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy :: Revise Pages (Next.js Environment)\" && git subtree split --prefix out -b gh-pages && echo gh-pages를 생성하였습니다. && echo gh-pages를 원격 브랜치에 push합니다. && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && echo push 완료 && echo @@@ && echo 설정값을 정리합니다. && git checkout main && git branch -D temp-for-deploy-gh-pages && rd /s /q \"out\" && echo 설정값 정리 완료 && echo @@@@@@@@@@@@@ 배포 완료"
   },
   "eslintConfig": {
     "extends": [
