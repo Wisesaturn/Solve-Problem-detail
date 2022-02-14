@@ -51,7 +51,7 @@ const searchActive = atom({
 
 const checkEnv = atom({
     key: 'checkEnivronment',
-    default : `${process.env.NODE_ENV === 'production' ? 'study-blog' : ''}`,
+    default : `${process.env.NODE_ENV === 'production' ? '/study-blog/' : '/'}`,
 })
 
 const Home = 'http://wisesaturn.github.io/study-blog'

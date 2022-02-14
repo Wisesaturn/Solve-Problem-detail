@@ -24,8 +24,8 @@ const DarkMode_button = () => {
     return (
         <>
             <DarkmodeButton<React.ComponentType<Button_Type>> 
-                moon={`${ENV}/resource/moon.png`}
-                sun={`${ENV}/resource/sun.png`}>
+                moon={`${ENV}resource/moon.png`}
+                sun={`${ENV}resource/sun.png`}>
                 <label className="DarkMode_button">
                     <input type="checkbox" checked={check} onChange={confirm} />
                     <span className="Switch_row" />

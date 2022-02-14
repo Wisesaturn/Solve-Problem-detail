@@ -9,15 +9,15 @@
 <!-- 메뉴 -->
     <url>
         <loc>https://wisesaturn.github.io/study-blog/</loc>
-        <lastmod>2022-02-11T07:24:48+00:00</lastmod>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://wisesaturn.github.io/posts/developLog/blog</loc>
-        <lastmod>2022-02-11T07:24:48+00:00</lastmod>
+        <loc>https://wisesaturn.github.io/study-blog/posts/developLog/blog</loc>
+        <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://wisesaturn.github.io/posts/developLog/blog/마크다운%20테스트</loc>
-        <lastmod>2022-02-11T07:24:48+00:00</lastmod>
+        <loc>https://wisesaturn.github.io/study-blog/posts/developLog/blog/마크다운%20테스트</loc>
+        <changefreq>weekly</changefreq>
     </url>
 
 </urlset>

@@ -1,6 +1,8 @@
 import Date from '../components/Date'
 import Link from 'next/Link'
+import { checkEnv } from '../components/state'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 
 interface Cate_type {
     Data : {
@@ -14,8 +16,10 @@ interface Cate_type {
 }
 
 const Category = ({ Data, whatPage } : Cate_type) => {
+    const ENV = useRecoilValue(checkEnv)
+
     return (
-        <Link href={`/posts/${whatPage}/${Data.id}`} as={`/posts/${whatPage}/${Data.id}`}>
+        <Link href={`${ENV}posts/${whatPage}/${Data.id}`} passHref>
             <CateWrap>
                 <li key={Data.id}>
                     <div className="sub">
@@ -93,8 +97,8 @@ const CateWrap = styled.div`
         }
     }
 
-    @media only screen and (max-width: 325px) {
-        // 모바일 S 이하 (갤럭시 폴더 등)
+    @media only screen and (max-width: 375px) {
+        // 모바일 이하 (갤럭시 폴더 등)
         li {
             padding : .1rem 0;
             height : 4rem;

@@ -1,17 +1,18 @@
 import { MDLoader_Path, MDLoader_PostData } from '../../../../components/MDLoader/MdLoader_blog'
+import { checkEnv, darkModeState } from '../../../../components/state'
 import Date from '../../../../components/Date'
 import Head from 'next/head'
 import Layout from '../../../../components/Content/contentLayout'
 import Link from 'next/link'
 import React from 'react'
 import Utterance from '../../../../components/utterance'
-import { darkModeState } from '../../../../components/state'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
 
 const Posts = ({ postData }) => {
     const whatPage = 'developLog/blog'
     const darkMode = useRecoilValue(darkModeState)
+    const ENV = useRecoilValue(checkEnv)
 
     return (
         <Layout>
@@ -21,11 +22,12 @@ const Posts = ({ postData }) => {
                 <meta property="twitter:title" content={`{재한쓰의 공부용 블로그 😃 - ${postData.id}`} />
                 <meta property="og:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
                 <meta property="twitter:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
-                
+                <meta property="og:image" content="http://wisesaturn.github.io/study-blog/resource/ob-image/main.png" />
+                <meta property="twitter:image" content="http://wisesaturn.github.io/study-blog/resource/ob-image/main.png" />     
             </Head>
             <Post>
                 <div className="postCategory">
-                    <Link href="/">Home</Link> / <Link href={`/posts/${whatPage}`}> blog </Link> / {postData.id}
+                    <Link href={`/${ENV}`}>Home</Link> / <Link href={`/${ENV}/posts/${whatPage}`}> blog </Link> / {postData.id}
                 </div>
                 <div className="titleArea">
                     <span id="title">{postData.title}</span>

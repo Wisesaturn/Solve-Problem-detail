@@ -40,7 +40,7 @@ const IndexPage = () => {
     // 참고 : https://wazacs.tistory.com/35
 
     return (
-        <BG main={`${ENV}/resource/photo/main.jpg`}>
+        <BG main={`${ENV}resource/photo/main.jpg`}>
             <Search />
             <div className="forIndexNavi">
                 <Navigator />
@@ -76,11 +76,11 @@ const IndexPage = () => {
                         {/* 카테고리 - 기록 */}
                         <SwiperSlide>  {/* Slide Box */}
                             <div className="swiper-slide">
-                                <Link href='/posts/developLog/blog' passHref>
+                                <Link href={`${ENV}/posts/developLog/blog`} passHref>
                                     <div className="box">
                                         <div className="imgbox">
                                             <Image
-                                                src='/resource/photo/write.jpg'
+                                                src={`${ENV}resource/photo/write.jpg`}
                                                 width='200px'
                                                 height='200px'
                                                 layout='intrinsic' />
@@ -259,6 +259,11 @@ const Area = styled.div`
             }
         }
     }
+
+    @media only screen and (max-width : 768px) {
+        // 태블릿 이하는 Swipter X
+        display : none;
+    }
 `
 
 const Title = styled.div`
@@ -291,6 +296,13 @@ const Title = styled.div`
             100% {
                 opacity : 0;
             }
+        }
+    }
+
+    @media only screen and (max-width : 768px) {
+        // 태블릿 이하는 Swipter X
+        h2 {
+            margin-top : 15vh;
         }
     }   
 `

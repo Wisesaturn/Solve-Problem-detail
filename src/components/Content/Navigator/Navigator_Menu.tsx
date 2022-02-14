@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { subMenu, subMenuFocus } from '../../state'
+import { checkEnv, subMenu, subMenuFocus } from '../../state'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import Link from 'next/Link'
 import styled from 'styled-components'
-import { useRecoilState } from 'recoil'
 
 type visible_type = {
     visible: boolean
@@ -22,6 +22,7 @@ const Navigator_Menu = (props: props_type) => {
     const [sub, setSub] = useState([]) // extract loction
     const [focus, setFocus] = useState(false) // Is this active?
     const [now, setNow] = useRecoilState(subMenuFocus) // What's actually active.
+    const ENV = useRecoilValue(checkEnv) // Check the Environment
 
     const onClick = (e: e_type) => {
         let temp = [...menu[e.target.id - 1]] // When User Click on specific menu, copy on that's Sub.
@@ -30,7 +31,7 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <Link href={`${d.path}`} as={`${d.path}`}>
+        <Link href={`${ENV}/${d.path}`} as={`${ENV}/${d.path}`}>
             <li
                 key={index}>
                 {d.icon}

@@ -56,7 +56,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:url" content="http://wisesaturn.github.io/study-blog" />
           <meta property="og:title" content="재한쓰의 공부용 블로그 😃" />
-          <meta property="og:image" content="/resource/ob-image/main.png" />
+          <meta property="og:image" content="http://wisesaturn.github.io/study-blog/resource/ob-image/main.png" />
           <meta property="og:description" content="공부 및 문제풀이 기록용입니다." />
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image:width" content="1200" />
@@ -67,7 +67,7 @@ class MyDocument extends Document {
           <meta name="twitter:url" content="http://wisesaturn.github.io/study-blog" />
           <meta name="twitter:title" content="재한쓰의 공부용 블로그 😃" />
           <meta name="twitter:description" content="공부 및 문제풀이 기록용입니다." />
-          <meta name="twitter:image" content="/resource/ob-image/main.png" />
+          <meta name="twitter:image" content="http://wisesaturn.github.io/study-blog/resource/ob-image/main.png" />
           {/* meta tag Ended */}
         </Head>
         <body>

@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
 
 interface Profile_Type {
-
     profile : string
 }
 
@@ -15,7 +14,7 @@ const Profile = () => {
 
      return (
         <ProfileWrap>
-            <PictureArea<React.ComponentType<Profile_Type>> profile={`${ENV}/resource/Profile-zepeto.png`}/>
+            <PictureArea<React.ComponentType<Profile_Type>> profile={`${ENV}resource/Profile-zepeto.png`}/>
             <ContentArea>
                 <p id="title">송재한</p>
                 <p id="content">재한쓰의 공부용 블로그 😃</p>
@@ -53,10 +52,13 @@ const ProfileWrap = styled.div`
         height : 50vh;
         width : 100%;
     }
-
     @media only screen and (max-width:425px) {
         // 모바일
         height : 47vh;
+    }
+    @media only screen and (max-height : 600px) {
+        // 높이가 너무 작을 때 (검색창 focus 대비)
+        opacity : 0;
     }
 `
 

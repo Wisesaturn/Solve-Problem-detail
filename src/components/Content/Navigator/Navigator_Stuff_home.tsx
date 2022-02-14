@@ -76,6 +76,11 @@ const StuffWrap = styled.div`
             padding : 3vw;
         }
     }
+
+    @media only screen and (max-height : 600px) {
+        // 높이가 너무 작을 때
+        left : -5rem;
+    }
 `
 
 export default Navigator_Stuff

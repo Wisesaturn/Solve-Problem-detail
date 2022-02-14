@@ -88,6 +88,13 @@
 	src: url(./resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
 	src: url(./resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
 	src: url(./resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
+
+	font-family: 'Apple';
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoB.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoEB.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
 }
 
 * {
@@ -694,7 +701,6 @@ $boundary3: 425px; // Mobile
 		p {
 			font-size: 16px;
 		}
-
 		h4 {
 			margin-left: 1.4rem;
 		}
@@ -705,7 +711,7 @@ $boundary3: 425px; // Mobile
 
 	.Footer {
 		// Footer
-		font-size: 1px;
+		font-size: 8px;
 		text-align: justify;
 
 		.Wrap_SNS {

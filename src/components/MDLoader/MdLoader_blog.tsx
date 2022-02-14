@@ -7,7 +7,7 @@ import remarkParse from 'remark-parse'
 import remarkPrism from 'remark-prism'
 import { unified } from 'unified'
 
-const postsDir = path.join(process.cwd(), 'src/pages/posts/developLog/blog')
+const postsDir = path.join(process.cwd(), 'src/pages/posts/developLog/blog/-data')
 // process.cwd() : 현재 작업 Directory 반환
 // __dirname : 현재 스크립트의 Directory 반환
 
@@ -65,12 +65,12 @@ export const MDLoader_PostData = async (id : string) => {
     // 'gray-matter'의 'matter'를 사용하여 post할 data의 section를 파싱(parse)합니다.
     
     const processedContent = await unified()
-        .use(remarkParse) // metadate 무시 (오로지 내용만)
+        .use(remarkParse) // metadata와 content로 분류 (parsing)
         .use(remarkGfm) // 깃허브용 md 파일 형식 추가 (취소선, 표 등의 기능)
         //@ts-ignore (remarkPrism ts 규칙 무시)
         .use(remarkPrism) // <code>용 highlight
-        .use(remarkHtml, { sanitize: false })
-        .process(matterResult.content)
+        .use(remarkHtml, { sanitize: false }) // HTML로 변환, sanitize는 버전 호환이 안되어 추가 (true 상태면 Gfm, Prism이 적용 안됨)
+        .process(matterResult.content) // 'matter'로 pasing한 'content' section을 remark-plugin을 이용해 출력합니다.
         
     // remark 라이브러리를 이용하여 md 파일(matterResult에 저장된 내용)을 HTML 값으로 변환해줍니다.
     const contentHTML = processedContent.toString()
