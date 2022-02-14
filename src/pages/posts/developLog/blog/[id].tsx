@@ -27,7 +27,7 @@ const Posts = ({ postData }) => {
             </Head>
             <Post>
                 <div className="postCategory">
-                    <Link href={`/${ENV}`}>Home</Link> / <Link href={`/${ENV}/posts/${whatPage}`}> blog </Link> / {postData.id}
+                    <Link href={`${ENV}`}>Home</Link> / <Link href={`${ENV}posts/${whatPage}`}> blog </Link> / {postData.id}
                 </div>
                 <div className="titleArea">
                     <span id="title">{postData.title}</span>

@@ -76,7 +76,7 @@ const IndexPage = () => {
                         {/* 카테고리 - 기록 */}
                         <SwiperSlide>  {/* Slide Box */}
                             <div className="swiper-slide">
-                                <Link href={`${ENV}/posts/developLog/blog`} passHref>
+                                <Link href={`${ENV}posts/developLog/blog`} passHref>
                                     <div className="box">
                                         <div className="imgbox">
                                             <Image
