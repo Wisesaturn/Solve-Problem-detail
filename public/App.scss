@@ -753,4 +753,14 @@ $boundary3: 425px; // Mobile
 	}
 }
 
+@media only screen and (max-height: 600px) {
+	// 높이가 너무 작을 때 (검색창 focus 방지)
+	.Navigator_all_wrap {
+		.Navigator_wrap {
+			position: absolute;
+			top: -46.5vh;
+		}
+	}
+}
+
 // media query (반응형) 끝 @@@@@@@@@@@@@@@@@

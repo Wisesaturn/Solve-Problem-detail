@@ -34,7 +34,7 @@ const IndexPage = () => {
             clearInterval(time) // 길이가 같으면 setInterval 종료
         }
 
-        return () => clearInterval(time)
+        return () => clearInterval(time) // SSR용 return 값
     })
     // Title 타이핑용 (useEffect 이용)
     // 참고 : https://wazacs.tistory.com/35
