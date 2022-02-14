@@ -19,6 +19,7 @@ const Navigator = () => {
             </div>
             <div className="Navigator_wrap">
                 <Profile />
+                <NavigatorMenu content="프로그래머스" id="1" />
                 <NavigatorMenu content="기록" id="3" />
             </div>
         </div>

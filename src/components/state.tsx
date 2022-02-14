@@ -18,8 +18,8 @@ const darkModeState = atom({
 const subMenu = [
     [
         {
-            title: '프로그래머스',
-            path: '/programmers',
+            title: 'Level 1',
+            path: '/posts/programmers/Lv1',
             icon: '',
         },
     ],

@@ -41,6 +41,7 @@
 		--Error-ft: rgb(214, 106, 106);
 		--category-bg: #0c2017;
 		--category-hover: #383d3b;
+		--quote-ft: #8b9e96;
 	}
 
 	.light {
@@ -75,7 +76,8 @@
 		--search-border: #7bb197;
 		--Error-ft: rgb(165, 54, 54);
 		--category-bg: #b3e9cf;
-		--category-hover: #d9e9e1;
+		--category-hover: #819088;
+		--quote-ft: #77857f;
 	}
 }
 
@@ -373,6 +375,7 @@ body {
 		font-size: 14px;
 		font-weight: normal;
 		padding-left: 0.5rem;
+		color: var(--quote-ft);
 		display: flex;
 		flex-direction: column;
 		line-height: 1.6rem;
@@ -399,8 +402,12 @@ body {
 		li {
 			// 목록형 (한줄)
 			padding-left: 0.7rem;
-			line-height: 1.2rem;
+			line-height: 1.6rem;
 			display: list-item;
+		}
+		li > ul {
+			// 두 번째 목록형 marker
+			list-style-type: '🔹';
 		}
 	}
 

@@ -31,7 +31,7 @@ const Navigator_Menu = (props: props_type) => {
     }
 
     const subList = sub.map((d, index): any =>
-        <Link href={`${ENV}/${d.path}`} as={`${ENV}/${d.path}`}>
+        <Link href={`${ENV}${d.path}`} as={`${ENV}${d.path}`}>
             <li
                 key={index}>
                 {d.icon}
