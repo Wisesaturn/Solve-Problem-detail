@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<!-- 메뉴 -->
+    <url>
+        <loc>https://wisesaturn.github.io/study-blog/</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://wisesaturn.github.io/study-blog/posts/developLog/blog</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://wisesaturn.github.io/study-blog/posts/programmers/Lv1</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+<!-- 게시물 -->
+    <!-- blog -->
+    <url>
+        <loc>https://wisesaturn.github.io/study-blog/posts/developLog/blog/마크다운%20테스트</loc>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- Programmers -->
+    <url>
+        <loc>https://wisesaturn.github.io/study-blog/posts/programmers/Lv1/01%20-%20로또의%20최고%20순위와%20최저%20순위</loc>
+        <changefreq>daily</changefreq>
+    </url>
+
+</urlset>

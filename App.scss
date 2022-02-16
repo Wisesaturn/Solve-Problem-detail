@@ -1,0 +1,754 @@
+:root {
+	// Color depending on darkmode
+	--darkMode-dark-bg: #1b241f;
+	--darkMode-dark-toggle-bg: #212c26;
+	--darkMode-dark-sh: #232323;
+	--darkMode-light-bg: #ddd;
+	--darkMode-light-toggle-bg: #eee;
+	--darkMode-light-sh: #eaeaea;
+	--bottom-line: #999;
+
+	.dark {
+		--normal-after: #bcecd3;
+		--normal-active: #739684;
+		--normal-ft: #eee;
+		--normal-bg: #444;
+		--header: #2e3b35;
+		--header-after: #36443d;
+		--header-shadow: #222c27;
+		--footer-bg: #252525;
+		--footer-after: #2b2a2a;
+		--scrollbar: #809289;
+		--scrollbar-bg: #323d38;
+		--content-ft: #bcecd3;
+		--stuff-bg: #2e3b35;
+		--stuff-after: #36443d;
+		--stuff-active: #303f36;
+		--stuff-ft: #bcecd3;
+		--stuff-shadow: #333;
+		--stuff-ft-active: #212c26;
+		--profile-bg: #2b3b35;
+		--menu-bg: #3d5a4b;
+		--menu-after: #344d40;
+		--submenu-bg: #5a8870;
+		--submenu-after: #4f7462;
+		--submenu-active: #436856;
+		--submenu-shadow: #444;
+		--submenu-border: #444;
+		--profile-picture-bg: #374d44;
+		--profile-picture-shadow: #23352c;
+		--search-border: #999;
+		--Error-ft: rgb(214, 106, 106);
+		--category-bg: #0c2017;
+		--category-hover: #383d3b;
+		--quote-ft: #bce5d4;
+		--code-bg: #435f51;
+		--tag-hover: #333;
+		--tag-active: #111;
+	}
+
+	.light {
+		--normal-after: #257750;
+		--normal-active: #121f18;
+		--normal-ft: #444;
+		--normal-bg: #eee;
+		--header: #8ac5a8;
+		--header-after: #82bb9f;
+		--header-shadow: #5b7568;
+		--footer-bg: #d1d0d0;
+		--footer-after: #cac8c8;
+		--scrollbar: #788a81;
+		--scrollbar-bg: #9dc9b2;
+		--content-ft: #455e51;
+		--stuff-bg: #8ac5a8;
+		--stuff-after: #7bb197;
+		--stuff-active: #416d55;
+		--stuff-ft: #257750;
+		--stuff-shadow: #434e49;
+		--stuff-ft-active: #5e7a6b;
+		--profile-bg: #8ac5a8;
+		--menu-bg: #a4d6bc;
+		--menu-after: #aee4c8;
+		--submenu-bg: #c3e4d3;
+		--submenu-after: #7bb197;
+		--submenu-active: #68927b;
+		--submenu-shadow: #343f39;
+		--submenu-border: #ccc;
+		--profile-picture-bg: #7bb197;
+		--profile-picture-shadow: #85b39c;
+		--search-border: #7bb197;
+		--Error-ft: rgb(165, 54, 54);
+		--category-bg: #e1ebe5;
+		--category-hover: #cbe0d6;
+		--quote-ft: #77857f;
+		--code-bg: #c4e0d2;
+		--tag-hover: #ddd;
+		--tag-active: #aaa;
+	}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+@font-face {
+	font-family: 'Apple';
+	src: url(./resource/fonts/AppleSDGothicNeoB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoEB.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
+	src: url(./resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
+
+	font-family: 'Apple';
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoB.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoEB.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoH.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoL.ttf) format('truetype');
+	src: url(https://wisesaturn.github.io/study-blog/resource/fonts/AppleSDGothicNeoM.ttf) format('truetype');
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Apple';
+	font-size: 18px;
+}
+
+html,
+body,
+#root {
+	background-color: var(--normal-bg);
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+// Entire CSS @@@@@@@@@@@@@@@@@@@@@@
+#App {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	width: 100vw;
+	height: 100vh;
+	transition: 0.6s;
+	-webkit-transition: 0.6s;
+	-mos-transition: 0.6s;
+	color: var(--normal-ft);
+	background-color: var(--normal-bg);
+}
+// Entire CSS Ended @@@@@@@@@@@@@@@@
+
+// Header CSS @@@@@@@@@@@@@@@@@@@@@@
+.Header {
+	display: flex;
+	flex: none;
+	padding: 0.8rem 12rem;
+	height: 32px;
+	z-index: 9999;
+
+	background-color: var(--header);
+	box-shadow: 0px -3px 10px 5px var(--header-shadow);
+
+	&:hover {
+		animation: Header_hover 0.15s ease-out forwards;
+	}
+
+	> a {
+		text-align: center;
+		white-space: nowrap;
+		text-decoration: none;
+		font-weight: bold;
+		color: inherit;
+		margin: auto 0;
+	}
+
+	> .Sitebar {
+		margin-right: 2rem;
+	}
+
+	> a,
+	.Sitebar > svg {
+		&:hover {
+			animation: Choice 0.15s ease-out forwards;
+			cursor: pointer;
+		}
+		&:active {
+			animation: Active 0.15s ease-out forwards;
+			cursor: wait;
+		}
+	}
+}
+
+// Menu CSS ---------------------------
+.MenuSpace_wrap {
+	display: flex;
+	margin-left: auto;
+
+	> .MenuSpace {
+		font-weight: bold;
+		margin: auto 0;
+		display: inline-block;
+		margin-left: 24px;
+
+		&:hover {
+			animation: Choice 0.15s ease-out forwards;
+			cursor: pointer;
+		}
+		&:active {
+			animation: Active 0.15s ease-out forwards;
+			cursor: wait;
+		}
+	}
+}
+
+// Menu CSS Ended --------------------
+// Header CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// Content CSS @@@@@@@@@@@@@@@@@@@@@
+// Navigator CSS ------------------
+.Navigator_all_wrap {
+	// Navigator 전체
+	animation: Navigator 0.3s ease-out forwards;
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	background-color: none;
+	min-width: 18vw;
+	z-index: 1000;
+
+	> .Navigator_stuff_wrap {
+		// Navigator 버튼 (float 이용 X)
+		position: relative;
+		left: -3rem;
+		max-width: 4rem;
+	}
+
+	> .Navigator_wrap {
+		// Navigator 내용
+		position: relative;
+		top: -8rem;
+		width: 100%;
+	}
+}
+
+.Navigator_all_wrap_off {
+	// Navigator 꺼졌을 때
+	display: none;
+}
+
+.forIndexNavi {
+	// Index Page의 Navigator
+	position: absolute;
+	display: flex;
+	top: 2rem;
+	left: 4rem;
+
+	.Navigator_all_wrap ~ .dim {
+		// 뒷배경 흐릿하게 (Index 용)
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.4);
+		width: 100%;
+		height: 100%;
+		transition: 0.5s;
+	}
+}
+
+// Navigator CSS Ended ------------
+.contentWrap {
+	// content layout 용
+	display: flex;
+	flex: 1;
+	height: calc(100vh - (25px + 80px + 80px));
+	padding: 1.6rem 12rem;
+}
+
+.dataWrap {
+	//data Layout 용
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 0 1.6rem 1.6rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	white-space: pre-wrap;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+
+		&-thumb {
+			background-color: var(--scrollbar);
+			border-radius: 3px;
+			box-shadow: 0px 0px 2px 1px inset var(--scrollbar-bg);
+		}
+
+		&-track {
+			background-color: var(--scrollbar-bg);
+		}
+	}
+}
+
+// 내용 폰트 CSS --------------------------------------------------
+.content {
+	// CSS 초기화(기본값)
+	line-height: 1.2rem !important;
+	padding: 1.2rem 1.2rem 0 1.2rem;
+	p,
+	ol,
+	ul,
+	code {
+		margin-block-start: 0;
+		margin-block-end: 0;
+		padding-inline-start: 0;
+	}
+	// CSS 초기화 끝
+
+	// 공통 CSS
+	p {
+		// 일반 { 내용 }
+		line-height: 1.6rem;
+		text-align: justify;
+		text-indent: 1rem;
+	}
+	pre {
+		// ``` { 내용 } ```
+		padding: 1rem 1.5rem;
+		margin: 1.2rem 1.6rem;
+		border-radius: 5px;
+		code > span,
+		code {
+			// {코드 내용} (색상 : dark 모드가 default)
+			font-size: 14px !important;
+			font-family: 'Hack', monospace !important;
+			font-weight: bold;
+		}
+	}
+	strong {
+		color: var(--content-ft);
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1.6rem;
+	}
+
+	h1 {
+		// # {내용}
+		font-size: 2rem;
+		color: var(--content-ft);
+		padding: 1.4rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h2 {
+		// ## {내용}
+		font-size: 1.6rem;
+		color: var(--content-ft);
+		padding: 1.2rem 0;
+		border-bottom: 1px solid var(--bottom-line);
+	}
+
+	h3 {
+		// ### {내용}
+		font-size: 1.2rem;
+		color: var(--content-ft);
+		padding-top: 1rem;
+	}
+
+	h4 {
+		// #### {내용}
+		font-size: 1rem;
+		counter-increment: h4;
+		display: list-item;
+		padding-top: 0.8rem;
+	}
+
+	h4::marker {
+		// #### marker
+		display: list-item;
+		content: '#' counter(h4) '  ';
+		color: lightsalmon;
+		font-weight: bold;
+	}
+	blockquote {
+		// > {내용}
+		padding-left: 0.5rem;
+		color: var(--quote-ft);
+		display: flex;
+		flex-direction: column;
+		overflow-x: auto;
+		border-left: 7px solid var(--code-bg);
+
+		> p {
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.6rem;
+			text-indent: 0;
+		}
+	}
+	img {
+		// 이미지
+		width: 65%;
+		height: 65%;
+	}
+	ul,
+	ol {
+		// 목록형
+		line-height: 0.5rem;
+		list-style-type: '🔸';
+		padding-inline-start: 1rem;
+		li > p {
+			// 목룍형 속 내용
+			text-indent: 0rem;
+			padding-left: 0.5rem;
+			display: block;
+		}
+		li {
+			// 목록형 (한줄)
+			padding-left: 0.7rem;
+			line-height: 1.6rem;
+			display: list-item;
+		}
+		li > ul {
+			// 두 번째 목록형 marker
+			list-style-type: '🔹';
+		}
+	}
+
+	a {
+		// 링크
+		color: var(--normal-ft);
+		&:hover {
+			color: var(--normal-after);
+		}
+		&:active {
+			color: var(--normal-active);
+		}
+	}
+	pre {
+		// ``` {내용} ```
+		background-color: #344d40;
+	}
+	:not(pre) > code {
+		// ``` {내용} ``` 제외 <code> 태그
+		// 글자 배경색
+		background-color: var(--code-bg);
+		padding: 0.2rem 0.3rem;
+		border-radius: 3px;
+	}
+}
+
+// 내용 폰트 CSS 끝 -----------------------------------------------
+// Comment CSS ---------------------
+.countComment {
+	:nth-child(2) {
+		display: none;
+	}
+} // 임시 댓글창 없애기
+
+.utterances {
+	max-width: 97% !important;
+}
+// Comment CSS 끝 ------------------
+
+// Content CSS Ended @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// Footer CSS @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.Footer {
+	display: flex;
+	background-color: var(--footer-bg);
+	padding: 0.8rem 12rem;
+	font-size: 12px;
+	font-weight: bold;
+	white-space: pre-wrap;
+	z-index: 9999;
+
+	&:hover {
+		animation: Footer_hover 0.15s ease-out forwards;
+	}
+
+	.Wrap_SNS {
+		margin-left: auto;
+		display: flex;
+
+		> .SNS {
+			display: inherit;
+			vertical-align: middle;
+			margin-left: 48px;
+
+			> a {
+				color: inherit;
+			}
+
+			&:hover {
+				animation: Choice 0.15s ease-out forwards;
+				cursor: pointer;
+			}
+			&:active {
+				animation: Active 0.15s ease-out forwards;
+				cursor: wait;
+			}
+		}
+	}
+}
+// Footer CSS Ended @@@@@@@@@@@@@@@@@@@@@@
+
+// Animation Keyframes @@@@@@@@@@@@@@@@@@@
+@keyframes Choice {
+	to {
+		color: var(--normal-after);
+	}
+}
+
+@keyframes Active {
+	to {
+		color: var(--normal-active);
+	}
+}
+
+@keyframes Header_hover {
+	to {
+		background-color: var(--header-after);
+	}
+}
+
+@keyframes Footer_hover {
+	to {
+		background-color: var(--footer-after);
+	}
+}
+
+@keyframes Navigator {
+	from {
+		opacity: 0.5;
+		left: -2rem;
+	}
+	to {
+		opactiy: 1;
+		left: 0;
+	}
+}
+
+@keyframes Stuff_hover {
+	to {
+		left: -0.5rem;
+		background-color: var(--stuff-after);
+		color: var(--stuff-ft);
+	}
+}
+
+@keyframes Stuff_hover_before {
+	from {
+		left: -0.5rem;
+		background-color: var(--stuff-after);
+		color: var(--stuff-ft);
+	}
+	to {
+		left: 0;
+		background-color: var(--stuff-bg);
+	}
+}
+@keyframes Stuff_hover_active {
+	to {
+		left: -0.5rem;
+		background-color: var(--stuff-active);
+		color: var(--stuff-ft-active);
+	}
+}
+
+@keyframes Stuff_mobile_hover {
+	to {
+		background-color: var(--stuff-after);
+		color: var(--stuff-ft);
+	}
+}
+
+@keyframes Stuff_mobile_active {
+	to {
+		background-color: var(--stuff-active);
+		color: var(--stuff-ft-active);
+	}
+}
+
+@keyframes Subnav_menu_hover {
+	to {
+		padding-left: 1rem;
+		background-color: var(--menu-after);
+	}
+}
+
+@keyframes Subnav_hover {
+	to {
+		padding-left: 1.2rem;
+		background-color: var(--submenu-after);
+	}
+}
+
+@keyframes Subnav_active {
+	from {
+		padding-left: 1.2rem;
+		background-color: var(--submenu-after);
+	}
+	to {
+		padding-left: 1.2rem;
+		background-color: var(--submenu-active);
+	}
+}
+
+@keyframes Search_open {
+	from {
+		opacity: 0.5;
+		top: 0;
+	}
+	to {
+		opacity: 1;
+		top: -3rem;
+	}
+}
+// Animation Keyframes Ended @@@@@@@@@@@@@
+
+// media query (반응형) @@@@@@@@@@@@@@@@@
+$boundaryMax: 1920px; // Max Resolution
+$boundary0: 1280px; // Laptop ~ Desktop
+$boundary1: 1024px; // Laptop
+$boundary2: 768px; // Tablet
+$boundary3: 425px; // Mobile
+
+@media only screen and (min-width: $boundaryMax) {
+	// Max Resolution
+	.Navigator_all_wrap {
+		min-width: 20rem !important;
+	}
+}
+
+@media only screen and (min-width: $boundary2) and (max-width: $boundary1) {
+	// 태블릿 ~ 노트북
+	.Header,
+	.Footer {
+		// Header, Footer
+		padding: 0.8rem 4rem;
+	}
+
+	.contentWrap {
+		// Content 영역
+		padding: 1.6rem 4rem;
+	}
+
+	.dataWrap {
+		// Content 영역 중 Data 영역
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: $boundary2) {
+	// 모바일 ~ 태블릿
+	.Header,
+	.Footer {
+		padding: 0.6rem 1.2rem;
+	}
+
+	.contentWrap {
+		// Content 영역
+		padding: 0;
+		flex-direction: column;
+	}
+
+	.Navigator_all_wrap {
+		// Navigator 전체 영역
+		height: 50%;
+		> .Navigator_stuff_wrap {
+			left: 5vw;
+			top: 5vw;
+			position: absolute;
+		}
+	}
+
+	.forIndexNavi {
+		// Index Page의 Navigator
+		flex-direction: column;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.dataWrap {
+		// Content 영역 중 Data 영역
+		font-size: 14px;
+		padding: 0;
+		padding-top: 1.4rem;
+	}
+
+	.content {
+		// 내용 폰트
+		line-height: 0.6rem !important;
+		padding: 1rem 1rem 0 1rem;
+		p {
+			font-size: 16px;
+		}
+		h4 {
+			margin-left: 1.4rem;
+		}
+	}
+
+	.Footer {
+		// Footer
+		font-size: 8px;
+		text-align: justify;
+
+		.Wrap_SNS {
+			// SNS Link 영역
+			margin-left: auto;
+			align-items: center;
+			justify-content: center;
+			> .SNS {
+				margin: 0 0.8rem;
+				> a > svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $boundary3) {
+	// 모바일
+	.Header {
+		// Header
+		> a {
+			font-size: 0.6rem;
+		}
+
+		> .Sitebar {
+			margin-right: 1rem;
+		}
+	}
+
+	.Footer {
+		// Footer
+		display: inline-block;
+
+		.Wrap_SNS {
+			padding-top: 0.6rem;
+		}
+	}
+}
+
+@media only screen and (max-height: 600px) {
+	// 높이가 너무 작을 때 (검색창 focus 방지)
+	.Navigator_all_wrap {
+		.Navigator_wrap {
+			position: absolute;
+			top: -46.5vh;
+		}
+	}
+}
+
+// media query (반응형) 끝 @@@@@@@@@@@@@@@@@
