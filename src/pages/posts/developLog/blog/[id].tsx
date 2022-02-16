@@ -11,15 +11,19 @@ import { useRecoilValue } from 'recoil'
 
 const Posts = ({ postData }) => {
     const whatPage = 'developLog/blog'
-    const darkMode = useRecoilValue(darkModeState)
-    const ENV = useRecoilValue(checkEnv)
+    const darkMode = useRecoilValue(darkModeState) // 다크모드 체크
+    const ENV = useRecoilValue(checkEnv) // 환경 체크
+    const rearrange = postData.tags.map((data : string) => {
+        // tag arrange용 함수
+        return <div className="element">{data}</div>
+    })
 
     return (
         <Layout>
             <Head>
-                <title>재한쓰의 공부용 블로그 😊 - {postData.id}</title>
-                <meta property="og:title" content={`{재한쓰의 공부용 블로그 😃 - ${postData.id}`} />
-                <meta property="twitter:title" content={`{재한쓰의 공부용 블로그 😃 - ${postData.id}`} />
+                <title>{postData.id} - 재한쓰의 공부용 블로그 😃</title>
+                <meta property="og:title" content={`${postData.id} - 재한쓰의 공부용 블로그 😃`} />
+                <meta property="twitter:title" content={`${postData.id} - 재한쓰의 공부용 블로그 😃`} />
                 <meta property="og:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
                 <meta property="twitter:url" content={`http://wisesaturn.github.io/study-blog/posts/${whatPage}/${postData.id}`} />
                 <meta property="og:image" content="http://wisesaturn.github.io/study-blog/resource/ob-image/main.png" />
@@ -34,7 +38,7 @@ const Posts = ({ postData }) => {
                     <span id="date"><Date dateString={postData.date} theme="post" /> </span>
                 </div>
                 <div className="content" id={`${ darkMode ? 'dark' : 'light'}`} dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
-                <div className="tag">{postData.tags}</div>
+                <div className="tag"><span>태그</span>{rearrange}</div>
                 <div className="countComment"><Utterance /></div>
             </Post>
         </Layout>
@@ -83,6 +87,37 @@ const Post = styled.div`
     .tag { // 태그
         padding : 1.6rem 1.2rem;
         border-bottom : 2px solid var(--bottom-line);
+        display : flex;
+        align-items : center;
+       
+        > span, .element {
+            // 태그 공통 CSS
+            font-size : 16px;
+        }
+
+        > span {
+            // 태그 소제목
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        .element {
+            // 태그 element          
+            margin-left : 1rem;
+            padding : .2rem;
+            border-radius : 3px;
+
+            &:hover {
+                background-color : var(--tag-hover);
+                cursor : pointer;
+            }
+
+            &:active {
+                cursor : wait;
+                background-color : var(--tag-active);
+            }
+        }
     }
 
     /*

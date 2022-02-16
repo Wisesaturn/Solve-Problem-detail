@@ -57,7 +57,7 @@ const IndexPage = () => {
                         centeredSlides={true}
                         slidesPerView={'auto'}
                         spaceBetween={50}
-                        loop={true}
+                        loop={false}
                         loopedSlides={1}
                         coverflowEffect={{
                         rotate: 20,
@@ -91,6 +91,24 @@ const IndexPage = () => {
                                     </div>
                                 </Link>
                             </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="swiper-slide">
+                            <Link href={`${ENV}posts/programmers/Lv1`} passHref>
+                                    <div className="box">
+                                        <div className="imgbox">
+                                            <Image
+                                                src={`${ENV}resource/photo/programming.jpg`}
+                                                width='200px'
+                                                height='200px'
+                                                layout='intrinsic' />
+                                        </div>
+                                        <div className="contentBox">
+                                                <h2>Level 1<br/><span>프로그래머스</span></h2>
+                                        </div>
+                                    </div>
+                                </Link>
+                        </div>
                         </SwiperSlide>
                        </Swiper>
                 </Area>

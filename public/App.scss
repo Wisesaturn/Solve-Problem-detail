@@ -41,7 +41,10 @@
 		--Error-ft: rgb(214, 106, 106);
 		--category-bg: #0c2017;
 		--category-hover: #383d3b;
-		--quote-ft: #8b9e96;
+		--quote-ft: #bce5d4;
+		--code-bg: #435f51;
+		--tag-hover: #333;
+		--tag-active: #111;
 	}
 
 	.light {
@@ -75,9 +78,12 @@
 		--profile-picture-shadow: #85b39c;
 		--search-border: #7bb197;
 		--Error-ft: rgb(165, 54, 54);
-		--category-bg: #b3e9cf;
-		--category-hover: #819088;
+		--category-bg: #e1ebe5;
+		--category-hover: #cbe0d6;
 		--quote-ft: #77857f;
+		--code-bg: #c4e0d2;
+		--tag-hover: #ddd;
+		--tag-active: #aaa;
 	}
 }
 
@@ -368,19 +374,21 @@ body {
 		color: lightsalmon;
 		font-weight: bold;
 	}
-
-	blockquote > p,
 	blockquote {
 		// > {내용}
-		font-size: 14px;
-		font-weight: normal;
 		padding-left: 0.5rem;
 		color: var(--quote-ft);
 		display: flex;
 		flex-direction: column;
-		line-height: 1.6rem;
-		text-indent: 0;
 		overflow-x: auto;
+		border-left: 7px solid var(--code-bg);
+
+		> p {
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.6rem;
+			text-indent: 0;
+		}
 	}
 	img {
 		// 이미지
@@ -425,39 +433,15 @@ body {
 		// ``` {내용} ```
 		background-color: #344d40;
 	}
-}
-
-#dark {
-	// 'Dark' 모드일 때
-	blockquote {
-		// 인용구
-		border-left: 7px solid #9fb1a8;
-	}
-
 	:not(pre) > code {
 		// ``` {내용} ``` 제외 <code> 태그
 		// 글자 배경색
-		background-color: #435f51;
+		background-color: var(--code-bg);
 		padding: 0.2rem 0.3rem;
 		border-radius: 3px;
 	}
 }
 
-#light {
-	// 'light' 모드일 때
-	blockquote {
-		// 인용구
-		border-left: 7px solid #5e8a73;
-	}
-
-	:not(pre) > code {
-		// ``` {내용} ``` 제외 <code> 태그
-		// 글자 배경색
-		background-color: #a4e2c3;
-		padding: 0.2rem 0.3rem;
-		border-radius: 3px;
-	}
-}
 // 내용 폰트 CSS 끝 -----------------------------------------------
 // Comment CSS ---------------------
 .countComment {
@@ -710,9 +694,6 @@ $boundary3: 425px; // Mobile
 		}
 		h4 {
 			margin-left: 1.4rem;
-		}
-		blockquote > p {
-			overflow-x: auto;
 		}
 	}
 

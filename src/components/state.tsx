@@ -19,21 +19,21 @@ const subMenu = [
     [
         {
             title: 'Level 1',
-            path: '/posts/programmers/Lv1',
+            path: 'posts/programmers/Lv1',
             icon: '',
         },
     ],
     [
         {
             title: 'Unity',
-            path: '/unity',
+            path: 'unity',
             icon: '',
         },
     ],
     [
         {
             title: 'Blog',
-            path: '/posts/developLog/blog',
+            path: 'posts/developLog/blog',
             icon: '',
         },
     ],

@@ -17,9 +17,9 @@ const categoryBlog = ({ allPostsData }) => {
     return (
         <Layout>
             <Head>
-                <title>재한쓰의 공부용 블로그 😊 - 기록/blog</title>
-                <meta property="og:title" content={'{재한쓰의 공부용 블로그 😃 - 기록/blog'} />
-                <meta property="twitter:title" content={'{재한쓰의 공부용 블로그 😃 - 기록/blog'} />
+                <title>기록/blog - 재한쓰의 공부용 블로그 😊</title>
+                <meta property="og:title" content={'기록/blog - 재한쓰의 공부용 블로그 😃'} />
+                <meta property="twitter:title" content={'기록/blog - 재한쓰의 공부용 블로그 😃'} />
                 <meta property="og:url" content={'http://wisesaturn.github.io/study-blog/posts/developLog/blog'} />
                 <meta property="twitter:url" content={'http://wisesaturn.github.io/study-blog/posts/developLog/blog'} />
             </Head>
